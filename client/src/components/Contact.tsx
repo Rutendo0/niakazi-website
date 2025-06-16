@@ -65,30 +65,30 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-tech-gray">
+    <section id="contact" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h2 className="text-5xl font-heading font-bold text-brand-dark-blue mb-6">Get In Touch</h2>
-            <p className="text-xl text-gray-700">
+        <div className="max-w-4xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-dande-dark mb-6">Get In Touch</h2>
+            <p className="text-lg text-dande-text font-poppins">
               Ready to transform your business with reliable ICT solutions? Contact our experts today.
             </p>
           </div>
           
           <div className="grid lg:grid-cols-2 gap-12">
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-2xl font-heading font-bold text-brand-dark-blue mb-8">Contact Information</h3>
+            <div>
+              <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-8">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
                     <div key={index} className="flex items-start">
-                      <div className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                      <div className="w-12 h-12 bg-dande-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
                         <IconComponent className="text-white text-xl" />
                       </div>
                       <div>
-                        <h4 className="font-semibold text-brand-dark-blue mb-1">{info.title}</h4>
-                        <p className="text-gray-600">{info.text}</p>
+                        <h4 className="font-semibold text-dande-dark mb-1 font-poppins">{info.title}</h4>
+                        <p className="text-dande-text font-poppins">{info.text}</p>
                       </div>
                     </div>
                   );
@@ -96,7 +96,7 @@ export default function Contact() {
               </div>
               
               <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-brand-dark-blue mb-4">Follow Us</h4>
+                <h4 className="text-lg font-semibold text-dande-dark mb-4 font-poppins">Follow Us</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
@@ -106,7 +106,7 @@ export default function Contact() {
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
+                        className="w-12 h-12 bg-dande-primary rounded-lg flex items-center justify-center hover:opacity-90 transition-all"
                         aria-label={social.label}
                       >
                         <IconComponent className="text-white" />
@@ -115,65 +115,59 @@ export default function Contact() {
                   })}
                 </div>
               </div>
-              
-              <div className="mt-8 p-6 bg-brand-light-blue rounded-xl">
-                <h4 className="font-semibold text-brand-dark-blue mb-2">Business Hours</h4>
-                <p className="text-gray-700 text-sm">Monday - Friday: 8:00 AM - 5:00 PM</p>
-                <p className="text-gray-700 text-sm">24/7 Emergency Support Available</p>
-              </div>
             </div>
             
-            <div className="bg-white rounded-2xl p-8">
-              <h3 className="text-2xl font-heading font-bold text-brand-dark-blue mb-6">Send us a Message</h3>
+            <div className="bg-dande-light-gray rounded-lg p-8">
+              <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-6">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-brand-dark-blue font-medium mb-2">Full Name</label>
+                  <label htmlFor="name" className="block text-dande-dark font-medium mb-2 font-poppins">Full Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
                     placeholder="Your full name"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-brand-dark-blue font-medium mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-dande-dark font-medium mb-2 font-poppins">Email Address</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
                     placeholder="your.email@company.com"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-brand-dark-blue font-medium mb-2">Subject</label>
+                  <label htmlFor="subject" className="block text-dande-dark font-medium mb-2 font-poppins">Subject</label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
                     placeholder="How can we help you?"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-brand-dark-blue font-medium mb-2">Message</label>
+                  <label htmlFor="message" className="block text-dande-dark font-medium mb-2 font-poppins">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
                     placeholder="Tell us about your ICT requirements..."
                     required
                   />
@@ -181,7 +175,8 @@ export default function Contact() {
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-brand-blue hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center"
+                  className="w-full bg-dande-dark text-white font-semibold py-3 px-6 rounded-full transition-all disabled:opacity-50 flex items-center justify-center font-poppins hover:bg-opacity-90"
+                  style={{ backgroundColor: '#1f2b56' }}
                 >
                   {isSubmitting ? (
                     "Sending..."

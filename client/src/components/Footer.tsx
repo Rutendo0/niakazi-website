@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Wifi, Send } from "lucide-react";
+import { Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -44,47 +44,40 @@ export default function Footer() {
     "Connectivity",
     "Cloud Services", 
     "Security",
-    "Hardware & Software"
-  ];
-
-  const services = [
-    "Dedicated Internet Access",
-    "Microsoft 365",
-    "Cyber Security Training",
-    "Managed Services"
+    "Hardware & Software",
+    "Training & managed services",
+    "Value Added Services"
   ];
 
   return (
-    <footer className="bg-brand-dark-blue text-white py-12">
+    <footer className="bg-dande-dark text-white py-12" style={{ backgroundColor: '#1f2b56' }}>
       <div className="container mx-auto px-4">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <div className="flex items-center space-x-3 mb-4">
-              <div className="w-10 h-10 bg-tech-orange rounded-lg flex items-center justify-center">
-                <Wifi className="text-white text-lg" />
-              </div>
-              <div>
-                <h3 className="text-xl font-heading font-bold">Dandemutande</h3>
-                <p className="text-sm text-gray-300">ICT Solutions</p>
-              </div>
+            <div className="mb-4">
+              <img 
+                src="https://dandemutande.africa/wp-content/uploads/2022/08/Dandemutande_Logo.png" 
+                alt="Dandemutande"
+                className="h-10 w-auto mb-4 filter brightness-0 invert"
+              />
             </div>
-            <p className="text-gray-300 text-sm leading-relaxed mb-4">
+            <p className="text-gray-300 text-sm leading-relaxed mb-4 font-poppins">
               Your reliable ICT solutions partner with 26+ years of experience delivering cutting-edge technology infrastructure across Zimbabwe and Africa.
             </p>
-            <div className="text-gray-300 text-sm">
-              <p>📍 Harare, Zimbabwe</p>
+            <div className="text-gray-300 text-sm font-poppins">
+              <p className="mb-2">📍 Harare, Zimbabwe</p>
               <p>📞 +263 (0) 4 123 456</p>
             </div>
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Quick Links</h4>
+            <h4 className="text-lg font-semibold mb-4 font-poppins">Quick Links</h4>
             <ul className="space-y-2 text-sm">
               {quickLinks.map((link) => (
                 <li key={link.href}>
                   <button
                     onClick={() => scrollToSection(link.href)}
-                    className="text-gray-300 hover:text-tech-orange transition-colors"
+                    className="text-gray-300 hover:text-dande-primary transition-colors font-poppins"
                   >
                     {link.label}
                   </button>
@@ -94,11 +87,11 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Solutions</h4>
+            <h4 className="text-lg font-semibold mb-4 font-poppins">Our Solutions</h4>
             <ul className="space-y-2 text-sm">
               {solutions.map((solution) => (
                 <li key={solution}>
-                  <a href="#" className="text-gray-300 hover:text-tech-orange transition-colors">
+                  <a href="#" className="text-gray-300 hover:text-dande-primary transition-colors font-poppins">
                     {solution}
                   </a>
                 </li>
@@ -107,33 +100,37 @@ export default function Footer() {
           </div>
           
           <div>
-            <h4 className="text-lg font-semibold mb-4">Stay Updated</h4>
-            <p className="text-gray-300 text-sm mb-4">Subscribe to receive updates about our latest ICT solutions and services.</p>
-            <form onSubmit={handleNewsletterSubmit} className="flex">
+            <h4 className="text-lg font-semibold mb-4 font-poppins">Stay Connected</h4>
+            <p className="text-gray-300 text-sm mb-4 font-poppins">Subscribe to receive updates about our latest ICT solutions and services.</p>
+            <form onSubmit={handleNewsletterSubmit} className="flex mb-4">
               <input
                 type="email"
                 value={newsletterEmail}
                 onChange={(e) => setNewsletterEmail(e.target.value)}
                 placeholder="Your email"
-                className="flex-1 px-3 py-2 bg-white bg-opacity-20 rounded-l-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-tech-orange"
+                className="flex-1 px-3 py-2 bg-white bg-opacity-20 rounded-l-lg text-white placeholder-gray-300 focus:outline-none focus:ring-2 focus:ring-dande-primary font-poppins"
                 required
               />
               <button
                 type="submit"
-                className="bg-tech-orange hover:bg-orange-600 text-white px-4 py-2 rounded-r-lg transition-colors"
+                className="bg-dande-primary hover:opacity-90 text-white px-4 py-2 rounded-r-lg transition-all"
               >
                 <Send className="w-4 h-4" />
               </button>
             </form>
+            <div className="text-gray-300 text-sm font-poppins">
+              <p className="mb-1">📧 info@dandemutande.africa</p>
+              <p>🌐 www.dandemutande.africa</p>
+            </div>
           </div>
         </div>
         
         <div className="border-t border-gray-600 mt-8 pt-8 flex flex-col md:flex-row justify-between items-center">
-          <p className="text-gray-300 text-sm">© 2024 Dandemutande. All rights reserved.</p>
+          <p className="text-gray-300 text-sm font-poppins">© 2024 Dandemutande. All rights reserved.</p>
           <div className="flex space-x-4 mt-4 md:mt-0">
-            <a href="#" className="text-gray-300 hover:text-tech-orange text-sm transition-colors">Privacy Policy</a>
-            <a href="#" className="text-gray-300 hover:text-tech-orange text-sm transition-colors">Terms of Service</a>
-            <a href="#" className="text-gray-300 hover:text-tech-orange text-sm transition-colors">Support</a>
+            <a href="#" className="text-gray-300 hover:text-dande-primary text-sm transition-colors font-poppins">Privacy Policy</a>
+            <a href="#" className="text-gray-300 hover:text-dande-primary text-sm transition-colors font-poppins">Terms of Service</a>
+            <a href="#" className="text-gray-300 hover:text-dande-primary text-sm transition-colors font-poppins">Support</a>
           </div>
         </div>
       </div>
