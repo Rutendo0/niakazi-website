@@ -1,14 +1,14 @@
 import { useState } from "react";
-import { Menu, X, Wifi } from "lucide-react";
+import { Menu, X } from "lucide-react";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const navItems = [
     { href: "#home", label: "Home" },
+    { href: "#transforming-industries", label: "Transforming Industries" },
     { href: "#services", label: "Solutions" },
     { href: "#about", label: "About" },
-    { href: "#why-choose-us", label: "Why Choose Us" },
     { href: "#contact", label: "Contact" },
   ];
 
@@ -21,25 +21,23 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-lg sticky top-0 z-50">
-      <nav className="container mx-auto px-4 py-4">
+    <header className="bg-white shadow-sm sticky top-0 z-50">
+      <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center space-x-3">
-            <div className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center">
-              <Wifi className="text-white text-xl" />
-            </div>
-            <div>
-              <h1 className="text-2xl font-heading font-bold text-brand-dark-blue">Dandemutande</h1>
-              <p className="text-sm text-brand-blue font-medium">ICT Solutions</p>
-            </div>
+          <div className="flex items-center">
+            <img 
+              src="https://dandemutande.africa/wp-content/uploads/2022/08/Dandemutande_Logo.png" 
+              alt="Dandemutande"
+              className="h-12 w-auto"
+            />
           </div>
           
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden lg:flex space-x-8">
             {navItems.map((item) => (
               <button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-brand-dark-blue hover:text-brand-blue transition-colors font-medium"
+                className="text-dande-text hover:text-dande-primary transition-colors font-medium font-poppins"
               >
                 {item.label}
               </button>
@@ -47,7 +45,7 @@ export default function Header() {
           </div>
           
           <button
-            className="md:hidden text-brand-dark-blue"
+            className="lg:hidden text-dande-text"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           >
             {isMobileMenuOpen ? <X className="text-xl" /> : <Menu className="text-xl" />}
@@ -55,13 +53,13 @@ export default function Header() {
         </div>
         
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4">
+          <div className="lg:hidden mt-4 pb-4">
             <div className="flex flex-col space-y-4">
               {navItems.map((item) => (
                 <button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
-                  className="text-brand-dark-blue hover:text-brand-blue transition-colors text-left"
+                  className="text-dande-text hover:text-dande-primary transition-colors text-left font-poppins"
                 >
                   {item.label}
                 </button>

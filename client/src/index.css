@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&family=Rubik:wght@300;400;500;700;900&family=Muli:wght@300;400;600;700;800;900&display=swap');
 
 @tailwind base;
 @tailwind components;
@@ -6,33 +6,32 @@
 
 :root {
   --background: hsl(0, 0%, 100%);
-  --foreground: hsl(224, 71.4%, 4.1%);
-  --muted: hsl(220, 14.3%, 95.9%);
-  --muted-foreground: hsl(220, 8.9%, 46.1%);
+  --foreground: hsl(0, 0%, 0%);
+  --muted: hsl(210, 40%, 96%);
+  --muted-foreground: hsl(215.4, 16.3%, 46.9%);
   --popover: hsl(0, 0%, 100%);
-  --popover-foreground: hsl(224, 71.4%, 4.1%);
+  --popover-foreground: hsl(0, 0%, 0%);
   --card: hsl(0, 0%, 100%);
-  --card-foreground: hsl(224, 71.4%, 4.1%);
-  --border: hsl(220, 13%, 91%);
-  --input: hsl(220, 13%, 91%);
-  --primary: hsl(221.2, 83.2%, 53.3%);
-  --primary-foreground: hsl(210, 40%, 98%);
+  --card-foreground: hsl(0, 0%, 0%);
+  --border: hsl(214.3, 31.8%, 91.4%);
+  --input: hsl(214.3, 31.8%, 91.4%);
+  --primary: hsl(200, 91%, 42%);
+  --primary-foreground: hsl(0, 0%, 100%);
   --secondary: hsl(210, 40%, 96%);
   --secondary-foreground: hsl(222.2, 84%, 4.9%);
   --accent: hsl(210, 40%, 96%);
   --accent-foreground: hsl(222.2, 84%, 4.9%);
   --destructive: hsl(0, 84.2%, 60.2%);
   --destructive-foreground: hsl(210, 40%, 98%);
-  --ring: hsl(221.2, 83.2%, 53.3%);
+  --ring: hsl(200, 91%, 42%);
   --radius: 0.5rem;
   
-  /* Dandemutande ICT brand colors */
-  --brand-blue: hsl(221, 83%, 53%);
-  --brand-dark-blue: hsl(221, 100%, 20%);
-  --brand-light-blue: hsl(221, 83%, 85%);
-  --tech-orange: hsl(25, 95%, 53%);
-  --tech-gray: hsl(220, 13%, 91%);
-  --success-green: hsl(142, 76%, 36%);
+  /* Dandemutande exact brand colors from website */
+  --dande-primary: #1291C3;
+  --dande-dark: #1f2b56;
+  --dande-light-gray: #d9dce4;
+  --dande-white: #ffffff;
+  --dande-text: #32373c;
 }
 
 .dark {
@@ -74,63 +73,59 @@
 }
 
 @layer utilities {
-  .font-heading {
+  .font-poppins {
     font-family: 'Poppins', sans-serif;
   }
   
-  .bg-brand-blue {
-    background-color: hsl(var(--brand-blue));
+  .font-rubik {
+    font-family: 'Rubik', sans-serif;
   }
   
-  .text-brand-blue {
-    color: hsl(var(--brand-blue));
+  .font-muli {
+    font-family: 'Muli', sans-serif;
   }
   
-  .bg-brand-dark-blue {
-    background-color: hsl(var(--brand-dark-blue));
+  .bg-dande-primary {
+    background-color: var(--dande-primary);
   }
   
-  .text-brand-dark-blue {
-    color: hsl(var(--brand-dark-blue));
+  .text-dande-primary {
+    color: var(--dande-primary);
   }
   
-  .bg-brand-light-blue {
-    background-color: hsl(var(--brand-light-blue));
+  .bg-dande-dark {
+    background-color: var(--dande-dark);
   }
   
-  .text-brand-light-blue {
-    color: hsl(var(--brand-light-blue));
+  .text-dande-dark {
+    color: var(--dande-dark);
   }
   
-  .bg-tech-orange {
-    background-color: hsl(var(--tech-orange));
+  .bg-dande-light-gray {
+    background-color: var(--dande-light-gray);
   }
   
-  .text-tech-orange {
-    color: hsl(var(--tech-orange));
+  .text-dande-light-gray {
+    color: var(--dande-light-gray);
   }
   
-  .bg-tech-gray {
-    background-color: hsl(var(--tech-gray));
+  .bg-dande-white {
+    background-color: var(--dande-white);
   }
   
-  .text-tech-gray {
-    color: hsl(var(--tech-gray));
+  .text-dande-white {
+    color: var(--dande-white);
   }
   
-  .bg-success-green {
-    background-color: hsl(var(--success-green));
+  .text-dande-text {
+    color: var(--dande-text);
   }
   
-  .text-success-green {
-    color: hsl(var(--success-green));
+  .hover\:bg-dande-primary:hover {
+    background-color: var(--dande-primary);
   }
   
-  .hover\:bg-brand-blue:hover {
-    background-color: hsl(var(--brand-blue));
-  }
-  
-  .hover\:text-brand-blue:hover {
-    color: hsl(var(--brand-blue));
+  .hover\:text-dande-primary:hover {
+    color: var(--dande-primary);
   }
 }

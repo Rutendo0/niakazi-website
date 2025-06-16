@@ -1,78 +1,57 @@
-import { Wifi, Cloud, Shield, HardDrive, GraduationCap, Settings } from "lucide-react";
-
 export default function Services() {
   const services = [
     {
-      icon: Wifi,
       title: "Connectivity",
-      description: "Reliable internet connectivity solutions including dedicated internet access, fibre, SDWAN, and VSAT services for businesses of all sizes.",
-      features: ["Dedicated Internet Access", "Fibre Connectivity", "SDWAN Solutions", "VSAT Services"]
+      link: "/connectivity"
     },
     {
-      icon: Cloud,
-      title: "Cloud Services",
-      description: "Comprehensive cloud infrastructure and services to modernize your business operations and enhance scalability.",
-      features: ["Co-Location Services", "Microsoft Azure", "Microsoft 365", "Oracle Cloud Infrastructure"]
+      title: "Cloud",
+      link: "/cloud"
     },
     {
-      icon: Shield,
-      title: "Security",
-      description: "Advanced cybersecurity solutions to protect your business from evolving digital threats and ensure data integrity.",
-      features: ["Cyber Security Assessment", "Threat Protection", "Security Monitoring", "Compliance Solutions"]
+      title: "Security", 
+      link: "/security"
     },
     {
-      icon: HardDrive,
       title: "Hardware & Software",
-      description: "Complete ICT hardware and software solutions tailored to meet your business requirements and technical specifications.",
-      features: ["Enterprise Hardware", "Software Licensing", "System Integration", "Technical Support"]
+      link: "/hardware"
     },
     {
-      icon: GraduationCap,
-      title: "Training & Managed Services",
-      description: "Professional training programs and managed services to enhance your team's capabilities and operational efficiency.",
-      features: ["Cyber Security Training", "Managed IT Services", "Technical Training", "Consultation Services"]
+      title: "Training & managed services",
+      link: "/training"
     },
     {
-      icon: Settings,
       title: "Value Added Services",
-      description: "Additional ICT services and solutions designed to optimize your technology infrastructure and business processes.",
-      features: ["System Optimization", "Network Monitoring", "Maintenance Services", "Strategic Planning"]
+      link: "/value-added"
     }
   ];
 
   return (
-    <section id="services" className="py-20 bg-tech-gray">
+    <section id="services" className="py-16 bg-white">
       <div className="container mx-auto px-4">
-        <div className="text-center mb-16">
-          <h2 className="text-5xl font-heading font-bold text-brand-dark-blue mb-6">Our Solutions</h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
-            Comprehensive ICT solutions designed to empower your business with reliable connectivity, advanced security, and cutting-edge technology.
-          </p>
+        <div className="text-center mb-12">
+          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-6">Our Solutions</h2>
         </div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {services.map((service, index) => {
-            const IconComponent = service.icon;
-            return (
-              <div key={index} className="bg-white rounded-xl p-8 shadow-lg hover:shadow-xl transition-shadow">
-                <div className="flex items-center mb-6">
-                  <div className="w-16 h-16 bg-brand-blue rounded-lg flex items-center justify-center mr-4">
-                    <IconComponent className="text-white text-2xl" />
-                  </div>
-                  <h3 className="text-2xl font-heading font-bold text-brand-dark-blue">{service.title}</h3>
-                </div>
-                <p className="text-gray-700 mb-6 leading-relaxed">{service.description}</p>
-                <ul className="space-y-2">
-                  {service.features.map((feature, featureIndex) => (
-                    <li key={featureIndex} className="flex items-center text-gray-600">
-                      <div className="w-2 h-2 bg-tech-orange rounded-full mr-3"></div>
-                      {feature}
-                    </li>
-                  ))}
-                </ul>
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+          {services.map((service, index) => (
+            <div 
+              key={index} 
+              className="group relative bg-cover bg-center h-40 md:h-48 rounded-lg overflow-hidden cursor-pointer transform hover:scale-105 transition-all duration-300"
+              style={{
+                backgroundImage: `linear-gradient(45deg, ${index % 2 === 0 ? '#1291C3' : '#1f2b56'}, ${index % 2 === 0 ? '#1f2b56' : '#1291C3'})`
+              }}
+            >
+              <div className="absolute inset-0 bg-black bg-opacity-20 group-hover:bg-opacity-10 transition-all duration-300"></div>
+              <div className="relative h-full flex items-center justify-center p-4">
+                <h3 className="text-white text-center font-poppins font-semibold text-sm md:text-base leading-tight">
+                  <a href={service.link} className="hover:underline">
+                    {service.title}
+                  </a>
+                </h3>
               </div>
-            );
-          })}
+            </div>
+          ))}
         </div>
       </div>
     </section>
