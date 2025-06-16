@@ -1,46 +1,83 @@
-import { Heart, Users, GraduationCap } from "lucide-react";
+import { Target, Eye, Award } from "lucide-react";
 
 export default function About() {
   const values = [
     {
-      icon: Heart,
-      title: "Preserve",
-      description: "Safeguarding cultural traditions for future generations",
-      color: "text-sunset-orange"
+      icon: Target,
+      title: "Mission",
+      description: "To provide reliable, innovative ICT solutions that empower businesses to thrive in the digital economy",
+      color: "text-brand-blue"
     },
     {
-      icon: Users,
-      title: "Connect",
-      description: "Building bridges between communities and cultures",
-      color: "text-african-gold"
+      icon: Eye,
+      title: "Vision",
+      description: "To be the leading ICT solutions provider in Zimbabwe and across Africa, driving digital transformation",
+      color: "text-tech-orange"
     },
     {
-      icon: GraduationCap,
-      title: "Educate",
-      description: "Sharing knowledge and wisdom through learning",
-      color: "text-earth-brown"
+      icon: Award,
+      title: "Values",
+      description: "Excellence, reliability, innovation, and customer-centricity in everything we do",
+      color: "text-success-green"
     }
   ];
 
   return (
-    <section id="about" className="py-20 bg-warm-beige">
+    <section id="about" className="py-20 bg-white">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto text-center">
-          <h2 className="text-5xl font-display font-bold text-deep-brown mb-8">About Dandemutande</h2>
-          <p className="text-xl text-earth-brown leading-relaxed mb-8">
-            Dandemutande Africa is dedicated to preserving, celebrating, and sharing the rich cultural heritage of Africa. Our mission is to create bridges between generations, connect communities, and ensure that the wisdom and beauty of African traditions continue to thrive in the modern world.
-          </p>
-          <p className="text-lg text-earth-brown leading-relaxed mb-12">
-            Through educational programs, cultural events, and community initiatives, we work to foster understanding, appreciation, and pride in African heritage. We believe that by honoring our past, we can build a stronger, more connected future.
-          </p>
+        <div className="max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-12 items-center mb-16">
+            <div>
+              <h2 className="text-5xl font-heading font-bold text-brand-dark-blue mb-8">About Dandemutande</h2>
+              <p className="text-xl text-gray-700 leading-relaxed mb-6">
+                With over 26 years of experience, Dandemutande is Zimbabwe's trusted ICT solutions provider, delivering reliable connectivity, cloud services, cybersecurity, and comprehensive IT infrastructure to businesses across Africa.
+              </p>
+              <p className="text-lg text-gray-600 leading-relaxed mb-8">
+                We understand that in today's digital landscape, robust ICT infrastructure is not just an advantage—it's essential for business survival and growth. Our team of certified specialists works tirelessly to ensure your technology foundation is secure, scalable, and always performing at its best.
+              </p>
+              <div className="flex flex-wrap gap-4">
+                <div className="bg-brand-light-blue px-4 py-2 rounded-lg">
+                  <span className="font-semibold text-brand-dark-blue">26+ Years Experience</span>
+                </div>
+                <div className="bg-brand-light-blue px-4 py-2 rounded-lg">
+                  <span className="font-semibold text-brand-dark-blue">500+ Clients</span>
+                </div>
+                <div className="bg-brand-light-blue px-4 py-2 rounded-lg">
+                  <span className="font-semibold text-brand-dark-blue">99.9% Uptime</span>
+                </div>
+              </div>
+            </div>
+            <div className="bg-tech-gray rounded-2xl p-8">
+              <h3 className="text-2xl font-heading font-bold text-brand-dark-blue mb-6">Your Reliable ICT Solutions Partner</h3>
+              <ul className="space-y-4">
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-tech-orange rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-700">Agile and responsive 24/7 customer support</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-tech-orange rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-700">Powerful and affordable ICT products and services</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-tech-orange rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-700">Access to ICT specialists with deep expertise</span>
+                </li>
+                <li className="flex items-start">
+                  <div className="w-2 h-2 bg-tech-orange rounded-full mt-2 mr-3 flex-shrink-0"></div>
+                  <span className="text-gray-700">Proven track record across multiple industries</span>
+                </li>
+              </ul>
+            </div>
+          </div>
+          
           <div className="grid md:grid-cols-3 gap-8 text-center">
             {values.map((value, index) => {
               const IconComponent = value.icon;
               return (
-                <div key={index} className="bg-white rounded-xl p-6 shadow-lg">
-                  <IconComponent className={`text-4xl ${value.color} mb-4 mx-auto`} />
-                  <h3 className="text-2xl font-display font-bold text-deep-brown mb-2">{value.title}</h3>
-                  <p className="text-earth-brown">{value.description}</p>
+                <div key={index} className="bg-tech-gray rounded-xl p-8 hover:shadow-lg transition-shadow">
+                  <IconComponent className={`text-5xl ${value.color} mb-6 mx-auto`} />
+                  <h3 className="text-2xl font-heading font-bold text-brand-dark-blue mb-4">{value.title}</h3>
+                  <p className="text-gray-700 leading-relaxed">{value.description}</p>
                 </div>
               );
             })}

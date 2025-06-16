@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Facebook, Twitter, Instagram, Youtube, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Send } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -10,7 +10,6 @@ export default function Contact() {
     subject: "",
     message: ""
   });
-  const [newsletterEmail, setNewsletterEmail] = useState("");
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
 
@@ -41,75 +40,63 @@ export default function Contact() {
     }
   };
 
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    try {
-      await apiRequest("POST", "/api/newsletter", { email: newsletterEmail });
-      toast({
-        title: "Subscribed!",
-        description: "Thank you for subscribing to our newsletter!",
-      });
-      setNewsletterEmail("");
-    } catch (error) {
-      toast({
-        title: "Error",
-        description: "Failed to subscribe. Please try again.",
-        variant: "destructive",
-      });
-    }
-  };
-
   const contactInfo = [
     {
       icon: MapPin,
-      text: "123 Heritage Street, Cultural District, Accra, Ghana"
+      title: "Head Office",
+      text: "Harare, Zimbabwe"
     },
     {
       icon: Phone,
-      text: "+233 (0) 123 456 789"
+      title: "Phone",
+      text: "+263 (0) 4 123 456"
     },
     {
       icon: Mail,
+      title: "Email",
       text: "info@dandemutande.africa"
     }
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "#" },
-    { icon: Twitter, href: "#" },
-    { icon: Instagram, href: "#" },
-    { icon: Youtube, href: "#" }
+    { icon: Facebook, href: "https://www.facebook.com/DandemutandeZW", label: "Facebook" },
+    { icon: Twitter, href: "https://x.com/DandemutandeZW", label: "Twitter" },
+    { icon: Linkedin, href: "https://www.linkedin.com/company/13181424", label: "LinkedIn" }
   ];
 
   return (
-    <section id="contact" className="py-20 bg-white">
+    <section id="contact" className="py-20 bg-tech-gray">
       <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
+        <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
-            <h2 className="text-5xl font-display font-bold text-deep-brown mb-6">Get In Touch</h2>
-            <p className="text-xl text-earth-brown">
-              Join our community and be part of preserving African heritage for future generations.
+            <h2 className="text-5xl font-heading font-bold text-brand-dark-blue mb-6">Get In Touch</h2>
+            <p className="text-xl text-gray-700">
+              Ready to transform your business with reliable ICT solutions? Contact our experts today.
             </p>
           </div>
           
-          <div className="grid md:grid-cols-2 gap-12">
-            <div>
-              <h3 className="text-2xl font-display font-bold text-deep-brown mb-6">Contact Information</h3>
-              <div className="space-y-4">
+          <div className="grid lg:grid-cols-2 gap-12">
+            <div className="bg-white rounded-2xl p-8">
+              <h3 className="text-2xl font-heading font-bold text-brand-dark-blue mb-8">Contact Information</h3>
+              <div className="space-y-6">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
-                    <div key={index} className="flex items-center">
-                      <IconComponent className="text-sunset-orange text-xl w-6 mr-4" />
-                      <p className="text-earth-brown">{info.text}</p>
+                    <div key={index} className="flex items-start">
+                      <div className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                        <IconComponent className="text-white text-xl" />
+                      </div>
+                      <div>
+                        <h4 className="font-semibold text-brand-dark-blue mb-1">{info.title}</h4>
+                        <p className="text-gray-600">{info.text}</p>
+                      </div>
                     </div>
                   );
                 })}
               </div>
               
-              <div className="mt-8">
-                <h4 className="text-lg font-semibold text-deep-brown mb-4">Follow Us</h4>
+              <div className="mt-8 pt-8 border-t border-gray-200">
+                <h4 className="text-lg font-semibold text-brand-dark-blue mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
@@ -117,76 +104,93 @@ export default function Contact() {
                       <a
                         key={index}
                         href={social.href}
-                        className="w-12 h-12 bg-african-gold rounded-full flex items-center justify-center hover:bg-yellow-600 transition-colors"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="w-12 h-12 bg-brand-blue rounded-lg flex items-center justify-center hover:bg-blue-700 transition-colors"
+                        aria-label={social.label}
                       >
-                        <IconComponent className="text-deep-brown" />
+                        <IconComponent className="text-white" />
                       </a>
                     );
                   })}
                 </div>
               </div>
+              
+              <div className="mt-8 p-6 bg-brand-light-blue rounded-xl">
+                <h4 className="font-semibold text-brand-dark-blue mb-2">Business Hours</h4>
+                <p className="text-gray-700 text-sm">Monday - Friday: 8:00 AM - 5:00 PM</p>
+                <p className="text-gray-700 text-sm">24/7 Emergency Support Available</p>
+              </div>
             </div>
             
-            <div>
+            <div className="bg-white rounded-2xl p-8">
+              <h3 className="text-2xl font-heading font-bold text-brand-dark-blue mb-6">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
-                  <label htmlFor="name" className="block text-deep-brown font-medium mb-2">Full Name</label>
+                  <label htmlFor="name" className="block text-brand-dark-blue font-medium mb-2">Full Name</label>
                   <input
                     type="text"
                     id="name"
                     name="name"
                     value={formData.name}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-african-gold focus:border-transparent"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
                     placeholder="Your full name"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="email" className="block text-deep-brown font-medium mb-2">Email Address</label>
+                  <label htmlFor="email" className="block text-brand-dark-blue font-medium mb-2">Email Address</label>
                   <input
                     type="email"
                     id="email"
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-african-gold focus:border-transparent"
-                    placeholder="your.email@example.com"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                    placeholder="your.email@company.com"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="subject" className="block text-deep-brown font-medium mb-2">Subject</label>
+                  <label htmlFor="subject" className="block text-brand-dark-blue font-medium mb-2">Subject</label>
                   <input
                     type="text"
                     id="subject"
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-african-gold focus:border-transparent"
-                    placeholder="What is this about?"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                    placeholder="How can we help you?"
                     required
                   />
                 </div>
                 <div>
-                  <label htmlFor="message" className="block text-deep-brown font-medium mb-2">Message</label>
+                  <label htmlFor="message" className="block text-brand-dark-blue font-medium mb-2">Message</label>
                   <textarea
                     id="message"
                     name="message"
                     rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-african-gold focus:border-transparent"
-                    placeholder="Your message here..."
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-brand-blue focus:border-transparent"
+                    placeholder="Tell us about your ICT requirements..."
                     required
                   />
                 </div>
                 <button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-african-gold hover:bg-yellow-600 text-deep-brown font-semibold py-3 px-6 rounded-lg transition-colors disabled:opacity-50"
+                  className="w-full bg-brand-blue hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors disabled:opacity-50 flex items-center justify-center"
                 >
-                  {isSubmitting ? "Sending..." : "Send Message"}
+                  {isSubmitting ? (
+                    "Sending..."
+                  ) : (
+                    <>
+                      <Send className="w-5 h-5 mr-2" />
+                      Send Message
+                    </>
+                  )}
                 </button>
               </form>
             </div>
