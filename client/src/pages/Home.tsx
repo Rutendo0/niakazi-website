@@ -1,23 +1,21 @@
 import Header from "@/components/Header";
 import Hero from "@/components/Hero";
-import Heritage from "@/components/Heritage";
-import Art from "@/components/Art";
-import Events from "@/components/Events";
-import Testimonials from "@/components/Testimonials";
+import Services from "@/components/Services";
 import About from "@/components/About";
+import Solutions from "@/components/Solutions";
+import WhyChooseUs from "@/components/WhyChooseUs";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
 
 export default function Home() {
   return (
-    <div className="bg-warm-beige text-deep-brown">
+    <div className="bg-background text-foreground">
       <Header />
       <Hero />
-      <Heritage />
-      <Art />
-      <Events />
-      <Testimonials />
+      <Services />
       <About />
+      <Solutions />
+      <WhyChooseUs />
       <Contact />
       <Footer />
     </div>
