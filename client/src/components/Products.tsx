@@ -291,7 +291,7 @@ export default function Products() {
           animate={isVisible ? "visible" : "hidden"}
           key={activeCategory}
         >
-          {productCategories[activeCategory].map((product, index) => (
+          {productCategories[activeCategory as keyof typeof productCategories]?.map((product, index) => (
             <motion.div
               key={`${activeCategory}-${index}`}
               variants={cardVariants}
