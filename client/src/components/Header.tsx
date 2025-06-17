@@ -1,8 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
+import { motion } from "framer-motion";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
 
   const navItems = [
     { href: "#home", label: "Home" },
@@ -11,6 +13,14 @@ export default function Header() {
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 50);
+    };
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -21,28 +31,50 @@ export default function Header() {
   };
 
   return (
-    <header className="bg-white shadow-sm sticky top-0 z-50">
+    <motion.header 
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled ? 'bg-white/95 backdrop-blur-md shadow-lg' : 'bg-white/90'
+      }`}
+      initial={{ y: -100 }}
+      animate={{ y: 0 }}
+      transition={{ duration: 0.6 }}
+    >
       <nav className="container mx-auto px-4 py-3">
         <div className="flex items-center justify-between">
-          <div className="flex items-center">
+          <motion.div 
+            className="flex items-center"
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.2, duration: 0.5 }}
+          >
             <img 
               src="https://dandemutande.africa/wp-content/uploads/2022/08/Dandemutande_Logo.png" 
               alt="Dandemutande"
               className="h-12 w-auto"
             />
-          </div>
+          </motion.div>
           
-          <div className="hidden lg:flex space-x-8">
-            {navItems.map((item) => (
-              <button
+          <motion.div 
+            className="hidden lg:flex space-x-8"
+            initial={{ opacity: 0, y: -20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.4, duration: 0.5 }}
+          >
+            {navItems.map((item, index) => (
+              <motion.button
                 key={item.href}
                 onClick={() => scrollToSection(item.href)}
-                className="text-dande-text hover:text-dande-primary transition-colors font-medium font-poppins"
+                className="text-dande-text hover:text-dande-primary transition-colors font-medium font-poppins relative group"
+                initial={{ opacity: 0, y: -20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.5 + index * 0.1, duration: 0.3 }}
+                whileHover={{ scale: 1.05 }}
               >
                 {item.label}
-              </button>
+                <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-dande-primary transition-all duration-300 group-hover:w-full"></span>
+              </motion.button>
             ))}
-          </div>
+          </motion.div>
           
           <button
             className="lg:hidden text-dande-text"
@@ -53,21 +85,30 @@ export default function Header() {
         </div>
         
         {isMobileMenuOpen && (
-          <div className="lg:hidden mt-4 pb-4">
+          <motion.div 
+            className="lg:hidden mt-4 pb-4"
+            initial={{ opacity: 0, height: 0 }}
+            animate={{ opacity: 1, height: "auto" }}
+            exit={{ opacity: 0, height: 0 }}
+            transition={{ duration: 0.3 }}
+          >
             <div className="flex flex-col space-y-4">
-              {navItems.map((item) => (
-                <button
+              {navItems.map((item, index) => (
+                <motion.button
                   key={item.href}
                   onClick={() => scrollToSection(item.href)}
                   className="text-dande-text hover:text-dande-primary transition-colors text-left font-poppins"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: index * 0.1, duration: 0.3 }}
                 >
                   {item.label}
-                </button>
+                </motion.button>
               ))}
             </div>
-          </div>
+          </motion.div>
         )}
       </nav>
-    </header>
+    </motion.header>
   );
 }
