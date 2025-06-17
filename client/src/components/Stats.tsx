@@ -196,7 +196,7 @@ export default function Stats() {
           transition={{ duration: 0.8, delay: 1 }}
         >
           <blockquote className="text-xl md:text-2xl italic text-gray-700 max-w-4xl mx-auto mb-6">
-            "Dandemutande has been instrumental in our digital transformation journey. Their expertise and dedication to excellence is unmatched."
+            "NIAKAZI has been instrumental in our digital transformation journey. Their expertise and dedication to excellence is unmatched."
           </blockquote>
           <div className="text-dande-primary font-semibold">
             — Leading Enterprise Client, Zimbabwe

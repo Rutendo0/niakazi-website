@@ -323,7 +323,7 @@ export default function Footer() {
           animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
         >
-          <p className="text-gray-300 text-sm font-poppins">© 2024 Dandemutande. All rights reserved.</p>
+          <p className="text-gray-300 text-sm font-poppins">© 2024 NIAKAZI. All rights reserved.</p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <motion.a 
               href="#" 

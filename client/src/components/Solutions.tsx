@@ -63,7 +63,7 @@ export default function Solutions() {
             Ready to Transform Your Business?
           </h3>
           <p className="text-xl text-gray-700 mb-8 max-w-2xl mx-auto">
-            Join hundreds of businesses that trust Dandemutande for their ICT infrastructure needs.
+            Join hundreds of businesses that trust NIAKAZI for their ICT infrastructure needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <button className="bg-brand-blue hover:bg-blue-700 text-white font-semibold py-3 px-8 rounded-lg transition-colors">

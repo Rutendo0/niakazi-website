@@ -81,7 +81,7 @@ export default function About() {
                 transition={{ duration: 0.6 }}
               >
                 <Building className="w-5 h-5 mr-2" />
-                About Dandemutande
+                About NIAKAZI
               </motion.div>
 
               <h2 className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-8">

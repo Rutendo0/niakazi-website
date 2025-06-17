@@ -10,7 +10,7 @@ export default function Testimonials() {
       name: "James Mutindi",
       role: "IT Director",
       company: "Zimbabwe Banking Corporation",
-      quote: "Dandemutande transformed our entire network infrastructure. Their 24/7 support and expertise in cloud migration saved us months of downtime. Outstanding service delivery.",
+      quote: "NIAKAZI transformed our entire network infrastructure. Their 24/7 support and expertise in cloud migration saved us months of downtime. Outstanding service delivery.",
       rating: 5,
       avatar: "JM",
       industry: "Banking & Finance"
@@ -19,7 +19,7 @@ export default function Testimonials() {
       name: "Sarah Ncube",
       role: "CTO",
       company: "Harare Medical Center",
-      quote: "The security solutions implemented by Dandemutande protected us from multiple cyber threats. Their cybersecurity training program educated our entire staff effectively.",
+      quote: "The security solutions implemented by NIAKAZI protected us from multiple cyber threats. Their cybersecurity training program educated our entire staff effectively.",
       rating: 5,
       avatar: "SN",
       industry: "Healthcare"
@@ -28,7 +28,7 @@ export default function Testimonials() {
       name: "Michael Chikwanha",
       role: "Operations Manager",
       company: "Zimbabwe Mining Group",
-      quote: "From VSAT connectivity to our remote mining sites to complete data center setup - Dandemutande delivered beyond expectations. Truly reliable ICT partners.",
+      quote: "From VSAT connectivity to our remote mining sites to complete data center setup - NIAKAZI delivered beyond expectations. Truly reliable ICT partners.",
       rating: 5,
       avatar: "MC",
       industry: "Mining & Resources"
