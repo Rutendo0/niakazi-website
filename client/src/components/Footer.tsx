@@ -1,7 +1,8 @@
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, Facebook, Instagram, Linkedin, MapPin } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { motion } from "framer-motion";
 
 export default function Footer() {
   const [newsletterEmail, setNewsletterEmail] = useState("");
@@ -64,9 +65,53 @@ export default function Footer() {
             <p className="text-gray-300 text-sm leading-relaxed mb-4 font-poppins">
               Your reliable ICT solutions partner with 26+ years of experience delivering cutting-edge technology infrastructure across Zimbabwe and Africa.
             </p>
-            <div className="text-gray-300 text-sm font-poppins">
-              <p className="mb-2">📍 Harare, Zimbabwe</p>
+            <div className="text-gray-300 text-sm font-poppins mb-4">
+              <motion.div 
+                className="flex items-center mb-2"
+                whileHover={{ x: 5 }}
+              >
+                <MapPin className="h-4 w-4 mr-2" />
+                <a 
+                  href="https://maps.app.goo.gl/ZHqM1DbLxHzq6EV29"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-dande-primary transition-colors"
+                >
+                  View Our Location
+                </a>
+              </motion.div>
               <p>📞 +263 (0) 4 123 456</p>
+            </div>
+            
+            <div className="flex space-x-4">
+              <motion.a 
+                href="https://www.facebook.com/profile.php?id=61576086914795" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Facebook className="h-5 w-5" />
+              </motion.a>
+              <motion.a 
+                href="https://www.instagram.com/niakazi_technology_solutions?igsh=MWIxa2p2czRzZXR3ZQ==" 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-gray-400 hover:text-white transition-colors"
+                whileHover={{ scale: 1.2, rotate: -5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Instagram className="h-5 w-5" />
+              </motion.a>
+              <motion.a 
+                href="#" 
+                className="text-gray-400 hover:text-white transition-colors"
+                whileHover={{ scale: 1.2, rotate: 5 }}
+                whileTap={{ scale: 0.9 }}
+              >
+                <Linkedin className="h-5 w-5" />
+              </motion.a>
             </div>
           </div>
           
