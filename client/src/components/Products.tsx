@@ -17,25 +17,25 @@ export default function Products() {
       {
         title: "ERPNext/Odoo Setup",
         price: "US$400.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='erpGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%230066FF'/%3E%3Cstop offset='100%' stop-color='%230040CC'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23erpGrad)'/%3E%3Crect x='50' y='50' width='300' height='200' rx='10' fill='white' opacity='0.9'/%3E%3Crect x='70' y='80' width='60' height='40' rx='5' fill='%230066FF' opacity='0.8'/%3E%3Crect x='150' y='80' width='60' height='40' rx='5' fill='%230066FF' opacity='0.6'/%3E%3Crect x='230' y='80' width='60' height='40' rx='5' fill='%230066FF' opacity='0.8'/%3E%3Crect x='70' y='140' width='120' height='80' rx='5' fill='%230066FF' opacity='0.3'/%3E%3Crect x='210' y='140' width='80' height='80' rx='5' fill='%230066FF' opacity='0.4'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=300&fit=crop",
         description: "Complete ERP system implementation with full customization and training"
       },
       {
         title: "MS Dynamics/Odoo Enterprise",
         price: "US$1,000.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='dynamicsGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%23FF6B35'/%3E%3Cstop offset='100%' stop-color='%23F7931E'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23dynamicsGrad)'/%3E%3Ccircle cx='200' cy='150' r='80' fill='white' opacity='0.9'/%3E%3Ccircle cx='200' cy='150' r='50' fill='%23FF6B35' opacity='0.8'/%3E%3Crect x='170' y='120' width='60' height='60' rx='5' fill='white' opacity='0.7'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1551434678-e076c223a692?w=400&h=300&fit=crop",
         description: "Advanced enterprise resource planning with Microsoft integration"
       },
       {
         title: "Dedicated SLA Monthly",
         price: "US$100.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='slaGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%2300D084'/%3E%3Cstop offset='100%' stop-color='%2300A86B'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23slaGrad)'/%3E%3Cpath d='M100 150 L150 100 L250 100 L300 150 L250 200 L150 200 Z' fill='white' opacity='0.9'/%3E%3Ccircle cx='200' cy='150' r='30' fill='%2300D084'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop",
         description: "Monthly service level agreement with guaranteed response times"
       },
       {
         title: "Shared Monthly IT Support",
         price: "US$30.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='supportGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%236366F1'/%3E%3Cstop offset='100%' stop-color='%234F46E5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23supportGrad)'/%3E%3Ccircle cx='150' cy='100' r='30' fill='white' opacity='0.8'/%3E%3Ccircle cx='250' cy='100' r='30' fill='white' opacity='0.8'/%3E%3Ccircle cx='200' cy='200' r='40' fill='white' opacity='0.9'/%3E%3Cline x1='150' y1='130' x2='200' y2='160' stroke='white' stroke-width='3'/%3E%3Cline x1='250' y1='130' x2='200' y2='160' stroke='white' stroke-width='3'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=300&fit=crop",
         description: "Shared IT support services with expert technical assistance"
       }
     ],
@@ -43,19 +43,19 @@ export default function Products() {
       {
         title: "Chatbot Setup",
         price: "US$150.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='aiGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%23A855F7'/%3E%3Cstop offset='100%' stop-color='%238B5CF6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23aiGrad)'/%3E%3Ccircle cx='200' cy='120' r='50' fill='white' opacity='0.9'/%3E%3Ccircle cx='185' cy='105' r='8' fill='%23A855F7'/%3E%3Ccircle cx='215' cy='105' r='8' fill='%23A855F7'/%3E%3Cpath d='M180 135 Q200 150 220 135' stroke='%23A855F7' stroke-width='3' fill='none'/%3E%3Crect x='80' y='200' width='80' height='40' rx='20' fill='white' opacity='0.8'/%3E%3Crect x='240' y='200' width='80' height='40' rx='20' fill='white' opacity='0.8'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=400&h=300&fit=crop",
         description: "AI chatbot implementation with natural language processing"
       },
       {
         title: "Chatbot Integration",
         price: "US$100.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='integrationGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%2306B6D4'/%3E%3Cstop offset='100%' stop-color='%230891B2'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23integrationGrad)'/%3E%3Crect x='50' y='80' width='80' height='60' rx='10' fill='white' opacity='0.9'/%3E%3Crect x='270' y='80' width='80' height='60' rx='10' fill='white' opacity='0.9'/%3E%3Ccircle cx='200' cy='150' r='25' fill='white' opacity='0.9'/%3E%3Cline x1='130' y1='110' x2='175' y2='140' stroke='white' stroke-width='4'/%3E%3Cline x1='225' y1='140' x2='270' y2='110' stroke='white' stroke-width='4'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=400&h=300&fit=crop",
         description: "Seamless integration with existing systems and workflows"
       },
       {
         title: "Chatbot Monthly Maintenance",
         price: "US$30.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='maintenanceGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%2310B981'/%3E%3Cstop offset='100%' stop-color='%23059669'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23maintenanceGrad)'/%3E%3Ccircle cx='200' cy='150' r='60' fill='white' opacity='0.9'/%3E%3Cpath d='M200 120 L220 140 L200 160 L180 140 Z' fill='%2310B981'/%3E%3Cpath d='M170 150 L190 130 L210 150 L230 130' stroke='%2310B981' stroke-width='3' fill='none'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1620712943543-bcc4688e7485?w=400&h=300&fit=crop",
         description: "Ongoing maintenance, updates and performance optimization"
       }
     ],
@@ -63,25 +63,25 @@ export default function Products() {
       {
         title: "4 Channel DVR System",
         price: "US$290.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='cctvGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%23DC2626'/%3E%3Cstop offset='100%' stop-color='%23B91C1C'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23cctvGrad)'/%3E%3Crect x='150' y='100' width='100' height='60' rx='10' fill='white' opacity='0.9'/%3E%3Ccircle cx='200' cy='130' r='20' fill='%23DC2626'/%3E%3Ccircle cx='200' cy='130' r='10' fill='white'/%3E%3Crect x='80' y='200' width='60' height='40' rx='5' fill='white' opacity='0.8'/%3E%3Crect x='260' y='200' width='60' height='40' rx='5' fill='white' opacity='0.8'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
         description: "4 Channel DVR with 2 high-definition CCTV cameras and remote monitoring"
       },
       {
         title: "4 Channel DVR Kit",
         price: "US$410.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='dvrGrad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%23F59E0B'/%3E%3Cstop offset='100%' stop-color='%23D97706'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23dvrGrad)'/%3E%3Crect x='100' y='80' width='200' height='80' rx='10' fill='white' opacity='0.9'/%3E%3Ccircle cx='140' cy='120' r='15' fill='%23F59E0B'/%3E%3Ccircle cx='200' cy='120' r='15' fill='%23F59E0B'/%3E%3Ccircle cx='260' cy='120' r='15' fill='%23F59E0B'/%3E%3Crect x='120' y='200' width='160' height='40' rx='5' fill='white' opacity='0.8'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop",
         description: "Complete 4 CCTV camera kit with 500GB storage and mobile app access"
       },
       {
         title: "8 Channel DVR System",
         price: "US$630.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='dvr8Grad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%237C3AED'/%3E%3Cstop offset='100%' stop-color='%235B21B6'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23dvr8Grad)'/%3E%3Crect x='50' y='60' width='300' height='120' rx='15' fill='white' opacity='0.9'/%3E%3Ccircle cx='100' cy='100' r='12' fill='%237C3AED'/%3E%3Ccircle cx='150' cy='100' r='12' fill='%237C3AED'/%3E%3Ccircle cx='200' cy='100' r='12' fill='%237C3AED'/%3E%3Ccircle cx='250' cy='100' r='12' fill='%237C3AED'/%3E%3Ccircle cx='300' cy='100' r='12' fill='%237C3AED'/%3E%3Ccircle cx='125' cy='140' r='12' fill='%237C3AED'/%3E%3Ccircle cx='175' cy='140' r='12' fill='%237C3AED'/%3E%3Ccircle cx='225' cy='140' r='12' fill='%237C3AED'/%3E%3Crect x='100' y='200' width='200' height='50' rx='5' fill='white' opacity='0.8'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
         description: "8 CCTV cameras with 1TB HD storage and advanced analytics"
       },
       {
         title: "16 Channel DVR System",
         price: "US$1,260.00",
-        image: "data:image/svg+xml,%3Csvg viewBox='0 0 400 300' xmlns='http://www.w3.org/2000/svg'%3E%3Cdefs%3E%3ClinearGradient id='dvr16Grad' x1='0%' y1='0%' x2='100%' y2='100%'%3E%3Cstop offset='0%' stop-color='%23059669'/%3E%3Cstop offset='100%' stop-color='%23047857'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='400' height='300' fill='url(%23dvr16Grad)'/%3E%3Crect x='30' y='40' width='340' height='160' rx='20' fill='white' opacity='0.9'/%3E%3Cg%3E%3Ccircle cx='80' cy='80' r='10' fill='%23059669'/%3E%3Ccircle cx='120' cy='80' r='10' fill='%23059669'/%3E%3Ccircle cx='160' cy='80' r='10' fill='%23059669'/%3E%3Ccircle cx='200' cy='80' r='10' fill='%23059669'/%3E%3Ccircle cx='240' cy='80' r='10' fill='%23059669'/%3E%3Ccircle cx='280' cy='80' r='10' fill='%23059669'/%3E%3Ccircle cx='320' cy='80' r='10' fill='%23059669'/%3E%3Ccircle cx='360' cy='80' r='10' fill='%23059669'/%3E%3C/g%3E%3Cg%3E%3Ccircle cx='80' cy='120' r='10' fill='%23059669'/%3E%3Ccircle cx='120' cy='120' r='10' fill='%23059669'/%3E%3Ccircle cx='160' cy='120' r='10' fill='%23059669'/%3E%3Ccircle cx='200' cy='120' r='10' fill='%23059669'/%3E%3Ccircle cx='240' cy='120' r='10' fill='%23059669'/%3E%3Ccircle cx='280' cy='120' r='10' fill='%23059669'/%3E%3Ccircle cx='320' cy='120' r='10' fill='%23059669'/%3E%3Ccircle cx='360' cy='120' r='10' fill='%23059669'/%3E%3C/g%3E%3Crect x='80' y='220' width='240' height='50' rx='5' fill='white' opacity='0.8'/%3E%3C/svg%3E",
+        image: "https://images.unsplash.com/photo-1551868751-4d8af5f3b588?w=400&h=300&fit=crop",
         description: "Enterprise 16 CCTV cameras with 2TB HD storage and AI detection"
       }
     ],
