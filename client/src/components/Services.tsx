@@ -6,7 +6,7 @@ export default function Services() {
     {
       title: "Connectivity Solutions",
       icon: Network,
-      color: "from-blue-500 to-blue-600",
+      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-secondary",
       description: "Robust and reliable connectivity solutions to keep your business connected and productive.",
       items: [
         {
@@ -38,7 +38,7 @@ export default function Services() {
     {
       title: "Cloud Services",
       icon: Cloud,
-      color: "from-indigo-500 to-indigo-600",
+      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-accent",
       description: "Comprehensive cloud solutions to modernize your infrastructure and enhance business agility.",
       items: [
         {
@@ -82,7 +82,7 @@ export default function Services() {
     {
       title: "Security Solutions",
       icon: Shield,
-      color: "from-red-500 to-red-600",
+      color: "bg-gradient-to-r from-niakazi-accent to-niakazi-primary",
       description: "Comprehensive cybersecurity solutions to protect your business from evolving threats.",
       items: [
         {
@@ -114,7 +114,7 @@ export default function Services() {
     {
       title: "Hardware & Software",
       icon: Server,
-      color: "from-green-500 to-green-600",
+      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-light",
       description: "Enterprise-grade hardware and software solutions to power your business operations.",
       items: [
         {
@@ -146,7 +146,7 @@ export default function Services() {
     {
       title: "Training & Managed Services",
       icon: Wrench,
-      color: "from-purple-500 to-purple-600",
+      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-primary",
       description: "Professional IT training, certification programs, and comprehensive managed service solutions.",
       items: [
         {
@@ -176,8 +176,9 @@ export default function Services() {
   return (
     <section id="services" className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-dande-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-dande-dark/5 rounded-full blur-3xl"></div>
+      <div className="absolute top-0 left-0 w-72 h-72 bg-niakazi-primary/10 rounded-full blur-3xl aurora-bg"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-niakazi-secondary/10 rounded-full blur-3xl aurora-bg"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-niakazi-accent/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Header */}
@@ -189,18 +190,18 @@ export default function Services() {
           viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-dande-primary/10 text-dande-primary font-semibold mb-6"
+            className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-niakazi-primary font-semibold mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             whileInView={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6 }}
           >
-            <Star className="w-5 h-5 mr-2" />
+            <Star className="w-5 h-5 mr-2 text-shimmer" />
             Our Services
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-6">
+          <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-dark mb-6">
             Transform Your Business with{" "}
-            <span className="gradient-text">Premium ICT Solutions</span>
+            <span className="text-gradient-niakazi">Premium ICT Solutions</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
             Discover comprehensive technology services designed to optimize operations, enhance security, and drive sustainable growth for your organization across Zimbabwe and beyond.

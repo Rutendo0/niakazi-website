@@ -102,7 +102,7 @@ export default function Hero() {
   );
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-niakazi-dark via-niakazi-primary to-niakazi-secondary overflow-hidden parallax-container">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-niakazi overflow-hidden parallax-container">
       {/* Aurora Background Effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>
@@ -291,7 +291,7 @@ export default function Hero() {
         >
           <motion.button
             onClick={() => scrollToSection('#services')}
-            className="btn-modern bg-white text-dande-dark px-12 py-4 rounded-full font-poppins font-semibold text-lg hover:shadow-2xl transition-all inline-block"
+            className="btn-glow bg-white text-niakazi-dark px-12 py-4 rounded-full font-space-grotesk font-semibold text-lg hover:shadow-2xl transition-all inline-block ripple-btn"
             whileHover={{ 
               scale: 1.05,
               boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
