@@ -3,7 +3,9 @@ import { useParallax } from "../hooks/useScrollAnimation";
 import { Monitor, Wifi, Shield, Clock, Globe, Zap, Server, Database, Cpu, Network } from "lucide-react";
 
 export default function Hero() {
-  const offsetY = useParallax();
+  const offsetY = useParallax(0.3);
+  const backgroundOffset = useParallax(0.1);
+  const floatingOffset = useParallax(0.6);
   
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -111,7 +113,7 @@ export default function Hero() {
       <BackgroundPattern />
       
       {/* Tech Illustration Background */}
-      <div className="absolute inset-0" style={{ transform: `translateY(${offsetY * 0.2}px)` }}>
+      <div className="absolute inset-0" style={{ transform: `translateY(${backgroundOffset}px)` }}>
         <TechIllustration />
       </div>
       
