@@ -48,25 +48,25 @@ export default function Contact() {
       icon: Phone,
       title: "Phone",
       text: "+263 77 822 4653",
-      color: "from-blue-500 to-blue-600"
+      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-secondary"
     },
     {
       icon: Mail,
       title: "Email",
       text: "info@niakazi.com",
-      color: "from-green-500 to-green-600"
+      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-accent"
     },
     {
       icon: Clock,
       title: "Business Hours",
       text: "Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM",
-      color: "from-purple-500 to-purple-600"
+      color: "bg-gradient-to-r from-niakazi-accent to-niakazi-primary"
     },
     {
       icon: MapPin,
       title: "Address",
       text: "First Str & Union Ave, Harare\nZB Center, 4th Floor",
-      color: "from-orange-500 to-orange-600"
+      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-light"
     }
   ];
 

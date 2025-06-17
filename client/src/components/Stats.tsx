@@ -55,7 +55,7 @@ function AnimatedCounter({ end, suffix, isVisible, delay = 0 }: {
   
   return (
     <motion.div
-      className="text-4xl md:text-6xl font-poppins font-bold text-dande-primary mb-2"
+      className="text-4xl md:text-6xl font-space-grotesk font-bold text-gradient-niakazi mb-2 neon-glow"
       initial={{ scale: 0 }}
       animate={isVisible ? { scale: 1 } : {}}
       transition={{ duration: 0.6, delay: delay / 1000, type: "spring", stiffness: 200 }}
@@ -74,7 +74,7 @@ export default function Stats() {
       suffix: "+",
       label: "Years of Experience",
       icon: Clock,
-      color: "from-blue-500 to-blue-600",
+      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-secondary",
       delay: 0
     },
     {
@@ -82,7 +82,7 @@ export default function Stats() {
       suffix: "+", 
       label: "Happy Clients",
       icon: Users,
-      color: "from-green-500 to-green-600",
+      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-accent",
       delay: 200
     },
     {
@@ -90,7 +90,7 @@ export default function Stats() {
       suffix: "+",
       label: "Projects Completed", 
       icon: Award,
-      color: "from-purple-500 to-purple-600",
+      color: "bg-gradient-to-r from-niakazi-accent to-niakazi-primary",
       delay: 400
     },
     {
@@ -98,7 +98,7 @@ export default function Stats() {
       suffix: "%",
       label: "Client Satisfaction",
       icon: TrendingUp,
-      color: "from-orange-500 to-orange-600",
+      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-light",
       delay: 600
     }
   ];
