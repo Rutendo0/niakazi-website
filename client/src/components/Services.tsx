@@ -266,26 +266,175 @@ export default function Services() {
                   <div className="grid md:grid-cols-2 gap-8">
                     {service.items.map((item, itemIndex) => {
                       const ItemIcon = item.icon;
-                      const serviceImages = {
-                        "Dedicated Internet Access": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
-                        "Fiber Connectivity": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop",
-                        "SD-WAN Solutions": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop",
-                        "VSAT Services": "https://images.unsplash.com/photo-1446776877081-58393e6c9cd7?w=400&h=250&fit=crop",
-                        "Co-Location Services": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
-                        "Cloud Migration": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
-                        "Backup & Recovery": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=250&fit=crop",
-                        "Microsoft 365": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop",
-                        "Cybersecurity Assessment": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop",
-                        "Firewall Management": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop",
-                        "Endpoint Protection": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
-                        "Compliance Solutions": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
-                        "Networking Equipment": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
-                        "Compute Hardware": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
-                        "Software Solutions": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-                        "Data Center Equipment": "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=250&fit=crop",
-                        "Mobile Device Management": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop",
-                        "Managed Services": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop",
-                        "Technical Support": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop"
+                      // SVG Icons for each service for professional presentation
+                      const serviceIcons = {
+                        "Dedicated Internet Access": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <radialGradient id="internetGrad" cx="50%" cy="30%" r="60%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.8"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-secondary))" stopOpacity="0.3"/>
+                              </radialGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="35" fill="url(#internetGrad)" stroke="hsl(var(--niakazi-primary))" strokeWidth="2"/>
+                            <circle cx="50" cy="50" r="25" fill="none" stroke="white" strokeWidth="1.5" opacity="0.6"/>
+                            <circle cx="50" cy="50" r="15" fill="none" stroke="white" strokeWidth="1.5" opacity="0.8"/>
+                            <circle cx="50" cy="50" r="3" fill="white"/>
+                            <path d="M35 35 L65 65 M65 35 L35 65" stroke="white" strokeWidth="1" opacity="0.4"/>
+                          </svg>
+                        ),
+                        "Fiber Connectivity": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <linearGradient id="fiberGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-primary))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-accent))"/>
+                              </linearGradient>
+                            </defs>
+                            <path d="M10 80 Q30 40 50 50 Q70 60 90 20" stroke="url(#fiberGrad)" strokeWidth="4" fill="none"/>
+                            <path d="M10 75 Q30 35 50 45 Q70 55 90 15" stroke="white" strokeWidth="2" fill="none" opacity="0.6"/>
+                            <circle cx="10" cy="80" r="4" fill="url(#fiberGrad)"/>
+                            <circle cx="90" cy="20" r="4" fill="url(#fiberGrad)"/>
+                            <circle cx="50" cy="50" r="6" fill="white" opacity="0.8"/>
+                          </svg>
+                        ),
+                        "SD-WAN Solutions": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <radialGradient id="wanGrad">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-secondary))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-primary))"/>
+                              </radialGradient>
+                            </defs>
+                            <rect x="20" y="20" width="15" height="10" rx="2" fill="url(#wanGrad)"/>
+                            <rect x="65" y="20" width="15" height="10" rx="2" fill="url(#wanGrad)"/>
+                            <rect x="20" y="70" width="15" height="10" rx="2" fill="url(#wanGrad)"/>
+                            <rect x="65" y="70" width="15" height="10" rx="2" fill="url(#wanGrad)"/>
+                            <circle cx="50" cy="50" r="12" fill="url(#wanGrad)"/>
+                            <path d="M35 25 L38 50 M62 25 L62 50 M35 75 L38 50 M62 75 L62 50" stroke="white" strokeWidth="2"/>
+                          </svg>
+                        ),
+                        "VSAT Services": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <linearGradient id="vsatGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-accent))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-secondary))"/>
+                              </linearGradient>
+                            </defs>
+                            <ellipse cx="50" cy="75" rx="25" ry="8" fill="url(#vsatGrad)" opacity="0.6"/>
+                            <path d="M25 75 Q50 25 75 75" stroke="url(#vsatGrad)" strokeWidth="3" fill="none"/>
+                            <circle cx="50" cy="25" r="8" fill="white"/>
+                            <path d="M45 20 L55 20 M45 30 L55 30 M50 15 L50 35" stroke="hsl(var(--niakazi-primary))" strokeWidth="2"/>
+                          </svg>
+                        ),
+                        "Co-Location Services": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <linearGradient id="coloGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-primary))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-dark))"/>
+                              </linearGradient>
+                            </defs>
+                            <rect x="25" y="20" width="50" height="60" rx="4" fill="url(#coloGrad)"/>
+                            <rect x="30" y="30" width="8" height="4" rx="1" fill="white" opacity="0.8"/>
+                            <rect x="42" y="30" width="8" height="4" rx="1" fill="white" opacity="0.8"/>
+                            <rect x="54" y="30" width="8" height="4" rx="1" fill="white" opacity="0.8"/>
+                            <rect x="30" y="40" width="8" height="4" rx="1" fill="white" opacity="0.6"/>
+                            <rect x="42" y="40" width="8" height="4" rx="1" fill="white" opacity="0.6"/>
+                            <rect x="54" y="40" width="8" height="4" rx="1" fill="white" opacity="0.6"/>
+                            <rect x="30" y="50" width="8" height="4" rx="1" fill="white" opacity="0.4"/>
+                            <rect x="42" y="50" width="8" height="4" rx="1" fill="white" opacity="0.4"/>
+                            <rect x="54" y="50" width="8" height="4" rx="1" fill="white" opacity="0.4"/>
+                          </svg>
+                        ),
+                        "Microsoft Azure": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <linearGradient id="azureGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-primary))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-accent))"/>
+                              </linearGradient>
+                            </defs>
+                            <path d="M20 60 Q30 30 50 35 Q70 40 80 20 Q85 50 75 70 Q50 75 25 65 Z" fill="url(#azureGrad)" opacity="0.8"/>
+                            <circle cx="35" cy="45" r="8" fill="white" opacity="0.7"/>
+                            <circle cx="55" cy="55" r="6" fill="white" opacity="0.5"/>
+                            <circle cx="65" cy="35" r="4" fill="white" opacity="0.9"/>
+                          </svg>
+                        ),
+                        "Microsoft 365": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <linearGradient id="o365Grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-secondary))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-primary))"/>
+                              </linearGradient>
+                            </defs>
+                            <rect x="20" y="20" width="20" height="20" rx="3" fill="url(#o365Grad)"/>
+                            <rect x="45" y="20" width="20" height="20" rx="3" fill="url(#o365Grad)" opacity="0.8"/>
+                            <rect x="70" y="20" width="20" height="20" rx="3" fill="url(#o365Grad)" opacity="0.6"/>
+                            <rect x="20" y="45" width="20" height="20" rx="3" fill="url(#o365Grad)" opacity="0.8"/>
+                            <rect x="45" y="45" width="20" height="20" rx="3" fill="url(#o365Grad)"/>
+                            <rect x="70" y="45" width="20" height="20" rx="3" fill="url(#o365Grad)" opacity="0.8"/>
+                            <rect x="20" y="70" width="20" height="20" rx="3" fill="url(#o365Grad)" opacity="0.6"/>
+                            <rect x="45" y="70" width="20" height="20" rx="3" fill="url(#o365Grad)" opacity="0.8"/>
+                            <rect x="70" y="70" width="20" height="20" rx="3" fill="url(#o365Grad)"/>
+                          </svg>
+                        ),
+                        "Oracle Cloud Infrastructure": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <radialGradient id="oracleGrad">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-accent))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-primary))"/>
+                              </radialGradient>
+                            </defs>
+                            <circle cx="50" cy="50" r="30" fill="none" stroke="url(#oracleGrad)" strokeWidth="6"/>
+                            <circle cx="50" cy="50" r="20" fill="none" stroke="url(#oracleGrad)" strokeWidth="4" opacity="0.7"/>
+                            <circle cx="50" cy="50" r="10" fill="url(#oracleGrad)" opacity="0.5"/>
+                            <path d="M35 35 L65 35 L65 65 L35 65 Z" fill="none" stroke="white" strokeWidth="2" opacity="0.8"/>
+                          </svg>
+                        ),
+                        "Virtual Private Server": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <linearGradient id="vpsGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-primary))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-secondary))"/>
+                              </linearGradient>
+                            </defs>
+                            <rect x="20" y="30" width="60" height="40" rx="6" fill="url(#vpsGrad)"/>
+                            <rect x="25" y="35" width="12" height="8" rx="2" fill="white" opacity="0.8"/>
+                            <rect x="40" y="35" width="12" height="8" rx="2" fill="white" opacity="0.6"/>
+                            <rect x="55" y="35" width="12" height="8" rx="2" fill="white" opacity="0.8"/>
+                            <rect x="25" y="50" width="12" height="8" rx="2" fill="white" opacity="0.6"/>
+                            <rect x="40" y="50" width="12" height="8" rx="2" fill="white" opacity="0.8"/>
+                            <rect x="55" y="50" width="12" height="8" rx="2" fill="white" opacity="0.6"/>
+                            <circle cx="50" cy="20" r="6" fill="white" opacity="0.9"/>
+                            <path d="M50 14 L50 26" stroke="hsl(var(--niakazi-primary))" strokeWidth="2"/>
+                          </svg>
+                        ),
+                        "Storage Area Network": (
+                          <svg className="w-full h-full" viewBox="0 0 100 100" fill="none">
+                            <defs>
+                              <linearGradient id="sanGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+                                <stop offset="0%" stopColor="hsl(var(--niakazi-secondary))"/>
+                                <stop offset="100%" stopColor="hsl(var(--niakazi-accent))"/>
+                              </linearGradient>
+                            </defs>
+                            <rect x="15" y="25" width="70" height="50" rx="5" fill="url(#sanGrad)"/>
+                            <rect x="20" y="35" width="15" height="8" rx="2" fill="white" opacity="0.8"/>
+                            <rect x="40" y="35" width="15" height="8" rx="2" fill="white" opacity="0.8"/>
+                            <rect x="60" y="35" width="15" height="8" rx="2" fill="white" opacity="0.8"/>
+                            <rect x="20" y="50" width="15" height="8" rx="2" fill="white" opacity="0.6"/>
+                            <rect x="40" y="50" width="15" height="8" rx="2" fill="white" opacity="0.6"/>
+                            <rect x="60" y="50" width="15" height="8" rx="2" fill="white" opacity="0.6"/>
+                            <path d="M25 15 L50 25 L75 15" stroke="white" strokeWidth="3" fill="none"/>
+                            <circle cx="25" cy="15" r="3" fill="white"/>
+                            <circle cx="50" cy="25" r="3" fill="white"/>
+                            <circle cx="75" cy="15" r="3" fill="white"/>
+                          </svg>
+                        )
                       };
                       
                       return (
@@ -298,14 +447,16 @@ export default function Services() {
                           viewport={{ once: true }}
                           whileHover={{ y: -8 }}
                         >
-                          {/* Service Image */}
-                          <div className="h-48 bg-gradient-to-br from-niakazi-primary/10 to-niakazi-secondary/10 relative overflow-hidden">
-                            <img 
-                              src={serviceImages[item.name as keyof typeof serviceImages]}
-                              alt={item.name}
-                              className="w-full h-full object-cover opacity-80"
-                            />
-                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                          {/* Service Visual */}
+                          <div className="h-48 bg-gradient-to-br from-niakazi-primary/10 to-niakazi-secondary/10 relative overflow-hidden flex items-center justify-center">
+                            <div className="w-32 h-32 opacity-80">
+                              {serviceIcons[item.name as keyof typeof serviceIcons] || (
+                                <div className="w-full h-full bg-gradient-to-br from-niakazi-primary to-niakazi-secondary rounded-2xl flex items-center justify-center">
+                                  <ItemIcon className="text-white text-4xl" />
+                                </div>
+                              )}
+                            </div>
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/10 to-transparent"></div>
                             <div className="absolute top-4 left-4">
                               <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
                                 <ItemIcon className="w-6 h-6 text-niakazi-primary" />

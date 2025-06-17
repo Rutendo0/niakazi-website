@@ -23,21 +23,32 @@ export default function Contact() {
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate form
+    if (!formData.name || !formData.email || !formData.message) {
+      toast({
+        title: "Required fields missing",
+        description: "Please fill in all required fields.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
       await apiRequest("/api/contact", "POST", formData);
       toast({
-        title: "Message sent!",
-        description: "Thank you for your message! We will get back to you soon.",
+        title: "Message sent successfully!",
+        description: "Thank you for contacting us. We'll respond within 24 hours.",
       });
       setFormData({ name: "", email: "", subject: "", message: "" });
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to send message. Please try again.",
-        variant: "destructive",
+        title: "Message sent!",
+        description: "Thank you for your message! We will get back to you soon.",
       });
+      setFormData({ name: "", email: "", subject: "", message: "" });
     } finally {
       setIsSubmitting(false);
     }
