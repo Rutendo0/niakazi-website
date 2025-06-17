@@ -5,6 +5,7 @@ import { Toaster } from "@/components/ui/toaster";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import Home from "@/pages/Home";
 import Quote from "@/pages/Quote";
+import NotFound from "@/pages/not-found";
 import ScrollProgress from "@/components/ScrollProgress";
 
 function Router() {
@@ -13,6 +14,7 @@ function Router() {
       <Route path="/" component={Home} />
       <Route path="/quote" component={Quote} />
       <Route path="/#:section" component={Home} />
+      <Route component={NotFound} />
     </Switch>
   );
 }

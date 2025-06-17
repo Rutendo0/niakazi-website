@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { Menu, X } from "lucide-react";
 import { motion } from "framer-motion";
+import { Link } from "wouter";
 
 export default function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -112,6 +113,24 @@ export default function Header() {
             ))}
           </motion.div>
           
+          {/* Get Quote Button - Desktop */}
+          <motion.div
+            className="hidden lg:block"
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6, duration: 0.5 }}
+          >
+            <Link to="/quote">
+              <motion.button
+                className="px-6 py-3 bg-niakazi-primary text-white rounded-full font-medium font-space-grotesk hover:bg-niakazi-primary/90 transition-all duration-300 shadow-lg hover:shadow-xl"
+                whileHover={{ scale: 1.05, y: -2 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                Get Quote
+              </motion.button>
+            </Link>
+          </motion.div>
+          
           <motion.button
             className="lg:hidden p-2 rounded-xl bg-niakazi-primary/10 text-niakazi-primary hover:bg-niakazi-primary hover:text-white transition-all duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
@@ -156,6 +175,19 @@ export default function Header() {
                   {item.label}
                 </motion.button>
               ))}
+              <Link to="/quote">
+                <motion.button
+                  className="w-full px-4 py-3 bg-niakazi-primary text-white rounded-xl font-medium font-space-grotesk hover:bg-niakazi-primary/90 transition-all duration-300 mt-4"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  transition={{ delay: navItems.length * 0.1, duration: 0.3 }}
+                  whileHover={{ scale: 1.02, x: 4 }}
+                  whileTap={{ scale: 0.98 }}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Get Quote
+                </motion.button>
+              </Link>
             </div>
           </motion.div>
         )}
