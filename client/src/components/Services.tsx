@@ -216,7 +216,7 @@ export default function Services() {
             whileHover={{ scale: 1.05 }}
           >
             <Star className="w-5 h-5 mr-2 text-shimmer" />
-            Our Services
+            Our Solutions
           </motion.div>
           
           <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-dark mb-6">
@@ -268,21 +268,21 @@ export default function Services() {
                       const ItemIcon = item.icon;
                       const serviceImages = {
                         "Dedicated Internet Access": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
-                        "Fiber Connectivity": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                        "Fiber Connectivity": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop",
                         "SD-WAN Solutions": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop",
-                        "VSAT Services": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=250&fit=crop",
+                        "VSAT Services": "https://images.unsplash.com/photo-1446776877081-58393e6c9cd7?w=400&h=250&fit=crop",
                         "Co-Location Services": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
-                        "Cloud Migration": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
-                        "Backup & Recovery": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                        "Cloud Migration": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                        "Backup & Recovery": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=250&fit=crop",
                         "Microsoft 365": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop",
                         "Cybersecurity Assessment": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop",
                         "Firewall Management": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop",
                         "Endpoint Protection": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
-                        "Compliance Solutions": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
-                        "Networking Equipment": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
+                        "Compliance Solutions": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop",
+                        "Networking Equipment": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
                         "Compute Hardware": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
                         "Software Solutions": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
-                        "Data Center Equipment": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop",
+                        "Data Center Equipment": "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=250&fit=crop",
                         "Mobile Device Management": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop",
                         "Managed Services": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop",
                         "Technical Support": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop"
@@ -301,7 +301,7 @@ export default function Services() {
                           {/* Service Image */}
                           <div className="h-48 bg-gradient-to-br from-niakazi-primary/10 to-niakazi-secondary/10 relative overflow-hidden">
                             <img 
-                              src={serviceImages[item.name as keyof typeof serviceImages] || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop"}
+                              src={serviceImages[item.name as keyof typeof serviceImages]}
                               alt={item.name}
                               className="w-full h-full object-cover opacity-80"
                             />
