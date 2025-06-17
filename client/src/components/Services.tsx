@@ -160,7 +160,7 @@ export default function Services() {
     {
       title: "Value Added Services",
       icon: Star,
-      color: "from-orange-500 to-orange-600",
+      color: "bg-gradient-to-r from-niakazi-accent to-niakazi-secondary",
       description: "Additional services that enhance your IT capabilities and maximize your technology investments.",
       items: [
         {
@@ -215,20 +215,25 @@ export default function Services() {
             return (
               <motion.div
                 key={index}
-                className="bg-white rounded-3xl shadow-xl overflow-hidden"
+                className="bg-white rounded-3xl shadow-xl overflow-hidden tilt-card magnetic-area glass-card"
                 initial={{ opacity: 0, y: 50 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: index * 0.1 }}
                 viewport={{ once: true }}
+                whileHover={{ scale: 1.02, y: -10 }}
               >
                 <div className="p-8 md:p-12">
                   {/* Service Header */}
                   <div className="flex items-center mb-8">
-                    <div className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mr-6`}>
-                      <ServiceIcon className="text-white text-2xl" />
-                    </div>
+                    <motion.div 
+                      className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mr-6 pulse-glow`}
+                      whileHover={{ scale: 1.1, rotate: 5 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <ServiceIcon className="text-white text-2xl breathe" />
+                    </motion.div>
                     <div>
-                      <h3 className="text-3xl md:text-4xl font-poppins font-bold text-dande-dark mb-2">
+                      <h3 className="text-3xl md:text-4xl font-space-grotesk font-bold text-niakazi-dark mb-2 neon-glow">
                         {service.title}
                       </h3>
                       <p className="text-lg text-gray-600 max-w-3xl">

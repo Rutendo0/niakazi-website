@@ -11,43 +11,43 @@ export default function About() {
       {/* Zimbabwe map outline (simplified) */}
       <path 
         d="M100 150 L180 140 L240 160 L280 180 L290 220 L270 260 L220 280 L150 270 L110 240 Z" 
-        fill="hsl(var(--dande-primary))" 
+        fill="hsl(var(--niakazi-primary))" 
         opacity="0.2"
-        stroke="hsl(var(--dande-primary))" 
+        stroke="hsl(var(--niakazi-primary))" 
         strokeWidth="2"
       >
         <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
       </path>
       
       {/* Network connections across Zimbabwe */}
-      <circle cx="150" cy="200" r="4" fill="hsl(var(--dande-primary))">
+      <circle cx="150" cy="200" r="4" fill="hsl(var(--niakazi-primary))">
         <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="220" cy="180" r="3" fill="hsl(var(--dande-primary))">
+      <circle cx="220" cy="180" r="3" fill="hsl(var(--niakazi-secondary))">
         <animate attributeName="r" values="3;5;3" dur="2.5s" repeatCount="indefinite"/>
       </circle>
-      <circle cx="260" cy="220" r="4" fill="hsl(var(--dande-primary))">
+      <circle cx="260" cy="220" r="4" fill="hsl(var(--niakazi-accent))">
         <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite"/>
       </circle>
       
       {/* Connecting lines */}
-      <line x1="150" y1="200" x2="220" y2="180" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.6">
+      <line x1="150" y1="200" x2="220" y2="180" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.6">
         <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
       </line>
-      <line x1="220" y1="180" x2="260" y2="220" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.5">
+      <line x1="220" y1="180" x2="260" y2="220" stroke="hsl(var(--niakazi-secondary))" strokeWidth="2" opacity="0.5">
         <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite"/>
       </line>
       
       {/* Tech icons floating */}
       <g transform="translate(400, 100)">
-        <circle r="30" fill="white" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.9"/>
-        <text x="0" y="5" textAnchor="middle" fill="hsl(var(--dande-primary))" fontSize="20">⚡</text>
+        <circle r="30" fill="white" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.9"/>
+        <text x="0" y="5" textAnchor="middle" fill="hsl(var(--niakazi-primary))" fontSize="20">⚡</text>
         <animateTransform attributeName="transform" type="translate" values="400,100; 410,90; 400,100" dur="3s" repeatCount="indefinite"/>
       </g>
       
       <g transform="translate(480, 200)">
-        <circle r="25" fill="white" stroke="hsl(var(--dande-dark))" strokeWidth="2" opacity="0.8"/>
-        <text x="0" y="5" textAnchor="middle" fill="hsl(var(--dande-dark))" fontSize="16">🛡️</text>
+        <circle r="25" fill="white" stroke="hsl(var(--niakazi-dark))" strokeWidth="2" opacity="0.8"/>
+        <text x="0" y="5" textAnchor="middle" fill="hsl(var(--niakazi-dark))" fontSize="16">🛡️</text>
         <animateTransform attributeName="transform" type="translate" values="480,200; 470,210; 480,200" dur="4s" repeatCount="indefinite"/>
       </g>
     </svg>
@@ -55,9 +55,14 @@ export default function About() {
 
   return (
     <section id="about" className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
+      {/* Aurora Background Effects */}
+      <div className="aurora-bg"></div>
+      <div className="aurora-bg"></div>
+      
       {/* Background decorative elements */}
-      <div className="absolute top-20 right-0 w-80 h-80 bg-gradient-to-br from-dande-primary/10 to-transparent rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-dande-dark/5 to-transparent rounded-full blur-3xl"></div>
+      <div className="absolute top-20 right-0 w-80 h-80 bg-gradient-to-br from-niakazi-primary/10 to-transparent rounded-full blur-3xl particle-animation"></div>
+      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-niakazi-dark/5 to-transparent rounded-full blur-3xl blob-animation"></div>
+      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-niakazi-accent/5 rounded-full blur-3xl"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Our Story Section */}
@@ -75,18 +80,18 @@ export default function About() {
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <motion.div
-                className="inline-flex items-center px-4 py-2 rounded-full bg-dande-primary/10 text-dande-primary font-semibold mb-6"
+                className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-niakazi-primary font-semibold mb-6"
                 initial={{ opacity: 0, scale: 0.8 }}
                 animate={isVisible ? { opacity: 1, scale: 1 } : {}}
                 transition={{ duration: 0.6 }}
               >
-                <Building className="w-5 h-5 mr-2" />
+                <Building className="w-5 h-5 mr-2 text-shimmer" />
                 About NIAKAZI
               </motion.div>
 
-              <h2 className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-8">
+              <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-dark mb-8">
                 Our Story of{" "}
-                <span className="gradient-text">Innovation</span>
+                <span className="text-gradient-niakazi">Innovation</span>
               </h2>
               <p className="text-lg text-gray-700 font-poppins leading-relaxed mb-6">
                 Founded with a vision to bridge the gap between cutting-edge technology and business success in Zimbabwe, NIAKAZI has been at the forefront of digital transformation for over 26 years. We specialize in delivering comprehensive ICT solutions that empower organizations to thrive in an increasingly connected world.
