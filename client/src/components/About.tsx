@@ -109,7 +109,7 @@ export default function About() {
             <motion.div 
               className="relative"
               initial={{ opacity: 0, x: 50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
               {/* Company illustration */}

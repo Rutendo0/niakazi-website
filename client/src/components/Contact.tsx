@@ -14,7 +14,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
-  const { ref, isInView } = useScrollAnimation();
+  const { ref, isVisible } = useScrollAnimation();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -121,19 +121,19 @@ export default function Contact() {
           className="max-w-6xl mx-auto"
           ref={ref}
           initial={{ opacity: 0 }}
-          animate={isInView ? { opacity: 1 } : {}}
+          animate={isVisible ? { opacity: 1 } : {}}
           transition={{ duration: 0.8 }}
         >
           <motion.div 
             className="text-center mb-16"
             initial={{ opacity: 0, y: 30 }}
-            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
             <motion.div
               className="inline-flex items-center px-4 py-2 rounded-full bg-dande-primary/10 text-dande-primary font-semibold mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
-              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6 }}
             >
               <MessageCircle className="w-5 h-5 mr-2" />
@@ -153,7 +153,7 @@ export default function Contact() {
             {/* Contact Information */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
-              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
               <div className="mb-8 h-48 relative">
@@ -169,7 +169,7 @@ export default function Contact() {
                       key={index} 
                       className="flex items-start group"
                       initial={{ opacity: 0, y: 20 }}
-                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      animate={isVisible ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
                       whileHover={{ x: 5 }}
                     >
@@ -209,9 +209,15 @@ export default function Contact() {
                   })}
                 </div>
               </div>
-            </div>
+            </motion.div>
             
-            <div className="bg-dande-light-gray rounded-lg p-8">
+            {/* Contact Form */}
+            <motion.div 
+              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20"
+              initial={{ opacity: 0, x: 50 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.4 }}
+            >
               <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-6">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div>
@@ -282,9 +288,9 @@ export default function Contact() {
                   )}
                 </button>
               </form>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );
