@@ -5,49 +5,78 @@ import { useScrollAnimation } from "../hooks/useScrollAnimation";
 export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
-  // Company illustration SVG
+  // Enhanced company illustration with modern design
   const CompanyIllustration = () => (
-    <svg className="w-full h-full opacity-80" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-      {/* Zimbabwe map outline (simplified) */}
+    <svg className="w-full h-full opacity-90" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+          <stop offset="0%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.3"/>
+          <stop offset="100%" stopColor="hsl(var(--niakazi-secondary))" stopOpacity="0.1"/>
+        </linearGradient>
+        <filter id="glow">
+          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      
+      {/* Enhanced Zimbabwe map outline */}
       <path 
         d="M100 150 L180 140 L240 160 L280 180 L290 220 L270 260 L220 280 L150 270 L110 240 Z" 
-        fill="hsl(var(--niakazi-primary))" 
-        opacity="0.2"
+        fill="url(#mapGradient)"
         stroke="hsl(var(--niakazi-primary))" 
-        strokeWidth="2"
+        strokeWidth="3"
+        filter="url(#glow)"
       >
-        <animate attributeName="opacity" values="0.2;0.4;0.2" dur="4s" repeatCount="indefinite"/>
+        <animate attributeName="stroke-opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
       </path>
       
-      {/* Network connections across Zimbabwe */}
-      <circle cx="150" cy="200" r="4" fill="hsl(var(--niakazi-primary))">
-        <animate attributeName="r" values="4;6;4" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="220" cy="180" r="3" fill="hsl(var(--niakazi-secondary))">
-        <animate attributeName="r" values="3;5;3" dur="2.5s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="260" cy="220" r="4" fill="hsl(var(--niakazi-accent))">
-        <animate attributeName="r" values="4;6;4" dur="3s" repeatCount="indefinite"/>
-      </circle>
+      {/* Enhanced network nodes */}
+      <g filter="url(#glow)">
+        <circle cx="150" cy="200" r="6" fill="hsl(var(--niakazi-primary))">
+          <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="220" cy="180" r="5" fill="hsl(var(--niakazi-secondary))">
+          <animate attributeName="r" values="5;8;5" dur="2.5s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.6;0.9;0.6" dur="2.5s" repeatCount="indefinite"/>
+        </circle>
+        <circle cx="260" cy="220" r="6" fill="hsl(var(--niakazi-accent))">
+          <animate attributeName="r" values="6;9;6" dur="3s" repeatCount="indefinite"/>
+          <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
+        </circle>
+      </g>
       
-      {/* Connecting lines */}
-      <line x1="150" y1="200" x2="220" y2="180" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.6">
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="2s" repeatCount="indefinite"/>
+      {/* Enhanced connecting lines with gradient */}
+      <defs>
+        <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
+          <stop offset="0%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.8"/>
+          <stop offset="100%" stopColor="hsl(var(--niakazi-secondary))" stopOpacity="0.4"/>
+        </linearGradient>
+      </defs>
+      <line x1="150" y1="200" x2="220" y2="180" stroke="url(#lineGrad1)" strokeWidth="3">
+        <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite"/>
       </line>
-      <line x1="220" y1="180" x2="260" y2="220" stroke="hsl(var(--niakazi-secondary))" strokeWidth="2" opacity="0.5">
-        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2.5s" repeatCount="indefinite"/>
+      <line x1="220" y1="180" x2="260" y2="220" stroke="url(#lineGrad1)" strokeWidth="3">
+        <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
       </line>
       
-      {/* Tech icons floating */}
+      {/* Modern tech elements */}
       <g transform="translate(400, 100)">
-        <circle r="30" fill="white" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.9"/>
-        <text x="0" y="5" textAnchor="middle" fill="hsl(var(--niakazi-primary))" fontSize="20">⚡</text>
-        <animateTransform attributeName="transform" type="translate" values="400,100; 410,90; 400,100" dur="3s" repeatCount="indefinite"/>
+        <circle r="35" fill="rgba(255,255,255,0.9)" stroke="hsl(var(--niakazi-primary))" strokeWidth="3" opacity="0.9" filter="url(#glow)"/>
+        <circle r="20" fill="hsl(var(--niakazi-primary))" opacity="0.8">
+          <animate attributeName="r" values="20;25;20" dur="3s" repeatCount="indefinite"/>
+        </circle>
+        <animateTransform attributeName="transform" type="translate" values="400,100; 415,85; 400,100" dur="4s" repeatCount="indefinite"/>
       </g>
       
       <g transform="translate(480, 200)">
-        <circle r="25" fill="white" stroke="hsl(var(--niakazi-dark))" strokeWidth="2" opacity="0.8"/>
-        <text x="0" y="5" textAnchor="middle" fill="hsl(var(--niakazi-dark))" fontSize="16">🛡️</text>
+        <circle r="30" fill="rgba(255,255,255,0.85)" stroke="hsl(var(--niakazi-secondary))" strokeWidth="3" opacity="0.8" filter="url(#glow)"/>
+        <circle r="15" fill="hsl(var(--niakazi-secondary))" opacity="0.7">
+          <animate attributeName="r" values="15;20;15" dur="3.5s" repeatCount="indefinite"/>
+        </circle>
         <animateTransform attributeName="transform" type="translate" values="480,200; 470,210; 480,200" dur="4s" repeatCount="indefinite"/>
       </g>
     </svg>

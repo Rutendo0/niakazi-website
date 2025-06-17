@@ -1,12 +1,15 @@
 import { motion } from "framer-motion";
-import { Network, Cloud, Shield, Server, Wrench, Star, Globe, Wifi, Zap, Database, Users, Phone, CheckCircle } from "lucide-react";
+import { Network, Cloud, Shield, Server, Wrench, Star, Globe, Wifi, Zap, Database, Users, Phone, CheckCircle, ArrowRight } from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Services() {
+  const { ref, isVisible } = useScrollAnimation();
+
   const services = [
     {
       title: "Connectivity Solutions",
       icon: Network,
-      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-secondary",
+      color: "from-niakazi-primary to-niakazi-secondary",
       description: "Robust and reliable connectivity solutions to keep your business connected and productive.",
       items: [
         {
@@ -174,26 +177,43 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-niakazi-primary/10 rounded-full blur-3xl aurora-bg"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-niakazi-secondary/10 rounded-full blur-3xl aurora-bg"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-niakazi-accent/5 rounded-full blur-3xl"></div>
+    <section id="services" className="py-32 bg-gradient-to-br from-gray-50 via-white to-niakazi-light/20 relative overflow-hidden">
+      {/* Enhanced background effects */}
+      <div className="aurora-bg"></div>
+      <div className="aurora-bg"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Header */}
+      {/* Floating geometric shapes */}
+      <motion.div 
+        className="absolute top-20 left-10 w-20 h-20 bg-niakazi-primary/10 rounded-2xl rotate-12"
+        animate={{ 
+          y: [0, -20, 0],
+          rotate: [12, 22, 12]
+        }}
+        transition={{ duration: 6, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-32 right-20 w-16 h-16 bg-niakazi-secondary/10 rounded-full"
+        animate={{ 
+          y: [0, -15, 0],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ duration: 4, repeat: Infinity }}
+      />
+      
+      <div className="container mx-auto px-6 relative z-10" ref={ref}>
+        {/* Enhanced header */}
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
         >
           <motion.div
-            className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-niakazi-primary font-semibold mb-6"
+            className="inline-flex items-center px-8 py-4 rounded-full animated-gradient-border glass-card text-niakazi-primary font-semibold mb-8 text-lg"
             initial={{ opacity: 0, scale: 0.8 }}
-            whileInView={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.6 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.05 }}
           >
             <Star className="w-5 h-5 mr-2 text-shimmer" />
             Our Services

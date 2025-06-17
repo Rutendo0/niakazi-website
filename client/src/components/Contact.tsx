@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock, MessageCircle } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock, MessageCircle, Globe, Shield, Zap, Users } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -43,6 +43,66 @@ export default function Contact() {
     }
   };
 
+  // Enhanced contact illustration
+  const ContactIllustration = () => (
+    <svg className="w-full h-full opacity-80" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      <defs>
+        <radialGradient id="contactGlow" cx="50%" cy="50%" r="50%">
+          <stop offset="0%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.8"/>
+          <stop offset="100%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.1"/>
+        </radialGradient>
+        <filter id="contactGlow">
+          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+          <feMerge> 
+            <feMergeNode in="coloredBlur"/>
+            <feMergeNode in="SourceGraphic"/>
+          </feMerge>
+        </filter>
+      </defs>
+      
+      {/* Central hub */}
+      <circle cx="200" cy="150" r="40" fill="url(#contactGlow)" filter="url(#contactGlow)">
+        <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      
+      {/* Communication satellites */}
+      <circle cx="120" cy="80" r="15" fill="hsl(var(--niakazi-secondary))" opacity="0.7">
+        <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="280" cy="80" r="12" fill="hsl(var(--niakazi-accent))" opacity="0.6">
+        <animate attributeName="r" values="12;18;12" dur="2.5s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="320" cy="220" r="14" fill="hsl(var(--niakazi-primary))" opacity="0.8">
+        <animate attributeName="r" values="14;19;14" dur="2.2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="80" cy="220" r="13" fill="hsl(var(--niakazi-secondary))" opacity="0.7">
+        <animate attributeName="r" values="13;17;13" dur="2.8s" repeatCount="indefinite"/>
+      </circle>
+      
+      {/* Connection lines */}
+      <line x1="200" y1="150" x2="120" y2="80" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="280" y2="80" stroke="hsl(var(--niakazi-secondary))" strokeWidth="2" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="320" y2="220" stroke="hsl(var(--niakazi-accent))" strokeWidth="2" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="80" y2="220" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.5">
+        <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2.8s" repeatCount="indefinite"/>
+      </line>
+      
+      {/* Data packets */}
+      <circle r="3" fill="white" opacity="0.9">
+        <animateMotion dur="4s" repeatCount="indefinite" path="M200,150 Q160,115 120,80"/>
+      </circle>
+      <circle r="2" fill="white" opacity="0.7">
+        <animateMotion dur="3s" repeatCount="indefinite" path="M200,150 Q240,115 280,80"/>
+      </circle>
+    </svg>
+  );
+
   const contactInfo = [
     {
       icon: Phone,
@@ -76,14 +136,30 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 left-0 w-72 h-72 bg-dande-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 right-0 w-96 h-96 bg-dande-dark/5 rounded-full blur-3xl"></div>
+    <section id="contact" className="py-32 bg-gradient-to-br from-niakazi-dark via-niakazi-primary to-niakazi-secondary relative overflow-hidden">
+      {/* Enhanced background effects */}
+      <div className="aurora-bg"></div>
+      <div className="aurora-bg"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Floating tech elements */}
+      <motion.div 
+        className="absolute top-20 left-20 text-white/20"
+        animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
+        transition={{ duration: 6, repeat: Infinity }}
+      >
+        <Globe size={40} />
+      </motion.div>
+      <motion.div 
+        className="absolute bottom-32 right-32 text-white/15"
+        animate={{ y: [0, -15, 0], rotate: [0, -8, 0] }}
+        transition={{ duration: 4, repeat: Infinity }}
+      >
+        <Shield size={35} />
+      </motion.div>
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
-          className="max-w-6xl mx-auto"
+          className="max-w-7xl mx-auto"
           ref={ref}
           initial={{ opacity: 0 }}
           animate={isVisible ? { opacity: 1 } : {}}
