@@ -172,7 +172,7 @@ export default function Contact() {
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              className="inline-flex items-center px-4 py-2 rounded-full bg-dande-primary/10 text-dande-primary font-semibold mb-6"
+              className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-white font-semibold mb-6"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={isVisible ? { opacity: 1, scale: 1 } : {}}
               transition={{ duration: 0.6 }}
@@ -181,11 +181,11 @@ export default function Contact() {
               Get In Touch
             </motion.div>
 
-            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-6">
+            <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-white mb-6">
               Ready to Transform Your{" "}
-              <span className="gradient-text">Business?</span>
+              <span className="text-shimmer">Business?</span>
             </h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <p className="text-xl text-white/90 max-w-3xl mx-auto">
               Contact our ICT experts today and discover how we can help optimize your technology infrastructure across Zimbabwe.
             </p>
           </motion.div>
@@ -197,7 +197,7 @@ export default function Contact() {
               animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-8">Contact Information</h3>
+              <h3 className="text-2xl font-space-grotesk font-bold text-white mb-8">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;

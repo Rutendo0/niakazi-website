@@ -246,7 +246,7 @@ export default function Services() {
                   {/* Service Header */}
                   <div className="flex items-center mb-8">
                     <motion.div 
-                      className={`w-16 h-16 ${service.color} rounded-2xl flex items-center justify-center mr-6 pulse-glow`}
+                      className={`w-16 h-16 bg-gradient-to-r ${service.color} rounded-2xl flex items-center justify-center mr-6`}
                       whileHover={{ scale: 1.1, rotate: 5 }}
                       transition={{ duration: 0.3 }}
                     >

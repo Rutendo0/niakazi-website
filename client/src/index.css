@@ -588,9 +588,9 @@ button, a, .card, .hover-element {
 .text-shimmer {
   background: linear-gradient(
     90deg,
-    hsl(var(--niakazi-dark)) 25%,
-    hsl(var(--niakazi-primary)) 50%,
-    hsl(var(--niakazi-dark)) 75%
+    white 25%,
+    hsl(var(--niakazi-light)) 50%,
+    white 75%
   );
   background-size: 200% auto;
   -webkit-background-clip: text;
@@ -620,20 +620,12 @@ button, a, .card, .hover-element {
 
 /* Neon glow effect */
 .neon-glow {
-  text-shadow: 
-    0 0 5px hsl(var(--niakazi-primary)),
-    0 0 10px hsl(var(--niakazi-primary)),
-    0 0 15px hsl(var(--niakazi-primary)),
-    0 0 20px hsl(var(--niakazi-primary));
-  transition: text-shadow 0.3s ease;
+  filter: drop-shadow(0 0 10px hsl(var(--niakazi-primary) / 0.5));
+  transition: filter 0.3s ease;
 }
 
 .neon-glow:hover {
-  text-shadow: 
-    0 0 10px hsl(var(--niakazi-primary)),
-    0 0 20px hsl(var(--niakazi-primary)),
-    0 0 30px hsl(var(--niakazi-primary)),
-    0 0 40px hsl(var(--niakazi-primary));
+  filter: drop-shadow(0 0 15px hsl(var(--niakazi-primary) / 0.7));
 }
 
 /* Bounce entrance animation */
@@ -830,10 +822,7 @@ button, a, .card, .hover-element {
 
 /* Enhanced text effects */
 .text-glow {
-  text-shadow: 
-    0 0 10px hsl(var(--niakazi-primary) / 0.5),
-    0 0 20px hsl(var(--niakazi-primary) / 0.3),
-    0 0 30px hsl(var(--niakazi-primary) / 0.2);
+  filter: drop-shadow(0 0 8px hsl(var(--niakazi-primary) / 0.3));
 }
 
 /* Smooth image loading */

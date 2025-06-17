@@ -48,8 +48,8 @@ export default function Header() {
     <motion.header 
       className={`sticky top-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-xl shadow-2xl border-b border-white/20' 
-          : 'bg-white/80 backdrop-blur-sm'
+          ? 'bg-white/10 backdrop-blur-xl border-b border-white/10' 
+          : 'bg-transparent'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -70,7 +70,9 @@ export default function Header() {
             >
               <span className="text-white font-bold text-lg">N</span>
             </motion.div>
-            <div className="text-2xl font-bold text-niakazi-primary font-space-grotesk">
+            <div className={`text-2xl font-bold font-space-grotesk transition-colors duration-300 ${
+              scrolled ? 'text-niakazi-primary' : 'text-white'
+            }`}>
               NIAKAZI
             </div>
           </motion.div>
@@ -88,8 +90,10 @@ export default function Header() {
                 className={`
                   px-4 py-2 rounded-full font-medium font-space-grotesk relative group transition-all duration-300
                   ${activeSection === item.href 
-                    ? 'text-white bg-niakazi-primary shadow-lg' 
-                    : 'text-niakazi-text hover:text-niakazi-primary hover:bg-niakazi-primary/10'
+                    ? 'text-white bg-niakazi-primary' 
+                    : scrolled 
+                      ? 'text-niakazi-text hover:text-niakazi-primary hover:bg-niakazi-primary/10'
+                      : 'text-white hover:text-niakazi-light hover:bg-white/10'
                   }
                 `}
                 initial={{ opacity: 0, y: -20 }}
