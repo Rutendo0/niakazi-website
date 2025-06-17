@@ -1,7 +1,9 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock } from "lucide-react";
+import { motion } from "framer-motion";
+import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock, MessageCircle, Zap } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
+import { useScrollAnimation } from "@/hooks/useScrollAnimation";
 
 export default function Contact() {
   const [formData, setFormData] = useState({
@@ -12,6 +14,7 @@ export default function Contact() {
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
   const { toast } = useToast();
+  const { ref, isInView } = useScrollAnimation();
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
@@ -23,7 +26,7 @@ export default function Contact() {
     setIsSubmitting(true);
     
     try {
-      await apiRequest("POST", "/api/contact", formData);
+      await apiRequest("/api/contact", "POST", formData);
       toast({
         title: "Message sent!",
         description: "Thank you for your message! We will get back to you soon.",
@@ -44,57 +47,144 @@ export default function Contact() {
     {
       icon: Phone,
       title: "Phone",
-      text: "+1263 77 822 4653"
+      text: "+263 77 822 4653",
+      color: "from-blue-500 to-blue-600"
     },
     {
       icon: Mail,
       title: "Email",
-      text: "info@niakazi.com"
+      text: "info@dandemutande.africa",
+      color: "from-green-500 to-green-600"
     },
     {
       icon: Clock,
       title: "Business Hours",
-      text: "Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM"
+      text: "Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM",
+      color: "from-purple-500 to-purple-600"
     },
     {
       icon: MapPin,
       title: "Address",
-      text: "First Str & Union Ave, Harare\nZB Center, 4th Floor"
+      text: "First Str & Union Ave, Harare\nZB Center, 4th Floor",
+      color: "from-orange-500 to-orange-600"
     }
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61576086914795", label: "Facebook" },
-    { icon: Instagram, href: "https://www.instagram.com/niakazi_technology_solutions?igsh=MWIxa2p2czRzZXR3ZQ==", label: "Instagram" }
+    { icon: Facebook, href: "https://www.facebook.com/dandemutande", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/dandemutande", label: "Instagram" }
   ];
 
+  // Contact illustration SVG
+  const ContactIllustration = () => (
+    <svg className="w-full h-full opacity-80" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
+      {/* Communication waves */}
+      <circle cx="200" cy="150" r="60" fill="none" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.3">
+        <animate attributeName="r" values="60;80;60" dur="3s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="200" cy="150" r="40" fill="none" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.5">
+        <animate attributeName="r" values="40;60;40" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      
+      {/* Central device/phone */}
+      <rect x="185" y="135" width="30" height="30" rx="5" fill="hsl(var(--dande-primary))" opacity="0.8"/>
+      <circle cx="200" cy="150" r="8" fill="white"/>
+      
+      {/* Message bubbles */}
+      <ellipse cx="120" cy="100" rx="25" ry="15" fill="hsl(var(--dande-dark))" opacity="0.6">
+        <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
+      </ellipse>
+      <ellipse cx="280" cy="200" rx="30" ry="18" fill="hsl(var(--dande-primary))" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite"/>
+      </ellipse>
+      
+      {/* Connection lines */}
+      <line x1="200" y1="150" x2="120" y2="100" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.3">
+        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <line x1="200" y1="150" x2="280" y2="200" stroke="hsl(var(--dande-dark))" strokeWidth="2" opacity="0.4">
+        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
+      </line>
+    </svg>
+  );
+
   return (
-    <section id="contact" className="py-16 bg-white">
-      <div className="container mx-auto px-4">
-        <div className="max-w-4xl mx-auto">
-          <div className="text-center mb-12">
-            <h2 className="text-3xl md:text-4xl font-poppins font-bold text-dande-dark mb-6">Get In Touch</h2>
-            <p className="text-lg text-dande-text font-poppins">
-              Ready to transform your business with reliable ICT solutions? Contact our experts today.
+    <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
+      {/* Background decorative elements */}
+      <div className="absolute top-0 left-0 w-72 h-72 bg-dande-primary/5 rounded-full blur-3xl"></div>
+      <div className="absolute bottom-0 right-0 w-96 h-96 bg-dande-dark/5 rounded-full blur-3xl"></div>
+      
+      <div className="container mx-auto px-4 relative z-10">
+        <motion.div 
+          className="max-w-6xl mx-auto"
+          ref={ref}
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.8 }}
+        >
+          <motion.div 
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isInView ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
+          >
+            <motion.div
+              className="inline-flex items-center px-4 py-2 rounded-full bg-dande-primary/10 text-dande-primary font-semibold mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isInView ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6 }}
+            >
+              <MessageCircle className="w-5 h-5 mr-2" />
+              Get In Touch
+            </motion.div>
+
+            <h2 className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-6">
+              Ready to Transform Your{" "}
+              <span className="gradient-text">Business?</span>
+            </h2>
+            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+              Contact our ICT experts today and discover how we can help optimize your technology infrastructure across Zimbabwe.
             </p>
-          </div>
+          </motion.div>
           
-          <div className="grid lg:grid-cols-2 gap-12">
-            <div>
+          <div className="grid lg:grid-cols-2 gap-16">
+            {/* Contact Information */}
+            <motion.div
+              initial={{ opacity: 0, x: -50 }}
+              animate={isInView ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 0.2 }}
+            >
+              <div className="mb-8 h-48 relative">
+                <ContactIllustration />
+              </div>
+
               <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-8">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
-                    <div key={index} className="flex items-start">
-                      <div className="w-12 h-12 bg-dande-primary rounded-lg flex items-center justify-center mr-4 flex-shrink-0">
+                    <motion.div 
+                      key={index} 
+                      className="flex items-start group"
+                      initial={{ opacity: 0, y: 20 }}
+                      animate={isInView ? { opacity: 1, y: 0 } : {}}
+                      transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                      whileHover={{ x: 5 }}
+                    >
+                      <motion.div 
+                        className={`w-14 h-14 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-lg`}
+                        whileHover={{ scale: 1.1, rotate: 5 }}
+                        transition={{ type: "spring", stiffness: 300 }}
+                      >
                         <IconComponent className="text-white text-xl" />
-                      </div>
+                      </motion.div>
                       <div>
-                        <h4 className="font-semibold text-dande-dark mb-1 font-poppins">{info.title}</h4>
-                        <p className="text-dande-text font-poppins whitespace-pre-line">{info.text}</p>
+                        <h4 className="font-semibold text-dande-dark mb-2 font-poppins text-lg">{info.title}</h4>
+                        <p className="text-gray-600 font-poppins whitespace-pre-line leading-relaxed">{info.text}</p>
                       </div>
-                    </div>
+                    </motion.div>
                   );
                 })}
               </div>
