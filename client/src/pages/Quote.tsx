@@ -354,8 +354,8 @@ export default function Quote() {
                           <SelectTrigger>
                             <SelectValue placeholder="Select project type" />
                           </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="new-implementation">New Implementation</SelectItem>
+                          <SelectContent className="bg-white border border-gray-200 shadow-lg rounded-lg max-h-60 overflow-y-auto">
+                            <SelectItem value="new-implementation" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">New Implementation</SelectItem>
                             <SelectItem value="system-upgrade">System Upgrade</SelectItem>
                             <SelectItem value="migration">Migration</SelectItem>
                             <SelectItem value="security-audit">Security Audit</SelectItem>

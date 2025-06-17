@@ -205,13 +205,13 @@ export default function Services() {
         <motion.div 
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
             className="inline-flex items-center px-8 py-4 rounded-full bg-blue-100 text-blue-800 font-semibold mb-8 text-lg"
             initial={{ opacity: 0, scale: 0.8 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
           >
