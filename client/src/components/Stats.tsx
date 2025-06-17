@@ -1,4 +1,9 @@
+import { motion } from "framer-motion";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { useState, useEffect } from "react";
+
 export default function Stats() {
+  const { ref, isVisible } = useScrollAnimation(0.3);
   const stats = [
     {
       number: "0",
