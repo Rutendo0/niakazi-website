@@ -284,7 +284,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.div 
-          className="text-center mb-12"
+          className="text-center mb-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
@@ -299,6 +299,18 @@ export default function Hero() {
             whileTap={{ scale: 0.95 }}
           >
             Discover Our Solutions
+          </motion.button>
+          
+          <motion.button
+            onClick={() => window.location.href = '/quote'}
+            className="bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-space-grotesk font-semibold text-lg hover:bg-white hover:text-niakazi-dark transition-all inline-block"
+            whileHover={{ 
+              scale: 1.05,
+              backgroundColor: "rgba(255,255,255,0.1)"
+            }}
+            whileTap={{ scale: 0.95 }}
+          >
+            Get Free Quote
           </motion.button>
         </motion.div>
 

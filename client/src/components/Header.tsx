@@ -11,6 +11,7 @@ export default function Header() {
     { href: "#home", label: "Home" },
     { href: "#services", label: "Solutions" },
     { href: "#products", label: "Products" },
+    { href: "#stats", label: "Statistics" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" },
   ];
@@ -64,9 +65,10 @@ export default function Header() {
             transition={{ delay: 0.2, duration: 0.5 }}
           >
             <motion.div 
-              className="w-10 h-10 bg-gradient-niakazi rounded-xl flex items-center justify-center shadow-lg"
+              className="w-10 h-10 bg-gradient-niakazi rounded-xl flex items-center justify-center shadow-lg cursor-pointer"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
+              onClick={() => scrollToSection('#home')}
             >
               <span className="text-white font-bold text-lg">N</span>
             </motion.div>

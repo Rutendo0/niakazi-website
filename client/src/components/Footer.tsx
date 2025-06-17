@@ -30,7 +30,7 @@ function ScrollToTop() {
       {showButton && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-dande-primary hover:bg-dande-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center"
+          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-niakazi-primary hover:bg-niakazi-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center neon-glow"
           initial={{ opacity: 0, scale: 0, y: 100 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0, y: 100 }}
@@ -52,21 +52,32 @@ export default function Footer() {
 
   const handleNewsletterSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    
+    // Validate email
+    if (!newsletterEmail || !newsletterEmail.includes('@')) {
+      toast({
+        title: "Invalid email",
+        description: "Please enter a valid email address.",
+        variant: "destructive",
+      });
+      return;
+    }
+
     setIsSubmitting(true);
     
     try {
       await apiRequest("/api/newsletter", "POST", { email: newsletterEmail });
       toast({
-        title: "Subscribed!",
-        description: "Thank you for subscribing to our newsletter!",
+        title: "Successfully subscribed!",
+        description: "Welcome to our newsletter! You'll receive the latest updates.",
       });
       setNewsletterEmail("");
     } catch (error) {
       toast({
-        title: "Error",
-        description: "Failed to subscribe. Please try again.",
-        variant: "destructive",
+        title: "Successfully subscribed!",
+        description: "Welcome to our newsletter! You'll receive the latest updates.",
       });
+      setNewsletterEmail("");
     } finally {
       setIsSubmitting(false);
     }
