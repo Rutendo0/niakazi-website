@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock, MessageCircle, Zap } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock, MessageCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -75,41 +75,6 @@ export default function Contact() {
     { icon: Instagram, href: "https://www.instagram.com/dandemutande", label: "Instagram" }
   ];
 
-  // Contact illustration SVG
-  const ContactIllustration = () => (
-    <svg className="w-full h-full opacity-80" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-      {/* Communication waves */}
-      <circle cx="200" cy="150" r="60" fill="none" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.3">
-        <animate attributeName="r" values="60;80;60" dur="3s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.3;0.1;0.3" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="200" cy="150" r="40" fill="none" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.5">
-        <animate attributeName="r" values="40;60;40" dur="2s" repeatCount="indefinite"/>
-        <animate attributeName="opacity" values="0.5;0.2;0.5" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      
-      {/* Central device/phone */}
-      <rect x="185" y="135" width="30" height="30" rx="5" fill="hsl(var(--dande-primary))" opacity="0.8"/>
-      <circle cx="200" cy="150" r="8" fill="white"/>
-      
-      {/* Message bubbles */}
-      <ellipse cx="120" cy="100" rx="25" ry="15" fill="hsl(var(--dande-dark))" opacity="0.6">
-        <animate attributeName="opacity" values="0.6;0.9;0.6" dur="4s" repeatCount="indefinite"/>
-      </ellipse>
-      <ellipse cx="280" cy="200" rx="30" ry="18" fill="hsl(var(--dande-primary))" opacity="0.4">
-        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="3.5s" repeatCount="indefinite"/>
-      </ellipse>
-      
-      {/* Connection lines */}
-      <line x1="200" y1="150" x2="120" y2="100" stroke="hsl(var(--dande-primary))" strokeWidth="2" opacity="0.3">
-        <animate attributeName="opacity" values="0.3;0.7;0.3" dur="2s" repeatCount="indefinite"/>
-      </line>
-      <line x1="200" y1="150" x2="280" y2="200" stroke="hsl(var(--dande-dark))" strokeWidth="2" opacity="0.4">
-        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
-      </line>
-    </svg>
-  );
-
   return (
     <section id="contact" className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
       {/* Background decorative elements */}
@@ -156,10 +121,6 @@ export default function Contact() {
               animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <div className="mb-8 h-48 relative">
-                <ContactIllustration />
-              </div>
-
               <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-8">Contact Information</h3>
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
@@ -195,16 +156,18 @@ export default function Contact() {
                   {socialLinks.map((social, index) => {
                     const IconComponent = social.icon;
                     return (
-                      <a
+                      <motion.a
                         key={index}
                         href={social.href}
                         target="_blank"
                         rel="noopener noreferrer"
                         className="w-12 h-12 bg-dande-primary rounded-lg flex items-center justify-center hover:opacity-90 transition-all"
                         aria-label={social.label}
+                        whileHover={{ scale: 1.1, y: -2 }}
+                        whileTap={{ scale: 0.95 }}
                       >
                         <IconComponent className="text-white" />
-                      </a>
+                      </motion.a>
                     );
                   })}
                 </div>
@@ -220,32 +183,35 @@ export default function Contact() {
             >
               <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-6">Send us a Message</h3>
               <form onSubmit={handleSubmit} className="space-y-6">
-                <div>
-                  <label htmlFor="name" className="block text-dande-dark font-medium mb-2 font-poppins">Full Name</label>
-                  <input
-                    type="text"
-                    id="name"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
-                    placeholder="Your full name"
-                    required
-                  />
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <label htmlFor="name" className="block text-dande-dark font-medium mb-2 font-poppins">Full Name</label>
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      value={formData.name}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins transition-all"
+                      placeholder="Your full name"
+                      required
+                    />
+                  </div>
+                  <div>
+                    <label htmlFor="email" className="block text-dande-dark font-medium mb-2 font-poppins">Email Address</label>
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      value={formData.email}
+                      onChange={handleInputChange}
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins transition-all"
+                      placeholder="your.email@example.com"
+                      required
+                    />
+                  </div>
                 </div>
-                <div>
-                  <label htmlFor="email" className="block text-dande-dark font-medium mb-2 font-poppins">Email Address</label>
-                  <input
-                    type="email"
-                    id="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
-                    placeholder="your.email@company.com"
-                    required
-                  />
-                </div>
+                
                 <div>
                   <label htmlFor="subject" className="block text-dande-dark font-medium mb-2 font-poppins">Subject</label>
                   <input
@@ -254,29 +220,32 @@ export default function Contact() {
                     name="subject"
                     value={formData.subject}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins transition-all"
                     placeholder="How can we help you?"
                     required
                   />
                 </div>
+                
                 <div>
                   <label htmlFor="message" className="block text-dande-dark font-medium mb-2 font-poppins">Message</label>
                   <textarea
                     id="message"
                     name="message"
-                    rows={4}
                     value={formData.message}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins"
-                    placeholder="Tell us about your ICT requirements..."
+                    rows={6}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins resize-none transition-all"
+                    placeholder="Tell us about your project or requirements..."
                     required
-                  />
+                  ></textarea>
                 </div>
-                <button
+                
+                <motion.button
                   type="submit"
                   disabled={isSubmitting}
-                  className="w-full bg-dande-dark text-white font-semibold py-3 px-6 rounded-full transition-all disabled:opacity-50 flex items-center justify-center font-poppins hover:bg-opacity-90"
-                  style={{ backgroundColor: '#1f2b56' }}
+                  className="w-full bg-dande-primary text-white px-8 py-4 rounded-lg font-poppins font-semibold text-lg hover:bg-dande-dark transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
+                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
                 >
                   {isSubmitting ? (
                     "Sending..."
@@ -286,7 +255,7 @@ export default function Contact() {
                       Send Message
                     </>
                   )}
-                </button>
+                </motion.button>
               </form>
             </motion.div>
           </div>

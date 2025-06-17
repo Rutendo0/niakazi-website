@@ -105,6 +105,15 @@ The application uses two main database tables:
 ```
 Changelog:
 - June 17, 2025. Initial setup
+- June 17, 2025. Enhanced UI/UX with modern design elements:
+  * Added animated SVG illustrations for Hero, About, and Contact sections
+  * Implemented advanced parallax scrolling effects and floating animations
+  * Enhanced visual design with glassmorphism effects and gradient text
+  * Added modern hover animations and interactive elements
+  * Improved responsive design with mobile-first approach
+  * Added visual icons and improved typography throughout
+  * Enhanced contact form with better user experience
+  * Fixed TypeScript errors and improved component structure
 ```
 
 ## User Preferences
