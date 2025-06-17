@@ -301,23 +301,51 @@ export default function Quote() {
                     </h3>
                     <div className="grid md:grid-cols-2 gap-6">
                       <div>
-                        <Label htmlFor="industry">Industry</Label>
+                        <Label htmlFor="industry" className="text-sm font-medium text-gray-700 mb-2 block">
+                          Industry *
+                        </Label>
                         <Select onValueChange={(value) => form.setValue("industry", value)}>
-                          <SelectTrigger>
-                            <SelectValue placeholder="Select your industry" />
+                          <SelectTrigger className="w-full h-12 text-left">
+                            <SelectValue placeholder="Choose your industry sector" />
                           </SelectTrigger>
-                          <SelectContent>
-                            <SelectItem value="healthcare">Healthcare</SelectItem>
-                            <SelectItem value="finance">Finance & Banking</SelectItem>
-                            <SelectItem value="education">Education</SelectItem>
-                            <SelectItem value="retail">Retail & E-commerce</SelectItem>
-                            <SelectItem value="manufacturing">Manufacturing</SelectItem>
-                            <SelectItem value="government">Government</SelectItem>
-                            <SelectItem value="nonprofit">Non-profit</SelectItem>
-                            <SelectItem value="technology">Technology</SelectItem>
-                            <SelectItem value="other">Other</SelectItem>
+                          <SelectContent className="bg-white border border-gray-200 shadow-lg rounded-lg max-h-60 overflow-y-auto">
+                            <SelectItem value="healthcare" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Healthcare & Medical Services
+                            </SelectItem>
+                            <SelectItem value="finance" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Finance & Banking
+                            </SelectItem>
+                            <SelectItem value="education" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Education & Training
+                            </SelectItem>
+                            <SelectItem value="retail" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Retail & E-commerce
+                            </SelectItem>
+                            <SelectItem value="manufacturing" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Manufacturing & Industrial
+                            </SelectItem>
+                            <SelectItem value="government" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Government & Public Sector
+                            </SelectItem>
+                            <SelectItem value="nonprofit" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Non-profit Organizations
+                            </SelectItem>
+                            <SelectItem value="technology" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Technology & Software
+                            </SelectItem>
+                            <SelectItem value="agriculture" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Agriculture & Food Processing
+                            </SelectItem>
+                            <SelectItem value="other" className="px-4 py-3 hover:bg-blue-50 cursor-pointer">
+                              Other Industry
+                            </SelectItem>
                           </SelectContent>
                         </Select>
+                        {form.formState.errors.industry && (
+                          <p className="text-red-500 text-sm mt-1">
+                            {form.formState.errors.industry.message}
+                          </p>
+                        )}
                       </div>
 
                       <div>
