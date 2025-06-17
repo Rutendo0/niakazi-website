@@ -119,14 +119,14 @@ export default function Hero() {
       
       {/* Animated gradient overlay */}
       <motion.div 
-        className="absolute inset-0 bg-gradient-to-r from-transparent via-black/10 to-transparent"
+        className="absolute inset-0 bg-gradient-to-r from-transparent via-black/80 to-transparent"
         animate={{ x: [-100, 100, -100] }}
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       />
       
       {/* Enhanced Floating tech icons */}
       <motion.div
-        className="absolute top-20 left-10 text-white/30 particle-animation"
+        className="absolute top-20 left-10 text-white particle-animation"
         animate={{ 
           y: [0, -20, 0],
           rotate: [0, 10, 0]
@@ -141,9 +141,9 @@ export default function Hero() {
       </motion.div>
       
       <motion.div
-        className="absolute top-40 right-20 text-white/25 blob-animation"
+        className="absolute top-40 right-20 text-white blob-animation"
         animate={{ 
-          y: [0, -15, 0],
+          y: [0, -10, 0],
           rotate: [0, -10, 0]
         }}
         transition={{ 
@@ -157,7 +157,7 @@ export default function Hero() {
       </motion.div>
       
       <motion.div
-        className="absolute bottom-40 left-20 text-white/20 float-slow"
+        className="absolute bottom-40 left-20 text-white float-slow"
         animate={{ 
           y: [0, -25, 0],
           rotate: [0, 15, 0]
@@ -173,7 +173,7 @@ export default function Hero() {
       </motion.div>
 
       <motion.div
-        className="absolute bottom-60 right-40 text-white/35 float-medium"
+        className="absolute bottom-60 right-40 text-white float-medium"
         animate={{ 
           y: [0, -18, 0],
           rotate: [0, -8, 0]
@@ -189,7 +189,7 @@ export default function Hero() {
       </motion.div>
       
       <motion.div
-        className="absolute top-1/3 left-1/4 text-white/15 float-fast"
+        className="absolute top-1/3 left-1/4 text-white float-fast"
         animate={{ 
           y: [0, -12, 0],
           rotate: [0, 20, 0]
@@ -205,7 +205,7 @@ export default function Hero() {
       </motion.div>
       
       <motion.div
-        className="absolute top-2/3 right-1/3 text-white/20 particle-animation"
+        className="absolute top-2/3 right-1/3 text-white particle-animation"
         animate={{ 
           y: [0, -22, 0],
           rotate: [0, -12, 0]
@@ -237,7 +237,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-7xl font-space-grotesk font-bold mb-8 leading-tight"
+          className="text-4xl md:text-6xl lg:text-5xl font-space-grotesk font-bold mb-8 leading-tight"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
@@ -248,7 +248,7 @@ export default function Hero() {
           <span className="block text-gradient-niakazi text-shimmer mt-2">
             connectivity
           </span> 
-          <span className="block text-3xl md:text-5xl lg:text-6xl mt-2 neon-glow">
+          <span className="block text-3xl md:text-3xl lg:text-6xl mt-2 neon-glow">
             for your business
           </span>
         </motion.h1>
@@ -317,12 +317,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.p 
-          className="text-lg md:text-xl max-w-4xl mx-auto leading-relaxed font-poppins opacity-90"
+          className="text-lg md:text-xl max-w-1xl mx-auto leading-relaxed font-poppins opacity-90"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          Count on us for agile and responsive 24/7 customer support. Powerful and affordable ICT products and services. Access to ICT specialists with deep expertise across Zimbabwe and beyond.
+          Count on us for agile and responsive 24/7 customer support. Powerful and affordable ICT products and services.
         </motion.p>
       </motion.div>
 

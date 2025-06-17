@@ -122,10 +122,10 @@ export default function About() {
                 Our Story of{" "}
                 <span className="text-gradient-niakazi">Innovation</span>
               </h2>
-              <p className="text-lg text-gray-700 font-poppins leading-relaxed mb-6">
+              <p className="text-lg text-gray-400 font-poppins leading-relaxed mb-6">
                 Founded with a vision to bridge the gap between cutting-edge technology and business success in Zimbabwe, NIAKAZI has been at the forefront of digital transformation for over 26 years. We specialize in delivering comprehensive ICT solutions that empower organizations to thrive in an increasingly connected world.
               </p>
-              <p className="text-lg text-gray-700 font-poppins leading-relaxed mb-8">
+              <p className="text-lg text-gray-400 font-poppins leading-relaxed mb-8">
                 Our expertise spans across connectivity solutions, cloud services, cybersecurity, and enterprise infrastructure. We pride ourselves on understanding each client's unique challenges and delivering tailored solutions that drive measurable results across Zimbabwe and the region.
               </p>
               
@@ -153,9 +153,9 @@ export default function About() {
               
               <div className="grid grid-cols-2 gap-6">
                 {[
-                  { value: "1000+", label: "Projects Completed", delay: 0.6 },
-                  { value: "26+", label: "Years Experience", delay: 0.7 },
-                  { value: "500+", label: "Happy Clients", delay: 0.8 },
+                  { value: "100+", label: "Projects Completed", delay: 0.6 },
+                  { value: "5+", label: "Years Experience", delay: 0.7 },
+                  { value: "50+", label: "Happy Clients", delay: 0.8 },
                   { value: "24/7", label: "Support", delay: 0.9 }
                 ].map((stat, index) => (
                   <motion.div 

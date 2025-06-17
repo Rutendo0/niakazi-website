@@ -70,7 +70,7 @@ export default function Stats() {
   
   const stats = [
     {
-      end: 26,
+      end: 6,
       suffix: "+",
       label: "Years of Experience",
       icon: Clock,
@@ -78,7 +78,7 @@ export default function Stats() {
       delay: 0
     },
     {
-      end: 500,
+      end: 50,
       suffix: "+", 
       label: "Happy Clients",
       icon: Users,
@@ -86,7 +86,7 @@ export default function Stats() {
       delay: 200
     },
     {
-      end: 1000,
+      end: 100,
       suffix: "+",
       label: "Projects Completed", 
       icon: Award,
@@ -94,7 +94,7 @@ export default function Stats() {
       delay: 400
     },
     {
-      end: 99,
+      end: 90,
       suffix: "%",
       label: "Client Satisfaction",
       icon: TrendingUp,
@@ -131,7 +131,7 @@ export default function Stats() {
             Proven Track Record of{" "}
             <span className="gradient-text">Excellence</span>
           </h2>
-          <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
             Over two decades of delivering exceptional ICT solutions across Zimbabwe and beyond.
           </p>
         </motion.div>
@@ -195,7 +195,7 @@ export default function Stats() {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <blockquote className="text-xl md:text-2xl italic text-gray-700 max-w-4xl mx-auto mb-6">
+          <blockquote className="text-xl md:text-2xl italic text-gray-400 max-w-4xl mx-auto mb-6">
             "NIAKAZI has been instrumental in our digital transformation journey. Their expertise and dedication to excellence is unmatched."
           </blockquote>
           <div className="text-dande-primary font-semibold">

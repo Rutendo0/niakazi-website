@@ -139,7 +139,7 @@ export default function FAQ() {
             Frequently Asked
             <span className="block text-gradient-niakazi">Questions</span>
           </h2>
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             Get answers to common questions about our ICT solutions and services
           </p>
         </motion.div>

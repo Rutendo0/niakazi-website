@@ -268,23 +268,23 @@ export default function Services() {
                       const ItemIcon = item.icon;
                       // Professional service images using high-quality stock photos
                       const serviceImages = {
-                        "Dedicated Internet Access": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&q=80",
-                        "Fiber Connectivity": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop&q=80",
-                        "SD-WAN Solutions": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop&q=80",
-                        "VSAT Services": "https://images.unsplash.com/photo-1446776877081-58393e6c9cd7?w=400&h=250&fit=crop&q=80",
+                        "Dedicated Internet Access": "https://virtualcommissioning.com/wp-content/uploads/2020/01/hybrid-digital-twin-virtual-commissioning-1536x864.jpg",
+                        "Fiber Connectivity": "https://images.unsplash.com/photo-1607723619497-98a79f01ba90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmliZXIlMjBvcHRpY3xlbnwwfHwwfHw%3D&w=1000&q=80",
+                        "SD-WAN Solutions": "https://www.eletimes.com/wp-content/uploads/2018/08/Gartner-main.jpg",
+                        "VSAT Services": "https://vsatplus.net/wp-content/uploads/2022/08/blue-yellow-minimalist-school-admission-facebook-cover-1-1024x577.png",
                         "Co-Location Services": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&q=80",
-                        "Microsoft Azure": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&q=80",
+                        "Microsoft Azure": "https://wallpaperbat.com/img/1871965-empowering-msps-transforming-business-with-azure-cognitive-services.png",
                         "Microsoft 365": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop&q=80",
                         "Oracle Cloud Infrastructure": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop&q=80",
                         "Virtual Private Server": "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=250&fit=crop&q=80",
                         "Storage Area Network": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=250&fit=crop&q=80",
                         "Vulnerability Assessment & Penetration Testing": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop&q=80",
-                        "Cyber Security Awareness Training": "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=250&fit=crop&q=80",
+                        "Cyber Security Awareness Training": "https://img.freepik.com/premium-photo/protecting-business-personal-data-with-cybersecurity_1111209-10964.jpg",
                         "Endpoint Security": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&q=80",
                         "Security Operations Center": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop&q=80",
-                        "ICT Hardware": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop&q=80",
-                        "Software Solutions": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop&q=80",
-                        "Data Center Equipment": "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=250&fit=crop&q=80",
+                        "ICT Hardware": "https://img.freepik.com/premium-vector/cpu-motherboard-technology-background-high-resolution-3d-render_1250153-8089.jpg?w=740",
+                        "Software Solutions": "https://opensrs.com/wp-content/uploads/customer-easily-integrating-with-OpenSRS.png",
+                        "Data Center Equipment": "https://www.jll.com.mx/images/global/jll-data-centre-social-1200x628.jpg",
                         "Mobile Device Management": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop&q=80",
                         "Managed Services": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop&q=80",
                         "Technical Support": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&q=80"
@@ -322,7 +322,7 @@ export default function Services() {
                             
                             <div className="space-y-2">
                               {item.features.map((feature, featureIndex) => (
-                                <div key={featureIndex} className="flex items-center text-sm text-gray-700">
+                                <div key={featureIndex} className="flex items-center text-sm text-gray-400">
                                   <CheckCircle className="w-4 h-4 text-niakazi-primary mr-2 flex-shrink-0" />
                                   <span>{feature}</span>
                                 </div>

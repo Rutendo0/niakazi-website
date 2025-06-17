@@ -29,7 +29,7 @@ export default function Products() {
       {
         title: "Dedicated SLA Monthly",
         price: "US$100.00",
-        image: "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=300&fit=crop",
+        image: "https://static1.bigstockphoto.com/8/0/4/large1500/408051863.jpg",
         description: "Monthly service level agreement with guaranteed response times"
       },
       {
@@ -63,25 +63,25 @@ export default function Products() {
       {
         title: "4 Channel DVR System",
         price: "US$290.00",
-        image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=300&fit=crop",
+        image: "https://technest.ae/wp-content/uploads/2022/12/Hikvision-4-Channel-Full-HD-CCTV-Cameras-DVR-Kit.jpeg",
         description: "4 Channel DVR with 2 high-definition CCTV cameras and remote monitoring"
       },
       {
         title: "4 Channel DVR Kit",
         price: "US$410.00",
-        image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=300&fit=crop",
+        image: "https://www.areaspy.co.ke/wp-content/uploads/2020/06/CCTV-4-CHANNEL-COMPLETE-KIT-1024x792.jpg",
         description: "Complete 4 CCTV camera kit with 500GB storage and mobile app access"
       },
       {
         title: "8 Channel DVR System",
         price: "US$630.00",
-        image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
+        image:"https://diyprotect.co.za/wp-content/uploads/2023/01/8CH-Camera-Kit.jpg",
         description: "8 CCTV cameras with 1TB HD storage and advanced analytics"
       },
       {
         title: "16 Channel DVR System",
         price: "US$1,260.00",
-        image: "https://images.unsplash.com/photo-1551868751-4d8af5f3b588?w=400&h=300&fit=crop",
+        image: "https://www.kiosbarcode.com/wp-content/uploads/2022/12/hikvision-16-channel-1009x1024.png",
         description: "Enterprise 16 CCTV cameras with 2TB HD storage and AI detection"
       }
     ],
@@ -107,7 +107,7 @@ export default function Products() {
       {
         title: "Support and Hosting",
         price: "US$40.00",
-        image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=300&fit=crop",
+        image: "https://www.hashcashconsultants.com/img/bigdata/infrastructure-setup.jpg",
         description: "Monthly support and hosting services"
       }
     ],
@@ -133,13 +133,13 @@ export default function Products() {
       {
         title: "Biometric add-ons",
         price: "US$250.00",
-        image: "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=300&fit=crop",
+        image: "https://www.aspiresys.com/education-software-development-services/img/su-2.jpg",
         description: "Biometric integration for attendance"
       },
       {
         title: "Review Tools add-ons",
         price: "US$150.00",
-        image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=400&h=300&fit=crop",
+        image: "https://www.marketing91.com/wp-content/uploads/2020/02/Performance-Management-System.jpg",
         description: "Performance review and assessment tools"
       }
     ],
@@ -179,7 +179,7 @@ export default function Products() {
       {
         title: "eCommerce add-on",
         price: "US$150.00",
-        image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=400&h=300&fit=crop",
+        image: "https://instaco.ae/wp-content/uploads/2023/09/E-commerce-Business-in-Dubai-1024x683.jpeg",
         description: "Online store functionality integration"
       },
       {

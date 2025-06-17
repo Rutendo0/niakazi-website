@@ -99,19 +99,11 @@ export default function Footer() {
     { href: "#contact", label: "Contact" }
   ];
 
-  const solutions = [
-    "Connectivity Solutions",
-    "Cloud Services", 
-    "Security Solutions",
-    "Hardware & Software",
-    "Training & Managed Services",
-    "Value Added Services"
-  ];
-
+  
   const achievements = [
-    { icon: Award, text: "26+ Years Experience", number: "26+" },
-    { icon: Users, text: "Happy Clients", number: "500+" },
-    { icon: Star, text: "Projects Completed", number: "1000+" }
+    { icon: Award, text: "6+ Years Experience", number: "6+" },
+    { icon: Users, text: "Happy Clients", number: "200+" },
+    { icon: Star, text: "Projects Completed", number: "100+" }
   ];
 
   return (
@@ -209,10 +201,6 @@ export default function Footer() {
                 </div>
               </motion.div>
               
-              <p className="text-gray-300 leading-relaxed mb-6 font-poppins">
-                Zimbabwe's premier ICT solutions provider with 26+ years of experience delivering cutting-edge technology infrastructure across Africa.
-              </p>
-              
               {/* Quick Stats */}
               <div className="grid grid-cols-3 gap-4 mb-6">
                 {achievements.map((achievement, index) => (
@@ -293,31 +281,7 @@ export default function Footer() {
                 ))}
               </ul>
             </motion.div>
-
-            {/* Solutions */}
-            <motion.div
-              initial={{ opacity: 0, y: 50 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.3 }}
-            >
-              <h4 className="text-xl font-space-grotesk font-bold text-white mb-6">Our Solutions</h4>
-              <ul className="space-y-3">
-                {solutions.map((solution, index) => (
-                  <motion.li 
-                    key={index}
-                    className="text-gray-300 hover:text-niakazi-accent transition-colors cursor-pointer"
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
-                    whileHover={{ x: 5 }}
-                    onClick={() => scrollToSection('#services')}
-                  >
-                    {solution}
-                  </motion.li>
-                ))}
-              </ul>
-            </motion.div>
-
+ 
             {/* Contact Info */}
             <motion.div
               initial={{ opacity: 0, y: 50 }}
@@ -375,21 +339,7 @@ export default function Footer() {
                       info@niakazi.com
                     </a>
                   </div>
-                </motion.div>
-
-                <motion.div 
-                  className="flex items-start space-x-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
-                  whileHover={{ scale: 1.02, x: 5 }}
-                >
-                  <Clock className="h-5 w-5 text-niakazi-light mt-1 flex-shrink-0" />
-                  <div>
-                    <div className="text-white font-medium">Business Hours</div>
-                    <div className="text-gray-300 text-sm">
-                      Mon - Fri: 8:00 AM - 6:00 PM<br />
-                      Sat: 9:00 AM - 2:00 PM
-                    </div>
-                  </div>
-                </motion.div>
+                </motion.div> 
               </div>
             </motion.div>
           </motion.div>

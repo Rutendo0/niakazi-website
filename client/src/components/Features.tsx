@@ -81,7 +81,7 @@ export default function Features() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-niakazi-dark via-gray-900 to-niakazi-secondary relative overflow-hidden" ref={ref}>
+    <section className="py-32 bg-gradient-to-br from-niakazi-dark via-gray-400 to-niakazi-secondary relative overflow-hidden" ref={ref}>
       {/* Enhanced background effects */}
       <div className="absolute inset-0">
         <div className="aurora-bg"></div>
@@ -98,7 +98,7 @@ export default function Features() {
         <motion.div
           className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
+          animate={ { opacity: 1, y: 0 }}
           transition={{ duration: 0.8 }}
         >
           <motion.div
@@ -120,8 +120,7 @@ export default function Features() {
         <motion.div
           className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
           variants={containerVariants}
-          initial="hidden"
-          animate={isVisible ? "visible" : "hidden"}
+          
         >
           {features.map((feature, index) => (
             <motion.div
@@ -157,8 +156,8 @@ export default function Features() {
         <motion.div
           className="text-center mt-20"
           initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 0.6 }}
+          animate={{ opacity: 1, y: 0 } }
+          transition={{ duration: 1}}
         >
           <div className="glass-card bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto">
             <h3 className="text-2xl font-bold text-white mb-4">

@@ -89,7 +89,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-32 bg-gradient-to-br from-slate-900 via-niakazi-dark to-slate-800 relative overflow-hidden">
+    <section id="contact" className="py-32 bg-gradient-to-br from-slate-300 via-niakazi-dark to-slate-400 relative overflow-hidden">
       {/* Enhanced Aurora Background Effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>
@@ -151,7 +151,7 @@ export default function Contact() {
             Ready to Transform Your{" "}
             <span className="text-gradient-niakazi text-shimmer">Business?</span>
           </h2>
-          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+          <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
             Connect with our ICT experts today and discover how we can help optimize your technology infrastructure and drive sustainable growth for your organization across Zimbabwe.
           </p>
         </motion.div>
@@ -167,13 +167,13 @@ export default function Contact() {
           >
             <div className="mb-10">
               <h3 className="text-3xl font-space-grotesk font-bold text-white mb-4 neon-glow">Send us a Message</h3>
-              <p className="text-white/80 text-lg">Fill out the form below and we'll get back to you within 24 hours with a customized solution.</p>
+              <p className="text-white text-lg">Fill out the form below and we'll get back to you within 24 hours with a customized solution.</p>
             </div>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
                 <div>
-                  <label className="block text-sm font-medium text-white/90 mb-3">Name *</label>
+                  <label className="block text-sm font-medium text-white mb-3">Name *</label>
                   <input
                     type="text"
                     name="name"
@@ -185,7 +185,7 @@ export default function Contact() {
                   />
                 </div>
                 <div>
-                  <label className="block text-sm font-medium text-white/90 mb-3">Email *</label>
+                  <label className="block text-sm font-medium text-white mb-3">Email *</label>
                   <input
                     type="email"
                     name="email"
@@ -199,7 +199,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/90 mb-3">Subject</label>
+                <label className="block text-sm font-medium text-white mb-3">Subject</label>
                 <input
                   type="text"
                   name="subject"
@@ -211,7 +211,7 @@ export default function Contact() {
               </div>
 
               <div>
-                <label className="block text-sm font-medium text-white/90 mb-3">Message *</label>
+                <label className="block text-sm font-medium text-white mb-3">Message *</label>
                 <textarea
                   name="message"
                   value={formData.message}
@@ -331,7 +331,7 @@ export default function Contact() {
                 </div>
                 <h4 className="text-xl font-semibold text-white">Emergency Support</h4>
               </div>
-              <p className="text-white/80 mb-4">
+              <p className="text-white mb-4">
                 Need immediate technical assistance? Our emergency support team is available 24/7 for critical issues.
               </p>
               <motion.button

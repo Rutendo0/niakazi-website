@@ -4,9 +4,9 @@ export default function WhyChooseUs() {
   const features = [
     {
       icon: Clock,
-      title: "26+ Years of Experience",
+      title: "5+ Years of Experience",
       description: "Over two decades of delivering reliable ICT solutions across Zimbabwe and Africa.",
-      stat: "26+"
+      stat: "5+"
     },
     {
       icon: Users,
@@ -16,15 +16,15 @@ export default function WhyChooseUs() {
     },
     {
       icon: Award,
-      title: "99.9% Uptime Guarantee",
+      title: "90.9% Uptime Guarantee",
       description: "Industry-leading network reliability with comprehensive SLA commitments.",
-      stat: "99.9%"
+      stat: "90.9%"
     },
     {
       icon: HeartHandshake,
-      title: "500+ Satisfied Clients",
+      title: "50+ Satisfied Clients",
       description: "Trusted by businesses across multiple industries for critical ICT infrastructure.",
-      stat: "500+"
+      stat: "50+"
     }
   ];
 
