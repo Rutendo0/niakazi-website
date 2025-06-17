@@ -89,7 +89,7 @@ export default function About() {
                 <span className="gradient-text">Innovation</span>
               </h2>
               <p className="text-lg text-gray-700 font-poppins leading-relaxed mb-6">
-                Founded with a vision to bridge the gap between cutting-edge technology and business success in Zimbabwe, Dandemutande has been at the forefront of digital transformation for over 26 years. We specialize in delivering comprehensive ICT solutions that empower organizations to thrive in an increasingly connected world.
+                Founded with a vision to bridge the gap between cutting-edge technology and business success in Zimbabwe, NIAKAZI has been at the forefront of digital transformation for over 26 years. We specialize in delivering comprehensive ICT solutions that empower organizations to thrive in an increasingly connected world.
               </p>
               <p className="text-lg text-gray-700 font-poppins leading-relaxed mb-8">
                 Our expertise spans across connectivity solutions, cloud services, cybersecurity, and enterprise infrastructure. We pride ourselves on understanding each client's unique challenges and delivering tailored solutions that drive measurable results across Zimbabwe and the region.
@@ -204,7 +204,7 @@ export default function About() {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h3 className="text-3xl md:text-4xl font-poppins font-bold text-dande-dark mb-4">
-              Why Choose Niakazi
+              Why Choose NIAKAZI
             </h3>
             <p className="text-lg text-gray-600 max-w-3xl mx-auto">
               We combine technical expertise with business acumen to deliver solutions that matter

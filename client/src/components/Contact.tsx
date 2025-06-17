@@ -53,7 +53,7 @@ export default function Contact() {
     {
       icon: Mail,
       title: "Email",
-      text: "info@dandemutande.africa",
+      text: "info@niakazi.com",
       color: "from-green-500 to-green-600"
     },
     {
@@ -71,8 +71,8 @@ export default function Contact() {
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/dandemutande", label: "Facebook" },
-    { icon: Instagram, href: "https://www.instagram.com/dandemutande", label: "Instagram" }
+    { icon: Facebook, href: "https://www.facebook.com/niakazi", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/niakazi", label: "Instagram" }
   ];
 
   return (

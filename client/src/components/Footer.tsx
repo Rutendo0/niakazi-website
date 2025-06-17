@@ -170,7 +170,7 @@ export default function Footer() {
               {/* Social Links */}
               <div className="flex space-x-4">
                 <motion.a 
-                  href="https://www.facebook.com/dandemutande" 
+                  href="https://www.facebook.com/niakazi" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300"
@@ -180,7 +180,7 @@ export default function Footer() {
                   <Facebook className="h-4 w-4" />
                 </motion.a>
                 <motion.a 
-                  href="https://www.instagram.com/dandemutande" 
+                  href="https://www.instagram.com/niakazi" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-all duration-300"
@@ -304,14 +304,14 @@ export default function Footer() {
                   whileHover={{ x: 5 }}
                 >
                   <Mail className="h-4 w-4 mr-3 text-dande-primary" />
-                  <span>info@dandemutande.africa</span>
+                  <span>info@niakazi.com</span>
                 </motion.div>
                 <motion.div 
                   className="flex items-center text-gray-300 text-sm"
                   whileHover={{ x: 5 }}
                 >
                   <Globe className="h-4 w-4 mr-3 text-dande-primary" />
-                  <span>www.dandemutande.africa</span>
+                  <span>www.niakazi.com</span>
                 </motion.div>
               </div>
             </motion.div>
