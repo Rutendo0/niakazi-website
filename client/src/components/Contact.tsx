@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { MapPin, Phone, Mail, Facebook, Twitter, Linkedin, Send } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 
@@ -42,26 +42,30 @@ export default function Contact() {
 
   const contactInfo = [
     {
-      icon: MapPin,
-      title: "Head Office",
-      text: "Harare, Zimbabwe"
-    },
-    {
       icon: Phone,
       title: "Phone",
-      text: "+263 (0) 4 123 456"
+      text: "+1263 77 822 4653"
     },
     {
       icon: Mail,
       title: "Email",
-      text: "info@dandemutande.africa"
+      text: "info@niakazi.com"
+    },
+    {
+      icon: Clock,
+      title: "Business Hours",
+      text: "Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM"
+    },
+    {
+      icon: MapPin,
+      title: "Address",
+      text: "First Str & Union Ave, Harare\nZB Center, 4th Floor"
     }
   ];
 
   const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/DandemutandeZW", label: "Facebook" },
-    { icon: Twitter, href: "https://x.com/DandemutandeZW", label: "Twitter" },
-    { icon: Linkedin, href: "https://www.linkedin.com/company/13181424", label: "LinkedIn" }
+    { icon: Facebook, href: "https://www.facebook.com/profile.php?id=61576086914795", label: "Facebook" },
+    { icon: Instagram, href: "https://www.instagram.com/niakazi_technology_solutions?igsh=MWIxa2p2czRzZXR3ZQ==", label: "Instagram" }
   ];
 
   return (
@@ -88,7 +92,7 @@ export default function Contact() {
                       </div>
                       <div>
                         <h4 className="font-semibold text-dande-dark mb-1 font-poppins">{info.title}</h4>
-                        <p className="text-dande-text font-poppins">{info.text}</p>
+                        <p className="text-dande-text font-poppins whitespace-pre-line">{info.text}</p>
                       </div>
                     </div>
                   );
