@@ -97,8 +97,24 @@ export default function Quote() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+      <Header />
+      
+      {/* Back to Home Button */}
+      <div className="fixed top-24 left-6 z-40">
+        <Link to="/">
+          <motion.button
+            className="bg-white/90 backdrop-blur-sm hover:bg-white text-gray-800 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <ArrowLeft className="w-5 h-5" />
+            <span className="hidden sm:inline">Back to Home</span>
+          </motion.button>
+        </Link>
+      </div>
+      
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-dande-primary to-dande-dark text-white py-20">
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 pt-32">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
