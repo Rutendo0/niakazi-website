@@ -177,7 +177,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-32 bg-gradient-to-br from-gray-50 via-white to-niakazi-light/20 relative overflow-hidden">
+    <section id="services" className="py-24 bg-white relative overflow-hidden">
       {/* Enhanced background effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>
@@ -209,19 +209,19 @@ export default function Services() {
           transition={{ duration: 0.8 }}
         >
           <motion.div
-            className="inline-flex items-center px-8 py-4 rounded-full animated-gradient-border glass-card text-niakazi-primary font-semibold mb-8 text-lg"
+            className="inline-flex items-center px-8 py-4 rounded-full bg-blue-100 text-blue-800 font-semibold mb-8 text-lg"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : {}}
             transition={{ duration: 0.6, delay: 0.2 }}
             whileHover={{ scale: 1.05 }}
           >
-            <Star className="w-5 h-5 mr-2 text-shimmer" />
+            <Star className="w-5 h-5 mr-2" />
             Our Solutions
           </motion.div>
           
-          <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-dark mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Transform Your Business with{" "}
-            <span className="text-gradient-niakazi">Premium ICT Solutions</span>
+            <span className="text-blue-600">Premium ICT Solutions</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
             Discover comprehensive technology services designed to optimize operations, enhance security, and drive sustainable growth for your organization across Zimbabwe and beyond.
