@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { Send, Facebook, Instagram, Linkedin, MapPin, ArrowUp, Mail, Phone, Globe } from "lucide-react";
+import { Send, Facebook, Instagram, Linkedin, MapPin, ArrowUp, Mail, Phone, Globe, Clock, Award, Users, Star } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { motion, AnimatePresence } from "framer-motion";
@@ -30,14 +30,14 @@ function ScrollToTop() {
       {showButton && (
         <motion.button
           onClick={scrollToTop}
-          className="fixed bottom-6 right-6 z-50 w-12 h-12 bg-niakazi-primary hover:bg-niakazi-dark text-white rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center neon-glow"
+          className="fixed bottom-6 right-6 z-50 w-14 h-14 bg-niakazi-primary hover:bg-niakazi-secondary text-white rounded-full shadow-xl hover:shadow-2xl transition-all duration-300 flex items-center justify-center neon-glow"
           initial={{ opacity: 0, scale: 0, y: 100 }}
           animate={{ opacity: 1, scale: 1, y: 0 }}
           exit={{ opacity: 0, scale: 0, y: 100 }}
           whileHover={{ scale: 1.1, y: -2 }}
           whileTap={{ scale: 0.9 }}
         >
-          <ArrowUp className="w-5 h-5" />
+          <ArrowUp className="w-6 h-6" />
         </motion.button>
       )}
     </AnimatePresence>
@@ -93,31 +93,99 @@ export default function Footer() {
   const quickLinks = [
     { href: "#home", label: "Home" },
     { href: "#services", label: "Solutions" },
+    { href: "#products", label: "Products" },
+    { href: "#stats", label: "Statistics" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" }
   ];
 
   const solutions = [
-    "Connectivity",
+    "Connectivity Solutions",
     "Cloud Services", 
-    "Security",
+    "Security Solutions",
     "Hardware & Software",
-    "Training & managed services",
+    "Training & Managed Services",
     "Value Added Services"
+  ];
+
+  const achievements = [
+    { icon: Award, text: "26+ Years Experience", number: "26+" },
+    { icon: Users, text: "Happy Clients", number: "500+" },
+    { icon: Star, text: "Projects Completed", number: "1000+" }
   ];
 
   return (
     <>
       <ScrollToTop />
-      <footer className="bg-gradient-to-br from-dande-dark to-slate-800 text-white py-16 relative overflow-hidden">
-        {/* Background decorative elements */}
-        <div className="absolute top-0 left-0 w-96 h-96 bg-dande-primary/5 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-0 right-0 w-80 h-80 bg-blue-500/5 rounded-full blur-3xl"></div>
+      
+      {/* Newsletter Section */}
+      <section className="py-20 bg-gradient-to-br from-niakazi-primary to-niakazi-secondary relative overflow-hidden">
+        <div className="aurora-bg"></div>
+        <div className="aurora-bg"></div>
         
-        <div className="container mx-auto px-4 relative z-10">
+        <div className="container mx-auto px-6 relative z-10">
+          <motion.div
+            className="max-w-4xl mx-auto text-center"
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+          >
+            <motion.div
+              className="inline-flex items-center px-6 py-3 rounded-full glass-card text-white font-semibold mb-8"
+              whileHover={{ scale: 1.05 }}
+            >
+              <Send className="w-5 h-5 mr-2" />
+              Stay Updated
+            </motion.div>
+            
+            <h3 className="text-3xl md:text-4xl font-space-grotesk font-bold text-white mb-6">
+              Get the Latest ICT Insights
+            </h3>
+            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
+              Subscribe to our newsletter for technology trends, industry updates, and exclusive insights from Zimbabwe's leading ICT experts.
+            </p>
+            
+            <motion.form
+              onSubmit={handleNewsletterSubmit}
+              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              viewport={{ once: true }}
+            >
+              <input
+                type="email"
+                value={newsletterEmail}
+                onChange={(e) => setNewsletterEmail(e.target.value)}
+                placeholder="Enter your email address"
+                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all backdrop-blur-sm"
+                required
+              />
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className="px-8 py-4 bg-white text-niakazi-primary font-semibold rounded-xl hover:bg-white/90 transition-all inline-flex items-center justify-center space-x-2 btn-glow"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <Send className="w-5 h-5" />
+                <span>{isSubmitting ? "Subscribing..." : "Subscribe"}</span>
+              </motion.button>
+            </motion.form>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* Main Footer */}
+      <footer className="bg-gradient-to-br from-slate-900 via-niakazi-dark to-slate-800 text-white py-20 relative overflow-hidden">
+        {/* Background Effects */}
+        <div className="absolute top-0 left-0 w-96 h-96 bg-niakazi-primary/5 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-0 right-0 w-80 h-80 bg-niakazi-secondary/5 rounded-full blur-3xl"></div>
+        
+        <div className="container mx-auto px-6 relative z-10" ref={ref}>
           <motion.div 
-            ref={ref}
-            className="grid md:grid-cols-4 gap-8"
+            className="grid lg:grid-cols-4 md:grid-cols-2 gap-12 mb-16"
             initial={{ opacity: 0, y: 50 }}
             animate={isVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
@@ -128,54 +196,39 @@ export default function Footer() {
               animate={isVisible ? { opacity: 1, x: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.1 }}
             >
-              <div className="mb-6">
-                <motion.div 
-                  className="text-2xl font-bold text-white mb-4"
-                  whileHover={{ scale: 1.05 }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
+              <motion.div 
+                className="flex items-center space-x-3 mb-6"
+                whileHover={{ scale: 1.05 }}
+                transition={{ type: "spring", stiffness: 300 }}
+              >
+                <div className="w-12 h-12 bg-gradient-niakazi rounded-xl flex items-center justify-center">
+                  <span className="text-white font-bold text-xl">N</span>
+                </div>
+                <div className="text-3xl font-bold font-space-grotesk text-white">
                   NIAKAZI
-                </motion.div>
-              </div>
-              <p className="text-gray-300 text-sm leading-relaxed mb-6 font-poppins">
-                Your reliable ICT solutions partner with 26+ years of experience delivering cutting-edge technology infrastructure across Zimbabwe and Africa.
+                </div>
+              </motion.div>
+              
+              <p className="text-gray-300 leading-relaxed mb-6 font-poppins">
+                Zimbabwe's premier ICT solutions provider with 26+ years of experience delivering cutting-edge technology infrastructure across Africa.
               </p>
               
-              {/* Contact Info */}
-              <div className="space-y-3 mb-6">
-                <motion.div 
-                  className="flex items-center text-gray-300 text-sm"
-                  whileHover={{ x: 5, color: "#2563eb" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <MapPin className="h-4 w-4 mr-3 text-dande-primary" />
-                  <a 
-                    href="https://maps.app.goo.gl/ZHqM1DbLxHzq6EV29"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="hover:text-dande-primary transition-colors"
+              {/* Quick Stats */}
+              <div className="grid grid-cols-3 gap-4 mb-6">
+                {achievements.map((achievement, index) => (
+                  <motion.div
+                    key={index}
+                    className="text-center p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                    initial={{ opacity: 0, scale: 0.8 }}
+                    animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+                    transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
+                    whileHover={{ scale: 1.05 }}
                   >
-                    First Str & Union Ave, Harare
-                  </a>
-                </motion.div>
-                
-                <motion.div 
-                  className="flex items-center text-gray-300 text-sm"
-                  whileHover={{ x: 5, color: "#2563eb" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Phone className="h-4 w-4 mr-3 text-dande-primary" />
-                  <span>+263 77 822 4653</span>
-                </motion.div>
-                
-                <motion.div 
-                  className="flex items-center text-gray-300 text-sm"
-                  whileHover={{ x: 5, color: "#2563eb" }}
-                  transition={{ type: "spring", stiffness: 300 }}
-                >
-                  <Mail className="h-4 w-4 mr-3 text-dande-primary" />
-                  <span>info@niakazi.com</span>
-                </motion.div>
+                    <achievement.icon className="w-6 h-6 text-niakazi-accent mx-auto mb-2" />
+                    <div className="text-lg font-bold text-white">{achievement.number}</div>
+                    <div className="text-xs text-gray-400">{achievement.text}</div>
+                  </motion.div>
+                ))}
               </div>
               
               {/* Social Links */}
@@ -184,183 +237,201 @@ export default function Footer() {
                   href="https://www.facebook.com/niakazi" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
+                  className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-600 transition-all duration-300"
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Facebook className="h-4 w-4" />
+                  <Facebook className="h-5 w-5" />
                 </motion.a>
                 <motion.a 
                   href="https://www.instagram.com/niakazi" 
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
+                  className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-pink-600 transition-all duration-300"
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Instagram className="h-4 w-4" />
+                  <Instagram className="h-5 w-5" />
                 </motion.a>
                 <motion.a 
-                  href="#" 
-                  className="w-10 h-10 bg-white/10 rounded-full flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-700 transition-all duration-300"
-                  whileHover={{ scale: 1.2, y: -2 }}
+                  href="https://www.linkedin.com/company/niakazi" 
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="w-12 h-12 bg-white/10 rounded-xl flex items-center justify-center text-gray-400 hover:text-white hover:bg-blue-700 transition-all duration-300"
+                  whileHover={{ scale: 1.1, y: -2 }}
                   whileTap={{ scale: 0.9 }}
                 >
-                  <Linkedin className="h-4 w-4" />
+                  <Linkedin className="h-5 w-5" />
                 </motion.a>
               </div>
             </motion.div>
+
             {/* Quick Links */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.2 }}
             >
-              <h4 className="text-lg font-semibold mb-6 font-poppins text-white">Quick Links</h4>
+              <h4 className="text-xl font-space-grotesk font-bold text-white mb-6">Quick Links</h4>
               <ul className="space-y-3">
                 {quickLinks.map((link, index) => (
                   <motion.li 
-                    key={link.href}
+                    key={index}
                     initial={{ opacity: 0, x: -20 }}
                     animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.4 + index * 0.1 }}
                   >
                     <motion.button
                       onClick={() => scrollToSection(link.href)}
-                      className="text-gray-300 hover:text-dande-primary transition-colors font-poppins flex items-center group"
+                      className="text-gray-300 hover:text-niakazi-accent transition-colors cursor-pointer text-left"
                       whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 300 }}
                     >
-                      <span className="w-2 h-2 bg-dande-primary rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
                       {link.label}
                     </motion.button>
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
-            
+
             {/* Solutions */}
             <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.3 }}
             >
-              <h4 className="text-lg font-semibold mb-6 font-poppins text-white">Our Solutions</h4>
+              <h4 className="text-xl font-space-grotesk font-bold text-white mb-6">Our Solutions</h4>
               <ul className="space-y-3">
                 {solutions.map((solution, index) => (
                   <motion.li 
-                    key={solution}
+                    key={index}
+                    className="text-gray-300 hover:text-niakazi-accent transition-colors cursor-pointer"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                    transition={{ duration: 0.6, delay: 0.5 + index * 0.1 }}
+                    transition={{ duration: 0.5, delay: 0.5 + index * 0.1 }}
+                    whileHover={{ x: 5 }}
+                    onClick={() => scrollToSection('#services')}
                   >
-                    <motion.a 
-                      href="#services" 
-                      className="text-gray-300 hover:text-dande-primary transition-colors font-poppins flex items-center group"
-                      whileHover={{ x: 5 }}
-                    >
-                      <span className="w-2 h-2 bg-dande-primary rounded-full mr-3 opacity-0 group-hover:opacity-100 transition-opacity"></span>
-                      {solution}
-                    </motion.a>
+                    {solution}
                   </motion.li>
                 ))}
               </ul>
             </motion.div>
-            
-            {/* Newsletter */}
+
+            {/* Contact Info */}
             <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              initial={{ opacity: 0, y: 50 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 0.4 }}
             >
-              <h4 className="text-lg font-semibold mb-6 font-poppins text-white">Stay Connected</h4>
-              <p className="text-gray-300 text-sm mb-6 font-poppins">Subscribe to receive updates about our latest ICT solutions and services.</p>
-              <motion.form 
-                onSubmit={handleNewsletterSubmit} 
-                className="mb-6"
-                whileHover={{ scale: 1.02 }}
-              >
-                <div className="flex">
-                  <input
-                    type="email"
-                    value={newsletterEmail}
-                    onChange={(e) => setNewsletterEmail(e.target.value)}
-                    placeholder="Your email address"
-                    className="flex-1 px-4 py-3 bg-white/10 backdrop-blur-sm border border-white/20 rounded-l-lg text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-dande-primary font-poppins"
-                    required
-                    disabled={isSubmitting}
-                  />
-                  <motion.button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="bg-dande-primary hover:bg-dande-dark text-white px-6 py-3 rounded-r-lg transition-all duration-300 disabled:opacity-50 flex items-center"
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    {isSubmitting ? (
-                      <motion.div
-                        className="w-4 h-4 border-2 border-white border-t-transparent rounded-full"
-                        animate={{ rotate: 360 }}
-                        transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-                      />
-                    ) : (
-                      <Send className="w-4 h-4" />
-                    )}
-                  </motion.button>
-                </div>
-              </motion.form>
-              
-              <div className="space-y-2">
+              <h4 className="text-xl font-space-grotesk font-bold text-white mb-6">Contact Info</h4>
+              <div className="space-y-4">
                 <motion.div 
-                  className="flex items-center text-gray-300 text-sm"
-                  whileHover={{ x: 5 }}
+                  className="flex items-start space-x-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                  whileHover={{ scale: 1.02, x: 5 }}
                 >
-                  <Mail className="h-4 w-4 mr-3 text-dande-primary" />
-                  <span>info@niakazi.com</span>
+                  <MapPin className="h-5 w-5 text-niakazi-primary mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="text-white font-medium">Address</div>
+                    <a 
+                      href="https://maps.app.goo.gl/ZHqM1DbLxHzq6EV29"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-gray-300 text-sm hover:text-niakazi-accent transition-colors"
+                    >
+                      First Str & Union Ave, Harare<br />
+                      ZB Center, 4th Floor
+                    </a>
+                  </div>
                 </motion.div>
+                
                 <motion.div 
-                  className="flex items-center text-gray-300 text-sm"
-                  whileHover={{ x: 5 }}
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                  whileHover={{ scale: 1.02, x: 5 }}
                 >
-                  <Globe className="h-4 w-4 mr-3 text-dande-primary" />
-                  <span>www.niakazi.com</span>
+                  <Phone className="h-5 w-5 text-niakazi-secondary flex-shrink-0" />
+                  <div>
+                    <div className="text-white font-medium">Phone</div>
+                    <a 
+                      href="tel:+263778224653"
+                      className="text-gray-300 text-sm hover:text-niakazi-accent transition-colors"
+                    >
+                      +263 77 822 4653
+                    </a>
+                  </div>
+                </motion.div>
+                
+                <motion.div 
+                  className="flex items-center space-x-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                >
+                  <Mail className="h-5 w-5 text-niakazi-accent flex-shrink-0" />
+                  <div>
+                    <div className="text-white font-medium">Email</div>
+                    <a 
+                      href="mailto:info@niakazi.com"
+                      className="text-gray-300 text-sm hover:text-niakazi-accent transition-colors"
+                    >
+                      info@niakazi.com
+                    </a>
+                  </div>
+                </motion.div>
+
+                <motion.div 
+                  className="flex items-start space-x-3 p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                  whileHover={{ scale: 1.02, x: 5 }}
+                >
+                  <Clock className="h-5 w-5 text-niakazi-light mt-1 flex-shrink-0" />
+                  <div>
+                    <div className="text-white font-medium">Business Hours</div>
+                    <div className="text-gray-300 text-sm">
+                      Mon - Fri: 8:00 AM - 6:00 PM<br />
+                      Sat: 9:00 AM - 2:00 PM
+                    </div>
+                  </div>
                 </motion.div>
               </div>
             </motion.div>
-        </motion.div>
-        
-        <motion.div 
-          className="border-t border-white/20 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center"
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
-          <p className="text-gray-300 text-sm font-poppins">© 2024 NIAKAZI. All rights reserved.</p>
-          <div className="flex space-x-6 mt-4 md:mt-0">
-            <motion.a 
-              href="#" 
-              className="text-gray-300 hover:text-dande-primary text-sm transition-colors font-poppins"
-              whileHover={{ y: -2 }}
-            >
-              Privacy Policy
-            </motion.a>
-            <motion.a 
-              href="#" 
-              className="text-gray-300 hover:text-dande-primary text-sm transition-colors font-poppins"
-              whileHover={{ y: -2 }}
-            >
-              Terms of Service
-            </motion.a>
-            <motion.a 
-              href="#" 
-              className="text-gray-300 hover:text-dande-primary text-sm transition-colors font-poppins"
-              whileHover={{ y: -2 }}
-            >
-              Support
-            </motion.a>
-          </div>
-        </motion.div>
-      </div>
-    </footer>
+          </motion.div>
+
+          {/* Bottom Bar */}
+          <motion.div 
+            className="pt-8 border-t border-white/10"
+            initial={{ opacity: 0 }}
+            animate={isVisible ? { opacity: 1 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+              <div className="text-gray-400 text-sm">
+                © {new Date().getFullYear()} NIAKAZI. All rights reserved. Powering Zimbabwe's digital transformation.
+              </div>
+              <div className="flex space-x-6 text-sm">
+                <motion.button
+                  className="text-gray-400 hover:text-niakazi-accent transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => scrollToSection('#about')}
+                >
+                  Privacy Policy
+                </motion.button>
+                <motion.button
+                  className="text-gray-400 hover:text-niakazi-accent transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => scrollToSection('#about')}
+                >
+                  Terms of Service
+                </motion.button>
+                <motion.button
+                  className="text-gray-400 hover:text-niakazi-accent transition-colors"
+                  whileHover={{ scale: 1.05 }}
+                  onClick={() => scrollToSection('#contact')}
+                >
+                  Support
+                </motion.button>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </footer>
     </>
   );
 }

@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock, MessageCircle, Globe, Shield, Zap, Users } from "lucide-react";
+import { MapPin, Phone, Mail, Facebook, Instagram, Send, Clock, MessageCircle, Globe, Shield, Zap, Users, CheckCircle } from "lucide-react";
 import { useToast } from "@/hooks/use-toast";
 import { apiRequest } from "@/lib/queryClient";
 import { useScrollAnimation } from "@/hooks/useScrollAnimation";
@@ -54,66 +54,6 @@ export default function Contact() {
     }
   };
 
-  // Enhanced contact illustration
-  const ContactIllustration = () => (
-    <svg className="w-full h-full opacity-80" viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <radialGradient id="contactGlow" cx="50%" cy="50%" r="50%">
-          <stop offset="0%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.8"/>
-          <stop offset="100%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.1"/>
-        </radialGradient>
-        <filter id="contactGlow">
-          <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
-          <feMerge> 
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      
-      {/* Central hub */}
-      <circle cx="200" cy="150" r="40" fill="url(#contactGlow)" filter="url(#contactGlow)">
-        <animate attributeName="r" values="40;50;40" dur="3s" repeatCount="indefinite"/>
-      </circle>
-      
-      {/* Communication satellites */}
-      <circle cx="120" cy="80" r="15" fill="hsl(var(--niakazi-secondary))" opacity="0.7">
-        <animate attributeName="r" values="15;20;15" dur="2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="280" cy="80" r="12" fill="hsl(var(--niakazi-accent))" opacity="0.6">
-        <animate attributeName="r" values="12;18;12" dur="2.5s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="320" cy="220" r="14" fill="hsl(var(--niakazi-primary))" opacity="0.8">
-        <animate attributeName="r" values="14;19;14" dur="2.2s" repeatCount="indefinite"/>
-      </circle>
-      <circle cx="80" cy="220" r="13" fill="hsl(var(--niakazi-secondary))" opacity="0.7">
-        <animate attributeName="r" values="13;17;13" dur="2.8s" repeatCount="indefinite"/>
-      </circle>
-      
-      {/* Connection lines */}
-      <line x1="200" y1="150" x2="120" y2="80" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.5">
-        <animate attributeName="opacity" values="0.5;0.9;0.5" dur="2s" repeatCount="indefinite"/>
-      </line>
-      <line x1="200" y1="150" x2="280" y2="80" stroke="hsl(var(--niakazi-secondary))" strokeWidth="2" opacity="0.4">
-        <animate attributeName="opacity" values="0.4;0.8;0.4" dur="2.5s" repeatCount="indefinite"/>
-      </line>
-      <line x1="200" y1="150" x2="320" y2="220" stroke="hsl(var(--niakazi-accent))" strokeWidth="2" opacity="0.6">
-        <animate attributeName="opacity" values="0.6;1;0.6" dur="2.2s" repeatCount="indefinite"/>
-      </line>
-      <line x1="200" y1="150" x2="80" y2="220" stroke="hsl(var(--niakazi-primary))" strokeWidth="2" opacity="0.5">
-        <animate attributeName="opacity" values="0.5;0.8;0.5" dur="2.8s" repeatCount="indefinite"/>
-      </line>
-      
-      {/* Data packets */}
-      <circle r="3" fill="white" opacity="0.9">
-        <animateMotion dur="4s" repeatCount="indefinite" path="M200,150 Q160,115 120,80"/>
-      </circle>
-      <circle r="2" fill="white" opacity="0.7">
-        <animateMotion dur="3s" repeatCount="indefinite" path="M200,150 Q240,115 280,80"/>
-      </circle>
-    </svg>
-  );
-
   const contactInfo = [
     {
       icon: Phone,
@@ -123,7 +63,7 @@ export default function Contact() {
     },
     {
       icon: Mail,
-      title: "Email",
+      title: "Email", 
       text: "info@niakazi.com",
       color: "from-niakazi-secondary to-niakazi-accent"
     },
@@ -141,212 +81,270 @@ export default function Contact() {
     }
   ];
 
-  const socialLinks = [
-    { icon: Facebook, href: "https://www.facebook.com/niakazi", label: "Facebook" },
-    { icon: Instagram, href: "https://www.instagram.com/niakazi", label: "Instagram" }
+  const whyChooseUs = [
+    { icon: CheckCircle, text: "26+ Years Experience" },
+    { icon: CheckCircle, text: "24/7 Technical Support" },
+    { icon: CheckCircle, text: "Certified Professionals" },
+    { icon: CheckCircle, text: "Customized Solutions" }
   ];
 
   return (
-    <section id="contact" className="py-32 bg-gradient-to-br from-niakazi-dark via-niakazi-primary to-niakazi-secondary relative overflow-hidden">
-      {/* Enhanced background effects */}
+    <section id="contact" className="py-32 bg-gradient-to-br from-slate-900 via-niakazi-dark to-slate-800 relative overflow-hidden">
+      {/* Enhanced Aurora Background Effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>
       
-      {/* Floating tech elements */}
+      {/* Floating geometric shapes */}
       <motion.div 
-        className="absolute top-20 left-20 text-white/20"
+        className="absolute top-20 left-10 w-24 h-24 bg-niakazi-primary/20 rounded-3xl rotate-12"
+        animate={{ 
+          y: [0, -30, 0],
+          rotate: [12, 32, 12]
+        }}
+        transition={{ duration: 8, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-32 right-20 w-20 h-20 bg-niakazi-secondary/20 rounded-full"
+        animate={{ 
+          y: [0, -25, 0],
+          scale: [1, 1.2, 1]
+        }}
+        transition={{ duration: 6, repeat: Infinity }}
+      />
+      
+      {/* Tech Icons */}
+      <motion.div 
+        className="absolute top-1/4 right-10 text-white/10"
         animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
         transition={{ duration: 6, repeat: Infinity }}
       >
-        <Globe size={40} />
+        <Globe size={50} />
       </motion.div>
       <motion.div 
-        className="absolute bottom-32 right-32 text-white/15"
+        className="absolute bottom-1/4 left-10 text-white/10"
         animate={{ y: [0, -15, 0], rotate: [0, -8, 0] }}
         transition={{ duration: 4, repeat: Infinity }}
       >
-        <Shield size={35} />
+        <Shield size={45} />
       </motion.div>
       
-      <div className="container mx-auto px-6 relative z-10">
-        <motion.div 
-          className="max-w-7xl mx-auto"
-          ref={ref}
-          initial={{ opacity: 0 }}
-          animate={isVisible ? { opacity: 1 } : {}}
+      <div className="container mx-auto px-6 relative z-10" ref={ref}>
+        {/* Header Section */}
+        <motion.div
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <motion.div 
-            className="text-center mb-16"
-            initial={{ opacity: 0, y: 30 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.8 }}
+          <motion.div
+            className="inline-flex items-center px-8 py-4 rounded-full animated-gradient-border glass-card text-white font-semibold mb-8 text-lg"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            whileHover={{ scale: 1.05 }}
           >
-            <motion.div
-              className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-white font-semibold mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <MessageCircle className="w-5 h-5 mr-2" />
-              Get In Touch
-            </motion.div>
-
-            <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-white mb-6">
-              Ready to Transform Your{" "}
-              <span className="text-shimmer">Business?</span>
-            </h2>
-            <p className="text-xl text-white/90 max-w-3xl mx-auto">
-              Contact our ICT experts today and discover how we can help optimize your technology infrastructure across Zimbabwe.
-            </p>
+            <MessageCircle className="w-5 h-5 mr-2 text-shimmer" />
+            Let's Connect
           </motion.div>
           
-          <div className="grid lg:grid-cols-2 gap-16">
-            {/* Contact Information */}
-            <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
-            >
-              <h3 className="text-2xl font-space-grotesk font-bold text-white mb-8">Contact Information</h3>
+          <h2 className="text-4xl md:text-6xl font-space-grotesk font-bold text-white mb-8 leading-tight">
+            Ready to Transform Your{" "}
+            <span className="text-gradient-niakazi text-shimmer">Business?</span>
+          </h2>
+          <p className="text-xl text-white/90 max-w-4xl mx-auto leading-relaxed">
+            Connect with our ICT experts today and discover how we can help optimize your technology infrastructure and drive sustainable growth for your organization across Zimbabwe.
+          </p>
+        </motion.div>
+
+        <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
+          {/* Contact Form */}
+          <motion.div
+            className="luxury-card rounded-3xl p-8 md:p-12"
+            initial={{ opacity: 0, x: -50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
+            whileHover={{ y: -5, scale: 1.02 }}
+          >
+            <div className="mb-10">
+              <h3 className="text-3xl font-space-grotesk font-bold text-white mb-4 neon-glow">Send us a Message</h3>
+              <p className="text-white/80 text-lg">Fill out the form below and we'll get back to you within 24 hours with a customized solution.</p>
+            </div>
+
+            <form onSubmit={handleSubmit} className="space-y-6">
+              <div className="grid md:grid-cols-2 gap-6">
+                <div>
+                  <label className="block text-sm font-medium text-white/90 mb-3">Name *</label>
+                  <input
+                    type="text"
+                    name="name"
+                    value={formData.name}
+                    onChange={handleInputChange}
+                    className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm"
+                    placeholder="Your full name"
+                    required
+                  />
+                </div>
+                <div>
+                  <label className="block text-sm font-medium text-white/90 mb-3">Email *</label>
+                  <input
+                    type="email"
+                    name="email"
+                    value={formData.email}
+                    onChange={handleInputChange}
+                    className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm"
+                    placeholder="your.email@example.com"
+                    required
+                  />
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-white/90 mb-3">Subject</label>
+                <input
+                  type="text"
+                  name="subject"
+                  value={formData.subject}
+                  onChange={handleInputChange}
+                  className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm"
+                  placeholder="How can we help you?"
+                />
+              </div>
+
+              <div>
+                <label className="block text-sm font-medium text-white/90 mb-3">Message *</label>
+                <textarea
+                  name="message"
+                  value={formData.message}
+                  onChange={handleInputChange}
+                  rows={6}
+                  className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm resize-none"
+                  placeholder="Tell us about your project requirements..."
+                  required
+                />
+              </div>
+
+              <motion.button
+                type="submit"
+                disabled={isSubmitting}
+                className="w-full btn-glow bg-niakazi-primary hover:bg-niakazi-secondary text-white px-8 py-4 rounded-xl font-space-grotesk font-semibold text-lg transition-all inline-flex items-center justify-center space-x-2 ripple-btn"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+              >
+                <Send className="w-5 h-5" />
+                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+              </motion.button>
+            </form>
+
+            {/* Why Choose Us */}
+            <div className="mt-10 pt-8 border-t border-white/20">
+              <h4 className="text-lg font-semibold text-white mb-4">Why Choose NIAKAZI?</h4>
+              <div className="grid grid-cols-2 gap-3">
+                {whyChooseUs.map((item, index) => (
+                  <motion.div
+                    key={index}
+                    className="flex items-center space-x-2 text-white/80"
+                    initial={{ opacity: 0, x: -20 }}
+                    animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                    transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                  >
+                    <item.icon className="w-4 h-4 text-niakazi-accent" />
+                    <span className="text-sm">{item.text}</span>
+                  </motion.div>
+                ))}
+              </div>
+            </div>
+          </motion.div>
+
+          {/* Contact Information */}
+          <motion.div
+            className="space-y-8"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            <div className="luxury-card rounded-3xl p-8">
+              <h3 className="text-2xl font-space-grotesk font-bold text-white mb-8 neon-glow">Get in Touch</h3>
+              
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
                   const IconComponent = info.icon;
                   return (
-                    <motion.div 
-                      key={index} 
-                      className="flex items-start group"
+                    <motion.div
+                      key={index}
+                      className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
                       initial={{ opacity: 0, y: 20 }}
                       animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                      transition={{ duration: 0.6, delay: 0.4 + index * 0.1 }}
-                      whileHover={{ x: 5 }}
+                      transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
+                      whileHover={{ scale: 1.02, x: 5 }}
                     >
-                      <motion.div 
-                        className={`w-14 h-14 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center mr-4 flex-shrink-0`}
-                        whileHover={{ scale: 1.1, rotate: 5 }}
-                        transition={{ type: "spring", stiffness: 300 }}
-                      >
-                        <IconComponent className="text-white text-xl" />
-                      </motion.div>
+                      <div className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center`}>
+                        <IconComponent className="w-6 h-6 text-white" />
+                      </div>
                       <div>
-                        <h4 className="font-semibold text-dande-dark mb-2 font-poppins text-lg">{info.title}</h4>
-                        <p className="text-gray-600 font-poppins whitespace-pre-line leading-relaxed">{info.text}</p>
+                        <h4 className="text-white font-semibold mb-1">{info.title}</h4>
+                        <p className="text-white/80 text-sm whitespace-pre-line">{info.text}</p>
                       </div>
                     </motion.div>
                   );
                 })}
               </div>
-              
-              <div className="mt-8 pt-8 border-t border-gray-200">
-                <h4 className="text-lg font-semibold text-dande-dark mb-4 font-poppins">Follow Us</h4>
+
+              {/* Social Links */}
+              <div className="mt-8 pt-6 border-t border-white/20">
+                <h4 className="text-white font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
-                  {socialLinks.map((social, index) => {
-                    const IconComponent = social.icon;
-                    return (
-                      <motion.a
-                        key={index}
-                        href={social.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="w-12 h-12 bg-dande-primary rounded-lg flex items-center justify-center hover:opacity-90 transition-all"
-                        aria-label={social.label}
-                        whileHover={{ scale: 1.1, y: -2 }}
-                        whileTap={{ scale: 0.95 }}
-                      >
-                        <IconComponent className="text-white" />
-                      </motion.a>
-                    );
-                  })}
+                  <motion.a
+                    href="https://www.facebook.com/niakazi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-gradient-to-r from-niakazi-primary to-niakazi-secondary rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all"
+                    whileHover={{ scale: 1.1, rotate: 5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Facebook className="w-5 h-5" />
+                  </motion.a>
+                  <motion.a
+                    href="https://www.instagram.com/niakazi"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 bg-gradient-to-r from-niakazi-secondary to-niakazi-accent rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all"
+                    whileHover={{ scale: 1.1, rotate: -5 }}
+                    whileTap={{ scale: 0.9 }}
+                  >
+                    <Instagram className="w-5 h-5" />
+                  </motion.a>
                 </div>
               </div>
-            </motion.div>
-            
-            {/* Contact Form */}
-            <motion.div 
-              className="bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg border border-white/20"
-              initial={{ opacity: 0, x: 50 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
+            </div>
+
+            {/* Emergency Contact */}
+            <motion.div
+              className="luxury-card rounded-3xl p-8 bg-gradient-to-br from-niakazi-primary/20 to-niakazi-secondary/20"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1.0 }}
+              whileHover={{ scale: 1.02 }}
             >
-              <h3 className="text-2xl font-poppins font-bold text-dande-dark mb-6">Send us a Message</h3>
-              <form onSubmit={handleSubmit} className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <label htmlFor="name" className="block text-dande-dark font-medium mb-2 font-poppins">Full Name</label>
-                    <input
-                      type="text"
-                      id="name"
-                      name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins transition-all"
-                      placeholder="Your full name"
-                      required
-                    />
-                  </div>
-                  <div>
-                    <label htmlFor="email" className="block text-dande-dark font-medium mb-2 font-poppins">Email Address</label>
-                    <input
-                      type="email"
-                      id="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins transition-all"
-                      placeholder="your.email@example.com"
-                      required
-                    />
-                  </div>
+              <div className="flex items-center space-x-3 mb-4">
+                <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center">
+                  <Zap className="w-5 h-5 text-white" />
                 </div>
-                
-                <div>
-                  <label htmlFor="subject" className="block text-dande-dark font-medium mb-2 font-poppins">Subject</label>
-                  <input
-                    type="text"
-                    id="subject"
-                    name="subject"
-                    value={formData.subject}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins transition-all"
-                    placeholder="How can we help you?"
-                    required
-                  />
-                </div>
-                
-                <div>
-                  <label htmlFor="message" className="block text-dande-dark font-medium mb-2 font-poppins">Message</label>
-                  <textarea
-                    id="message"
-                    name="message"
-                    value={formData.message}
-                    onChange={handleInputChange}
-                    rows={6}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-dande-primary focus:border-transparent font-poppins resize-none transition-all"
-                    placeholder="Tell us about your project or requirements..."
-                    required
-                  ></textarea>
-                </div>
-                
-                <motion.button
-                  type="submit"
-                  disabled={isSubmitting}
-                  className="w-full bg-dande-primary text-white px-8 py-4 rounded-lg font-poppins font-semibold text-lg hover:bg-dande-dark transition-all duration-300 disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center"
-                  whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
-                  whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
-                >
-                  {isSubmitting ? (
-                    "Sending..."
-                  ) : (
-                    <>
-                      <Send className="w-5 h-5 mr-2" />
-                      Send Message
-                    </>
-                  )}
-                </motion.button>
-              </form>
+                <h4 className="text-xl font-semibold text-white">Emergency Support</h4>
+              </div>
+              <p className="text-white/80 mb-4">
+                Need immediate technical assistance? Our emergency support team is available 24/7 for critical issues.
+              </p>
+              <motion.button
+                className="w-full bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-xl font-semibold transition-all"
+                whileHover={{ scale: 1.02 }}
+                whileTap={{ scale: 0.98 }}
+                onClick={() => window.open('tel:+263778224653', '_self')}
+              >
+                Call Emergency Line
+              </motion.button>
             </motion.div>
-          </div>
-        </motion.div>
+          </motion.div>
+        </div>
       </div>
     </section>
   );
