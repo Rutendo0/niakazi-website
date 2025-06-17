@@ -14,7 +14,9 @@ import { Label } from "@/components/ui/label";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { FileText, Lightbulb, Star, Phone, Mail, MessageCircle } from "lucide-react";
+import { FileText, Lightbulb, Star, Phone, Mail, MessageCircle, ArrowLeft, Home } from "lucide-react";
+import { Link } from "wouter";
+import Header from "@/components/Header";
 
 // Enhanced form schema with proper validation
 const quoteFormSchema = insertQuoteSchema.extend({

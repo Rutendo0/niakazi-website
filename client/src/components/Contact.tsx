@@ -89,7 +89,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-32 bg-gradient-to-br from-slate-300 via-niakazi-dark to-slate-400 relative overflow-hidden">
+    <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
       {/* Enhanced Aurora Background Effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>
@@ -226,7 +226,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full btn-glow bg-niakazi-primary hover:bg-niakazi-secondary text-white px-8 py-4 rounded-xl font-space-grotesk font-semibold text-lg transition-all inline-flex items-center justify-center space-x-2 ripple-btn"
+                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
               >

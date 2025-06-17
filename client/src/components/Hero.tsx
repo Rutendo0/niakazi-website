@@ -104,7 +104,7 @@ export default function Hero() {
   );
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-niakazi overflow-hidden parallax-container">
+    <section id="home" className="relative h-screen flex items-center justify-center bg-gradient-niakazi overflow-hidden parallax-container">
       {/* Aurora Background Effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>
