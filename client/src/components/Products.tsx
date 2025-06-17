@@ -220,45 +220,69 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="py-24 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden" ref={ref}>
-      {/* Background decorative elements */}
-      <div className="absolute top-20 right-20 w-40 h-40 bg-dande-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-40 left-20 w-32 h-32 bg-dande-dark/5 rounded-full blur-3xl"></div>
+    <section id="products" className="py-32 bg-gradient-to-br from-gray-50 via-white to-niakazi-light/20 relative overflow-hidden" ref={ref}>
+      {/* Enhanced background effects */}
+      <div className="aurora-bg"></div>
+      <div className="aurora-bg"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      {/* Floating geometric shapes */}
+      <motion.div 
+        className="absolute top-20 right-20 w-20 h-20 bg-niakazi-primary/10 rounded-2xl rotate-12"
+        animate={{ 
+          y: [0, -20, 0],
+          rotate: [12, 22, 12]
+        }}
+        transition={{ duration: 6, repeat: Infinity }}
+      />
+      <motion.div 
+        className="absolute bottom-32 left-20 w-16 h-16 bg-niakazi-secondary/10 rounded-full"
+        animate={{ 
+          y: [0, -15, 0],
+          scale: [1, 1.1, 1]
+        }}
+        transition={{ duration: 4, repeat: Infinity }}
+      />
+      
+      <div className="container mx-auto px-6 relative z-10">
         <motion.div 
-          className="text-center mb-16"
+          className="text-center mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
           transition={{ duration: 0.8 }}
         >
+          <motion.div
+            className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-niakazi-primary font-semibold mb-6"
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+            transition={{ duration: 0.6 }}
+          >
+            <Star className="w-5 h-5 mr-2" />
+            Our Products
+          </motion.div>
+
           <motion.h2 
-            className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-6"
+            className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-dark mb-6"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Our Products & Services
+            Premium ICT{" "}
+            <span className="text-gradient-niakazi">Products & Solutions</span>
           </motion.h2>
           <motion.p 
-            className="text-lg text-gray-600 max-w-3xl mx-auto mb-8"
+            className="text-xl text-gray-700 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Comprehensive ICT solutions tailored to meet your business needs, from ERP systems to security solutions.
+            Discover our comprehensive range of technology products designed to enhance your business operations and drive digital transformation.
           </motion.p>
-          <motion.div 
-            className="w-24 h-1 bg-gradient-to-r from-dande-primary to-dande-dark mx-auto"
-            initial={{ width: 0 }}
-            animate={isVisible ? { width: 96 } : { width: 0 }}
-            transition={{ duration: 0.8, delay: 0.6 }}
-          />
+
         </motion.div>
 
         {/* Category Navigation */}
         <motion.div 
-          className="flex flex-wrap justify-center gap-4 mb-12"
+          className="flex flex-wrap justify-center gap-4 mb-16"
           initial={{ opacity: 0, y: 20 }}
           animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -267,10 +291,10 @@ export default function Products() {
             <motion.button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-poppins font-medium transition-all duration-300 ${
+              className={`px-6 py-3 rounded-full font-space-grotesk font-medium transition-all duration-300 ${
                 activeCategory === category
-                  ? 'bg-dande-primary text-white shadow-lg'
-                  : 'bg-white text-dande-dark hover:bg-dande-primary hover:text-white shadow-md'
+                  ? 'bg-niakazi-primary text-white'
+                  : 'bg-white text-niakazi-dark hover:bg-niakazi-primary hover:text-white'
               }`}
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}

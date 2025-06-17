@@ -41,7 +41,7 @@ export default function Services() {
     {
       title: "Cloud Services",
       icon: Cloud,
-      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-accent",
+      color: "from-niakazi-secondary to-niakazi-accent",
       description: "Comprehensive cloud solutions to modernize your infrastructure and enhance business agility.",
       items: [
         {
@@ -149,7 +149,7 @@ export default function Services() {
     {
       title: "Training & Managed Services",
       icon: Wrench,
-      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-primary",
+      color: "from-niakazi-secondary to-niakazi-primary",
       description: "Professional IT training, certification programs, and comprehensive managed service solutions.",
       items: [
         {
@@ -163,7 +163,7 @@ export default function Services() {
     {
       title: "Value Added Services",
       icon: Star,
-      color: "bg-gradient-to-r from-niakazi-accent to-niakazi-secondary",
+      color: "from-niakazi-accent to-niakazi-secondary",
       description: "Additional services that enhance your IT capabilities and maximize your technology investments.",
       items: [
         {
@@ -262,35 +262,77 @@ export default function Services() {
                     </div>
                   </div>
 
-                  {/* Service Items */}
-                  <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                  {/* Service Items Grid with Images */}
+                  <div className="grid md:grid-cols-2 gap-8">
                     {service.items.map((item, itemIndex) => {
                       const ItemIcon = item.icon;
+                      const serviceImages = {
+                        "Dedicated Internet Access": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
+                        "Fiber Connectivity": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                        "SD-WAN Solutions": "https://images.unsplash.com/photo-1518709268805-4e9042af2176?w=400&h=250&fit=crop",
+                        "VSAT Services": "https://images.unsplash.com/photo-1446776653964-20c1d3a81b06?w=400&h=250&fit=crop",
+                        "Co-Location Services": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
+                        "Cloud Migration": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop",
+                        "Backup & Recovery": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop",
+                        "Microsoft 365": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop",
+                        "Cybersecurity Assessment": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop",
+                        "Firewall Management": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop",
+                        "Endpoint Protection": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop",
+                        "Compliance Solutions": "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=400&h=250&fit=crop",
+                        "Networking Equipment": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop",
+                        "Compute Hardware": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=400&h=250&fit=crop",
+                        "Software Solutions": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=400&h=250&fit=crop",
+                        "Data Center Equipment": "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=400&h=250&fit=crop",
+                        "Mobile Device Management": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop",
+                        "Managed Services": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop",
+                        "Technical Support": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop"
+                      };
+                      
                       return (
                         <motion.div
                           key={itemIndex}
-                          className="bg-gray-50 rounded-2xl p-6 hover:shadow-lg transition-all duration-300"
-                          whileHover={{ scale: 1.02 }}
+                          className="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all tilt-card modern-card"
+                          initial={{ opacity: 0, scale: 0.9 }}
+                          whileInView={{ opacity: 1, scale: 1 }}
+                          transition={{ duration: 0.6, delay: itemIndex * 0.1 }}
+                          viewport={{ once: true }}
+                          whileHover={{ y: -8 }}
                         >
-                          <div className="flex items-center mb-4">
-                            <div className="w-12 h-12 bg-white rounded-xl flex items-center justify-center mr-4 shadow-md">
-                              <ItemIcon className="text-dande-primary text-xl" />
+                          {/* Service Image */}
+                          <div className="h-48 bg-gradient-to-br from-niakazi-primary/10 to-niakazi-secondary/10 relative overflow-hidden">
+                            <img 
+                              src={serviceImages[item.name as keyof typeof serviceImages] || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop"}
+                              alt={item.name}
+                              className="w-full h-full object-cover opacity-80"
+                            />
+                            <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
+                            <div className="absolute top-4 left-4">
+                              <div className="w-12 h-12 bg-white/90 backdrop-blur-sm rounded-xl flex items-center justify-center">
+                                <ItemIcon className="w-6 h-6 text-niakazi-primary" />
+                              </div>
                             </div>
-                            <h4 className="text-lg font-poppins font-semibold text-dande-dark">
-                              {item.name}
-                            </h4>
                           </div>
-                          <p className="text-gray-600 mb-4 leading-relaxed">
-                            {item.desc}
-                          </p>
-                          <ul className="space-y-2">
-                            {item.features.map((feature, featureIndex) => (
-                              <li key={featureIndex} className="flex items-center text-sm text-gray-700">
-                                <CheckCircle className="w-4 h-4 text-dande-primary mr-2 flex-shrink-0" />
-                                {feature}
-                              </li>
-                            ))}
-                          </ul>
+                          
+                          <div className="p-6">
+                            <h4 className="text-xl font-space-grotesk font-semibold text-niakazi-dark mb-3">{item.name}</h4>
+                            <p className="text-gray-600 mb-4 leading-relaxed">{item.desc}</p>
+                            
+                            <div className="space-y-2">
+                              {item.features.map((feature, featureIndex) => (
+                                <div key={featureIndex} className="flex items-center text-sm text-gray-700">
+                                  <CheckCircle className="w-4 h-4 text-niakazi-primary mr-2 flex-shrink-0" />
+                                  <span>{feature}</span>
+                                </div>
+                              ))}
+                            </div>
+                            
+                            <motion.button 
+                              className="mt-4 text-niakazi-primary font-medium flex items-center hover:text-niakazi-secondary transition-colors"
+                              whileHover={{ x: 4 }}
+                            >
+                              Learn More <ArrowRight className="w-4 h-4 ml-1" />
+                            </motion.button>
+                          </div>
                         </motion.div>
                       );
                     })}
@@ -303,30 +345,33 @@ export default function Services() {
 
         {/* Call to Action */}
         <motion.div
-          className="mt-16 bg-gradient-to-r from-dande-primary to-dande-dark rounded-3xl p-12 text-center text-white"
+          className="mt-20 bg-gradient-to-r from-niakazi-primary to-niakazi-secondary rounded-3xl p-12 text-center text-white relative overflow-hidden"
           initial={{ opacity: 0, scale: 0.9 }}
           whileInView={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
           viewport={{ once: true }}
         >
-          <Zap className="w-16 h-16 mx-auto mb-6 text-white" />
-          <h3 className="text-3xl font-poppins font-bold mb-4">Ready to transform your business?</h3>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Let's discuss your technology needs today
-          </p>
-          <motion.button
-            className="bg-white text-dande-primary px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:shadow-xl transition-all duration-300"
-            whileHover={{ scale: 1.05 }}
-            whileTap={{ scale: 0.95 }}
-            onClick={() => {
-              const contactSection = document.querySelector('#contact');
-              if (contactSection) {
-                contactSection.scrollIntoView({ behavior: 'smooth' });
-              }
-            }}
-          >
-            Get Started
-          </motion.button>
+          <div className="absolute inset-0 bg-gradient-to-r from-niakazi-dark/20 to-transparent"></div>
+          <div className="relative z-10">
+            <Zap className="w-16 h-16 mx-auto mb-6 text-white neon-glow" />
+            <h3 className="text-3xl font-space-grotesk font-bold mb-4">Ready to transform your business?</h3>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Let's discuss your technology needs today
+            </p>
+            <motion.button
+              className="bg-white text-niakazi-primary px-8 py-4 rounded-full font-space-grotesk font-semibold text-lg hover:shadow-xl transition-all duration-300 btn-glow"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Get Started
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </section>

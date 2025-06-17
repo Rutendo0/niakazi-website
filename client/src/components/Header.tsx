@@ -133,7 +133,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <div className="flex flex-col space-y-2 bg-white/80 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
+            <div className="flex flex-col space-y-2 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.href}
@@ -141,7 +141,7 @@ export default function Header() {
                   className={`
                     px-4 py-3 rounded-xl font-medium font-space-grotesk text-left transition-all duration-300
                     ${activeSection === item.href 
-                      ? 'text-white bg-niakazi-primary shadow-lg' 
+                      ? 'text-white bg-niakazi-primary' 
                       : 'text-niakazi-text hover:text-niakazi-primary hover:bg-niakazi-primary/10'
                     }
                   `}

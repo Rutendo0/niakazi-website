@@ -108,25 +108,25 @@ export default function Contact() {
       icon: Phone,
       title: "Phone",
       text: "+263 77 822 4653",
-      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-secondary"
+      color: "from-niakazi-primary to-niakazi-secondary"
     },
     {
       icon: Mail,
       title: "Email",
       text: "info@niakazi.com",
-      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-accent"
+      color: "from-niakazi-secondary to-niakazi-accent"
     },
     {
       icon: Clock,
       title: "Business Hours",
       text: "Mon - Fri: 8:00 AM - 6:00 PM\nSat: 9:00 AM - 2:00 PM",
-      color: "bg-gradient-to-r from-niakazi-accent to-niakazi-primary"
+      color: "from-niakazi-accent to-niakazi-primary"
     },
     {
       icon: MapPin,
       title: "Address",
       text: "First Str & Union Ave, Harare\nZB Center, 4th Floor",
-      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-light"
+      color: "from-niakazi-primary to-niakazi-light"
     }
   ];
 
@@ -211,7 +211,7 @@ export default function Contact() {
                       whileHover={{ x: 5 }}
                     >
                       <motion.div 
-                        className={`w-14 h-14 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center mr-4 flex-shrink-0 shadow-lg`}
+                        className={`w-14 h-14 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center mr-4 flex-shrink-0`}
                         whileHover={{ scale: 1.1, rotate: 5 }}
                         transition={{ type: "spring", stiffness: 300 }}
                       >
