@@ -47,11 +47,9 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2, duration: 0.5 }}
           >
-            <img 
-              src="https://dandemutande.africa/wp-content/uploads/2022/08/Dandemutande_Logo.png" 
-              alt="Dandemutande"
-              className="h-12 w-auto"
-            />
+            <div className="text-2xl font-bold text-dande-primary">
+              NIAKAZI
+            </div>
           </motion.div>
           
           <motion.div 

@@ -1,8 +1,8 @@
-# Dandemutande ICT Solutions Web Application
+# NIAKAZI ICT Solutions Web Application
 
 ## Overview
 
-This is a full-stack web application for Dandemutande, an ICT solutions company based in Zimbabwe. The application serves as a corporate website showcasing services, products, and allowing customer contact and newsletter subscriptions. Built with modern web technologies, it provides a professional online presence with both static content presentation and dynamic data handling capabilities.
+This is a full-stack web application for NIAKAZI, an ICT solutions company based in Zimbabwe. The application serves as a corporate website showcasing services, products, and allowing customer contact and newsletter subscriptions. Built with modern web technologies, it provides a professional online presence with both static content presentation and dynamic data handling capabilities.
 
 ## System Architecture
 

@@ -32,7 +32,7 @@ export default function WhyChooseUs() {
     <section id="why-choose-us" className="py-20 bg-brand-dark-blue text-white">
       <div className="container mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-5xl font-heading font-bold mb-6">Why Choose Dandemutande?</h2>
+          <h2 className="text-5xl font-heading font-bold mb-6">Why Choose NIAKAZI?</h2>
           <p className="text-xl text-gray-200 max-w-3xl mx-auto">
             Your trusted ICT solutions partner with a proven track record of delivering excellence and reliability.
           </p>

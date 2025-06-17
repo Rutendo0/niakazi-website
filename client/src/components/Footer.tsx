@@ -118,13 +118,13 @@ export default function Footer() {
               transition={{ duration: 0.8, delay: 0.1 }}
             >
               <div className="mb-6">
-                <motion.img 
-                  src="https://dandemutande.africa/wp-content/uploads/2022/08/Dandemutande_Logo.png" 
-                  alt="Dandemutande"
-                  className="h-12 w-auto mb-4 filter brightness-0 invert"
+                <motion.div 
+                  className="text-2xl font-bold text-white mb-4"
                   whileHover={{ scale: 1.05 }}
                   transition={{ type: "spring", stiffness: 300 }}
-                />
+                >
+                  NIAKAZI
+                </motion.div>
               </div>
               <p className="text-gray-300 text-sm leading-relaxed mb-6 font-poppins">
                 Your reliable ICT solutions partner with 26+ years of experience delivering cutting-edge technology infrastructure across Zimbabwe and Africa.
@@ -163,7 +163,7 @@ export default function Footer() {
                   transition={{ type: "spring", stiffness: 300 }}
                 >
                   <Mail className="h-4 w-4 mr-3 text-dande-primary" />
-                  <span>info@dandemutande.africa</span>
+                  <span>info@niakazi.com</span>
                 </motion.div>
               </div>
               
