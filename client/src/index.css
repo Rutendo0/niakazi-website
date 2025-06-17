@@ -74,6 +74,24 @@
   html {
     scroll-behavior: smooth;
   }
+  
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 8px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f5f9;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: hsl(var(--dande-primary));
+    border-radius: 4px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: hsl(var(--dande-dark));
+  }
 }
 
 @layer utilities {
@@ -222,4 +240,179 @@
 .image-hover:hover {
   transform: scale(1.05);
   filter: brightness(1.1);
+}
+
+/* Enhanced Card Animations */
+.card-3d {
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  transform-style: preserve-3d;
+}
+
+.card-3d:hover {
+  transform: translateY(-15px) rotateX(10deg) rotateY(5deg);
+  box-shadow: 0 30px 60px -12px rgba(0, 0, 0, 0.25), 
+              0 0 0 1px rgba(255, 255, 255, 0.1);
+}
+
+/* Magnetic hover effect */
+.magnetic {
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+.magnetic:hover {
+  transform: translateY(-8px) scale(1.02);
+}
+
+/* Ripple effect */
+@keyframes ripple {
+  0% {
+    transform: scale(0);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+.ripple-btn {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple-btn:active::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 5px;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.6);
+  opacity: 0;
+  border-radius: 100%;
+  transform: scale(1, 1) translate(-50%);
+  transform-origin: 50% 50%;
+  animation: ripple 0.6s linear;
+}
+
+/* Smooth scroll progress indicator */
+.scroll-progress {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(to right, hsl(var(--dande-primary)), hsl(var(--dande-dark)));
+  transform-origin: left;
+  z-index: 1000;
+  transition: transform 0.1s ease-out;
+}
+
+/* Advanced text reveal */
+.text-reveal-up {
+  overflow: hidden;
+}
+
+.text-reveal-up span {
+  display: inline-block;
+  transform: translateY(100px);
+  opacity: 0;
+  transition: all 0.8s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.text-reveal-up.animate span {
+  transform: translateY(0);
+  opacity: 1;
+}
+
+/* Gradient border with animation */
+@keyframes gradient-rotate {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.gradient-border-animated {
+  position: relative;
+  background: white;
+  border-radius: 12px;
+  padding: 2px;
+}
+
+.gradient-border-animated::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  border-radius: 12px;
+  padding: 2px;
+  background: linear-gradient(45deg, hsl(var(--dande-primary)), hsl(var(--dande-dark)), hsl(var(--dande-primary)));
+  mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  animation: gradient-rotate 3s linear infinite;
+}
+
+/* Glassmorphism cards */
+.glass-card {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+}
+
+/* Floating elements */
+.float-slow {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-medium {
+  animation: float 4s ease-in-out infinite;
+}
+
+.float-fast {
+  animation: float 2s ease-in-out infinite;
+}
+
+/* Pulsing glow effect */
+@keyframes pulse-glow {
+  0%, 100% { 
+    box-shadow: 0 0 20px hsl(var(--dande-primary) / 0.5);
+  }
+  50% { 
+    box-shadow: 0 0 40px hsl(var(--dande-primary) / 0.8);
+  }
+}
+
+.pulse-glow {
+  animation: pulse-glow 2s ease-in-out infinite;
+}
+
+/* Stagger animation delays */
+.stagger-1 { animation-delay: 0.1s; }
+.stagger-2 { animation-delay: 0.2s; }
+.stagger-3 { animation-delay: 0.3s; }
+.stagger-4 { animation-delay: 0.4s; }
+.stagger-5 { animation-delay: 0.5s; }
+
+/* Morphing background */
+@keyframes morph {
+  0%, 100% { border-radius: 40% 60% 70% 30% / 40% 40% 60% 50%; }
+  34% { border-radius: 70% 30% 50% 50% / 30% 30% 70% 70%; }
+  67% { border-radius: 100% 60% 60% 100% / 100% 100% 60% 60%; }
+}
+
+.morphing-bg {
+  animation: morph 8s ease-in-out infinite;
+}
+
+/* Parallax container */
+.parallax-container {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+}
+
+/* Smooth transitions for all interactive elements */
+button, a, .card, .hover-element {
+  transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
 }
