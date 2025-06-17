@@ -32,14 +32,15 @@
     --chart-4: 43 74% 66%;
     --chart-5: 27 87% 67%;
     --radius: 0.5rem;
-    --niakazi-primary: 270 100% 80%;
-    --niakazi-secondary: 310 100% 70%;
-    --niakazi-accent: 230 100% 85%;
-    --niakazi-dark: 240 25% 15%;
-    --niakazi-gradient-start: 270 100% 80%;
-    --niakazi-gradient-mid: 310 100% 70%;
-    --niakazi-gradient-end: 230 100% 85%;
-    --niakazi-text: 240 25% 15%;
+    --niakazi-primary: 210 100% 50%;
+    --niakazi-secondary: 220 100% 60%;
+    --niakazi-accent: 200 100% 70%;
+    --niakazi-dark: 210 100% 15%;
+    --niakazi-light: 210 100% 85%;
+    --niakazi-gradient-start: 210 100% 15%;
+    --niakazi-gradient-mid: 210 100% 50%;
+    --niakazi-gradient-end: 220 100% 60%;
+    --niakazi-text: 210 100% 15%;
   }
 
   .dark {
@@ -166,14 +167,26 @@
   }
   
   .bg-gradient-niakazi {
-    background: linear-gradient(135deg, hsl(var(--niakazi-primary)), hsl(var(--niakazi-secondary)), hsl(var(--niakazi-accent)));
+    background: linear-gradient(135deg, hsl(var(--niakazi-gradient-start)), hsl(var(--niakazi-gradient-mid)), hsl(var(--niakazi-gradient-end)));
   }
   
   .text-gradient-niakazi {
-    background: linear-gradient(135deg, hsl(var(--niakazi-primary)), hsl(var(--niakazi-secondary)), hsl(var(--niakazi-accent)));
+    background: linear-gradient(135deg, hsl(var(--niakazi-light)), hsl(var(--niakazi-accent)), hsl(var(--niakazi-secondary)));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+  }
+  
+  .bg-niakazi-light {
+    background-color: hsl(var(--niakazi-light));
+  }
+  
+  .text-niakazi-light {
+    color: hsl(var(--niakazi-light));
+  }
+  
+  .border-niakazi-light {
+    border-color: hsl(var(--niakazi-light));
   }
 }
 
