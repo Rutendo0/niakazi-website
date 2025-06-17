@@ -63,7 +63,7 @@ export default function Hero() {
   );
 
   return (
-    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-dande-dark to-dande-primary overflow-hidden">
+    <section id="home" className="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-dande-dark to-dande-primary overflow-hidden parallax-container">
       {/* Background Pattern */}
       <BackgroundPattern />
       
