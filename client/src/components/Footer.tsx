@@ -153,7 +153,6 @@ export default function Footer() {
                     onClick={() => scrollToSection(link.href)}
                     className="text-blue-200 hover:text-white transition-colors text-sm"
                     whileHover={{ scale: 1.05 }}
-                    transition={{ type: "spring", stiffness: 300 }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={isVisible ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}

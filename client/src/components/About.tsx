@@ -1,252 +1,235 @@
 import { motion } from "framer-motion";
-import { Target, Lightbulb, Heart, Users, Award, Clock, MapPin, Building, Zap } from "lucide-react";
+import { Target, Lightbulb, Heart, Users, Award, Clock, CheckCircle, ArrowRight, Star } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
-  // Enhanced company illustration with modern design
-  const CompanyIllustration = () => (
-    <svg className="w-full h-full opacity-90" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
-      <defs>
-        <linearGradient id="mapGradient" x1="0%" y1="0%" x2="100%" y2="100%">
-          <stop offset="0%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.3"/>
-          <stop offset="100%" stopColor="hsl(var(--niakazi-secondary))" stopOpacity="0.1"/>
-        </linearGradient>
-        <filter id="glow">
-          <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
-          <feMerge> 
-            <feMergeNode in="coloredBlur"/>
-            <feMergeNode in="SourceGraphic"/>
-          </feMerge>
-        </filter>
-      </defs>
-      
-      {/* Enhanced Zimbabwe map outline */}
-      <path 
-        d="M100 150 L180 140 L240 160 L280 180 L290 220 L270 260 L220 280 L150 270 L110 240 Z" 
-        fill="url(#mapGradient)"
-        stroke="hsl(var(--niakazi-primary))" 
-        strokeWidth="3"
-        filter="url(#glow)"
-      >
-        <animate attributeName="stroke-opacity" values="0.4;0.8;0.4" dur="3s" repeatCount="indefinite"/>
-      </path>
-      
-      {/* Enhanced network nodes */}
-      <g filter="url(#glow)">
-        <circle cx="150" cy="200" r="6" fill="hsl(var(--niakazi-primary))">
-          <animate attributeName="r" values="6;10;6" dur="2s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.7;1;0.7" dur="2s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="220" cy="180" r="5" fill="hsl(var(--niakazi-secondary))">
-          <animate attributeName="r" values="5;8;5" dur="2.5s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.6;0.9;0.6" dur="2.5s" repeatCount="indefinite"/>
-        </circle>
-        <circle cx="260" cy="220" r="6" fill="hsl(var(--niakazi-accent))">
-          <animate attributeName="r" values="6;9;6" dur="3s" repeatCount="indefinite"/>
-          <animate attributeName="opacity" values="0.8;1;0.8" dur="3s" repeatCount="indefinite"/>
-        </circle>
-      </g>
-      
-      {/* Enhanced connecting lines with gradient */}
-      <defs>
-        <linearGradient id="lineGrad1" x1="0%" y1="0%" x2="100%" y2="0%">
-          <stop offset="0%" stopColor="hsl(var(--niakazi-primary))" stopOpacity="0.8"/>
-          <stop offset="100%" stopColor="hsl(var(--niakazi-secondary))" stopOpacity="0.4"/>
-        </linearGradient>
-      </defs>
-      <line x1="150" y1="200" x2="220" y2="180" stroke="url(#lineGrad1)" strokeWidth="3">
-        <animate attributeName="stroke-opacity" values="0.4;0.9;0.4" dur="2s" repeatCount="indefinite"/>
-      </line>
-      <line x1="220" y1="180" x2="260" y2="220" stroke="url(#lineGrad1)" strokeWidth="3">
-        <animate attributeName="stroke-opacity" values="0.3;0.8;0.3" dur="2.5s" repeatCount="indefinite"/>
-      </line>
-      
-      {/* Modern tech elements */}
-      <g transform="translate(400, 100)">
-        <circle r="35" fill="rgba(255,255,255,0.9)" stroke="hsl(var(--niakazi-primary))" strokeWidth="3" opacity="0.9" filter="url(#glow)"/>
-        <circle r="20" fill="hsl(var(--niakazi-primary))" opacity="0.8">
-          <animate attributeName="r" values="20;25;20" dur="3s" repeatCount="indefinite"/>
-        </circle>
-        <animateTransform attributeName="transform" type="translate" values="400,100; 415,85; 400,100" dur="4s" repeatCount="indefinite"/>
-      </g>
-      
-      <g transform="translate(480, 200)">
-        <circle r="30" fill="rgba(255,255,255,0.85)" stroke="hsl(var(--niakazi-secondary))" strokeWidth="3" opacity="0.8" filter="url(#glow)"/>
-        <circle r="15" fill="hsl(var(--niakazi-secondary))" opacity="0.7">
-          <animate attributeName="r" values="15;20;15" dur="3.5s" repeatCount="indefinite"/>
-        </circle>
-        <animateTransform attributeName="transform" type="translate" values="480,200; 470,210; 480,200" dur="4s" repeatCount="indefinite"/>
-      </g>
-    </svg>
-  );
+  const achievements = [
+    { number: "26+", label: "Years Experience", icon: Clock },
+    { number: "500+", label: "Projects Completed", icon: Award },
+    { number: "200+", label: "Happy Clients", icon: Users },
+    { number: "99.9%", label: "Uptime Guarantee", icon: Star }
+  ];
+
+  const features = [
+    {
+      icon: Target,
+      title: "Professional Excellence",
+      description: "Certified ICT professionals delivering world-class solutions with proven methodologies and industry best practices."
+    },
+    {
+      icon: Lightbulb,
+      title: "Innovation Driven",
+      description: "Cutting-edge technology solutions that transform businesses and drive digital transformation across Zimbabwe."
+    },
+    {
+      icon: Heart,
+      title: "Client-Focused",
+      description: "Dedicated support and personalized service ensuring your success is our priority, 24/7 technical assistance."
+    }
+  ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden">
-      {/* Subtle background elements */}
-      <div className="absolute top-20 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
-      <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-50 rounded-full blur-3xl opacity-30"></div>
-      
-      <div className="container mx-auto px-4 relative z-10">
-        {/* Our Story Section */}
-        <div className="max-w-6xl mx-auto mb-20">
-          <motion.div 
-            className="grid lg:grid-cols-2 gap-12 items-center"
-            ref={ref}
-            initial={{ opacity: 0 }}
-            animate={isVisible ? { opacity: 1 } : {}}
+    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        
+        {/* Hero Section */}
+        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
+          {/* Left Content */}
+          <motion.div
+            initial={{ opacity: 0, x: -50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
             <motion.div
-              initial={{ opacity: 0, x: -50 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800 font-semibold mb-6"
+              initial={{ opacity: 0, scale: 0.8 }}
+              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
+              transition={{ duration: 0.6 }}
             >
-              <motion.div
-                className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-niakazi-primary font-semibold mb-6"
-                initial={{ opacity: 0, scale: 0.8 }}
-                animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-                transition={{ duration: 0.6 }}
-              >
-                <Building className="w-5 h-5 mr-2 text-shimmer" />
-                About NIAKAZI
-              </motion.div>
+              <CheckCircle className="w-5 h-5 mr-2" />
+              About NIAKAZI
+            </motion.div>
 
-              <h2 className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-dark mb-8">
-                Our Story of{" "}
-                <span className="text-gradient-niakazi">Innovation</span>
-              </h2>
-              <p className="text-lg text-gray-400 font-poppins leading-relaxed mb-6">
-                Founded with a vision to bridge the gap between cutting-edge technology and business success in Zimbabwe, NIAKAZI has been at the forefront of digital transformation for over 26 years. We specialize in delivering comprehensive ICT solutions that empower organizations to thrive in an increasingly connected world.
-              </p>
-              <p className="text-lg text-gray-400 font-poppins leading-relaxed mb-8">
-                Our expertise spans across connectivity solutions, cloud services, cybersecurity, and enterprise infrastructure. We pride ourselves on understanding each client's unique challenges and delivering tailored solutions that drive measurable results across Zimbabwe and the region.
-              </p>
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
+              Empowering Zimbabwe's{" "}
+              <span className="text-blue-600">Digital Future</span>
+            </h1>
+            
+            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
+              For over 26 years, NIAKAZI has been at the forefront of Zimbabwe's digital transformation, 
+              delivering innovative ICT solutions that drive business growth and operational excellence.
+            </p>
+
+            <div className="space-y-4 mb-8">
+              {[
+                "Enterprise-grade ICT infrastructure and solutions",
+                "24/7 technical support and monitoring services", 
+                "Custom software development and integration",
+                "Comprehensive training and consultation programs"
+              ].map((item, index) => (
+                <motion.div
+                  key={index}
+                  className="flex items-center"
+                  initial={{ opacity: 0, x: -20 }}
+                  animate={isVisible ? { opacity: 1, x: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
+                >
+                  <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
+                  <span className="text-gray-700">{item}</span>
+                </motion.div>
+              ))}
+            </div>
+
+            <motion.button
+              className="inline-flex items-center px-8 py-4 bg-blue-600 text-white rounded-xl font-semibold hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl group"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const element = document.querySelector('#contact');
+                if (element) {
+                  element.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Get Started Today
+              <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
+            </motion.button>
+          </motion.div>
+
+          {/* Right Image */}
+          <motion.div
+            className="relative"
+            initial={{ opacity: 0, x: 50 }}
+            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
+              <img
+                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=faces"
+                alt="NIAKAZI Team - ICT Professionals"
+                className="w-full h-[500px] object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
               
-              <motion.div 
-                className="flex items-center space-x-4 text-dande-primary"
+              {/* Floating Stats Card */}
+              <motion.div
+                className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg"
                 initial={{ opacity: 0, y: 20 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.8 }}
+                transition={{ duration: 0.6, delay: 1 }}
               >
-                <MapPin className="w-5 h-5" />
-                <span className="font-semibold">Proudly serving Zimbabwe since 1998</span>
+                <div className="grid grid-cols-2 gap-4">
+                  {achievements.slice(0, 2).map((achievement, index) => {
+                    const Icon = achievement.icon;
+                    return (
+                      <div key={index} className="text-center">
+                        <div className="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-lg mx-auto mb-2">
+                          <Icon className="w-5 h-5 text-blue-600" />
+                        </div>
+                        <div className="text-2xl font-bold text-gray-900">{achievement.number}</div>
+                        <div className="text-sm text-gray-600">{achievement.label}</div>
+                      </div>
+                    );
+                  })}
+                </div>
               </motion.div>
-            </motion.div>
-            
-            <motion.div 
-              className="relative"
-              initial={{ opacity: 0, x: 50 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 0.4 }}
-            >
-              {/* Company illustration */}
-              <div className="mb-8 h-64 relative">
-                <CompanyIllustration />
-              </div>
-              
-              <div className="grid grid-cols-2 gap-6">
-                {[
-                  { value: "100+", label: "Projects Completed", delay: 0.6 },
-                  { value: "5+", label: "Years Experience", delay: 0.7 },
-                  { value: "50+", label: "Happy Clients", delay: 0.8 },
-                  { value: "24/7", label: "Support", delay: 0.9 }
-                ].map((stat, index) => (
-                  <motion.div 
-                    key={stat.label}
-                    className="text-center bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20"
-                    initial={{ opacity: 0, y: 30, scale: 0.9 }}
-                    animate={isVisible ? { opacity: 1, y: 0, scale: 1 } : {}}
-                    transition={{ duration: 0.6, delay: stat.delay }}
-                    whileHover={{ scale: 1.05, y: -5 }}
-                  >
-                    <motion.div 
-                      className="text-3xl md:text-4xl font-poppins font-bold text-dande-primary mb-2"
-                      initial={{ scale: 0 }}
-                      animate={isVisible ? { scale: 1 } : {}}
-                      transition={{ duration: 0.6, delay: stat.delay + 0.2, type: "spring", stiffness: 200 }}
-                    >
-                      {stat.value}
-                    </motion.div>
-                    <div className="text-gray-600 font-poppins text-sm">
-                      {stat.label}
-                    </div>
-                  </motion.div>
-                ))}
-              </div>
-            </motion.div>
+            </div>
+
+            {/* Decorative Elements */}
+            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-200 rounded-full opacity-20"></div>
+            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-300 rounded-full opacity-15"></div>
           </motion.div>
         </div>
 
-        {/* Our Foundation Section */}
-        <div className="max-w-6xl mx-auto mb-20">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-poppins font-bold text-dande-dark mb-4">
-              Our Foundation
-            </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              Built on strong principles that guide everything we do
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <motion.div 
-              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.1 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Target className="text-white w-8 h-8" />
-              </div>
-              <h4 className="text-xl font-poppins font-bold text-gray-900 mb-4">
-                Our Mission
-              </h4>
-              <p className="text-gray-600 leading-relaxed">
-                To empower businesses with innovative technology solutions that drive growth, efficiency, and competitive advantage in the digital age.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Lightbulb className="text-white w-8 h-8" />
-              </div>
-              <h4 className="text-xl font-poppins font-bold text-gray-900 mb-4">
-                Our Vision
-              </h4>
-              <p className="text-gray-600 leading-relaxed">
-                To be the leading technology partner that transforms how businesses operate, connect, and succeed in an interconnected world.
-              </p>
-            </motion.div>
-            
-            <motion.div 
-              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
-              initial={{ opacity: 0, y: 30 }}
-              animate={isVisible ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.6, delay: 0.3 }}
-              whileHover={{ y: -5 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
-                <Heart className="text-white w-8 h-8" />
-              </div>
-              <h4 className="text-xl font-poppins font-bold text-gray-900 mb-4">
-                Our Values
-              </h4>
-              <p className="text-gray-600 leading-relaxed">
-                Innovation, integrity, excellence, and client success drive every decision we make and every solution we deliver.
-              </p>
-            </motion.div>
-          </div>
-        </div>
+        {/* Stats Section */}
+        <motion.div
+          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          {achievements.map((achievement, index) => {
+            const Icon = achievement.icon;
+            return (
+              <motion.div
+                key={index}
+                className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
+                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{achievement.number}</div>
+                <div className="text-gray-600 font-medium">{achievement.label}</div>
+              </motion.div>
+            );
+          })}
+        </motion.div>
 
+        {/* Features Section */}
+        <motion.div
+          className="grid md:grid-cols-3 gap-8 mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
+          {features.map((feature, index) => {
+            const Icon = feature.icon;
+            return (
+              <motion.div
+                key={index}
+                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
+                whileHover={{ y: -5 }}
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
+                  <Icon className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
+                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
+              </motion.div>
+            );
+          })}
+        </motion.div>
+
+        {/* Mission & Vision */}
+        <motion.div
+          className="bg-white rounded-3xl p-12 shadow-xl"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.8 }}
+        >
+          <div className="grid md:grid-cols-2 gap-12">
+            <div>
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                <Target className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To empower businesses across Zimbabwe with innovative ICT solutions that drive growth, 
+                efficiency, and competitive advantage in the digital economy.
+              </p>
+            </div>
+            
+            <div>
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
+                <Lightbulb className="w-8 h-8 text-white" />
+              </div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
+              <p className="text-gray-600 leading-relaxed">
+                To be Zimbabwe's leading technology partner, transforming how businesses operate, 
+                connect, and succeed in an increasingly digital world.
+              </p>
+            </div>
+          </div>
+        </motion.div>
 
       </div>
     </section>
