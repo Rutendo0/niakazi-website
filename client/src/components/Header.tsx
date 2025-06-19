@@ -69,7 +69,13 @@ export default function Header() {
               className="w-10 h-10 bg-gradient-niakazi rounded-xl flex items-center justify-center shadow-lg cursor-pointer"
               whileHover={{ scale: 1.1, rotate: 5 }}
               transition={{ type: "spring", stiffness: 400, damping: 10 }}
-              onClick={() => scrollToSection('#home')}
+              onClick={() => {
+                if (window.location.pathname === '/quote') {
+                  window.location.href = '/';
+                } else {
+                  scrollToSection('#home');
+                }
+              }}
             >
               <span className="text-white font-bold text-lg">N</span>
             </motion.div>
