@@ -107,7 +107,7 @@ export default function Footer() {
               {/* Social Links */}
               <div className="flex space-x-3">
                 <motion.a 
-                  href="https://www.facebook.com/niakazi" 
+                  href="https://www.facebook.com/profile.php?id=61576086914795" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-500 transition-all duration-300"
@@ -117,7 +117,7 @@ export default function Footer() {
                   <Facebook className="h-4 w-4" />
                 </motion.a>
                 <motion.a 
-                  href="https://www.instagram.com/niakazi" 
+                  href="https://www.instagram.com/niakazi_technology_solutions?igsh=MWIxa2p2czRzZXR3ZQ==" 
                   target="_blank"
                   rel="noopener noreferrer"
                   className="w-9 h-9 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-500 transition-all duration-300"

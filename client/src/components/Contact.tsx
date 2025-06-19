@@ -253,7 +253,7 @@ export default function Contact() {
                 <h4 className="text-gray-900 font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   <motion.a
-                    href="https://www.facebook.com/niakazi"
+                    href="https://www.facebook.com/profile.php?id=61576086914795"
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white hover:bg-blue-700 shadow-lg transition-all"
@@ -263,7 +263,7 @@ export default function Contact() {
                     <Facebook className="w-5 h-5" />
                   </motion.a>
                   <motion.a
-                    href="https://www.instagram.com/niakazi"
+                    href="https://www.instagram.com/niakazi_technology_solutions?igsh=MWIxa2p2czRzZXR3ZQ=="
                     target="_blank"
                     rel="noopener noreferrer"
                     className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white hover:from-purple-600 hover:to-pink-600 shadow-lg transition-all"
