@@ -99,12 +99,12 @@ export default function Stats() {
   ];
 
   return (
-    <section id="stats" className="py-16 sm:py-20 md:py-24 bg-white relative">
+    <section id="stats" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-visible">
       {/* Subtle background elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-30"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-50 rounded-full blur-lg opacity-20"></div>
       
-      <div className="container mx-auto px-4 relative z-10">
+      <div className="container mx-auto px-4 relative z-10 overflow-visible">
         <motion.div
           ref={ref}
           className="text-center mb-16"
@@ -151,8 +151,8 @@ export default function Stats() {
                   </div>
                   
                   {/* Additional Information - Always Visible */}
-                  <div className="mt-4 pt-4 border-t border-gray-200">
-                    <div className="text-xs sm:text-sm text-gray-500 font-medium">
+                  <div className="mt-3 pt-3 border-t border-gray-200">
+                    <div className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">
                       {index === 0 && "Established expertise serving clients since 2018"}
                       {index === 1 && "Trusted by businesses across Zimbabwe"}
                       {index === 2 && "Successful implementations and deployments"}

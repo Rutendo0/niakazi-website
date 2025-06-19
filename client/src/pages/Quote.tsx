@@ -15,7 +15,7 @@ import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@
 import { Checkbox } from "@/components/ui/checkbox";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { FileText, Lightbulb, Star, Phone, Mail, MessageCircle } from "lucide-react";
-import Header from "@/components/Header";
+import { Link } from "wouter";
 
 // Enhanced form schema with proper validation
 const quoteFormSchema = insertQuoteSchema.extend({
@@ -96,10 +96,24 @@ export default function Quote() {
 
   return (
     <div className="min-h-screen bg-white">
-      <Header />
+      {/* Back Button */}
+      <div className="fixed top-6 left-6 z-50">
+        <Link to="/">
+          <motion.button
+            className="bg-white/90 backdrop-blur-sm hover:bg-white text-gray-800 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+          >
+            <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+            </svg>
+            <span className="hidden sm:inline">Back</span>
+          </motion.button>
+        </Link>
+      </div>
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 sm:py-20 pt-20 sm:pt-24">
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 sm:py-20 pt-16 sm:pt-20">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
