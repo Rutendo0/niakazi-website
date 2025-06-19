@@ -1,7 +1,5 @@
 import { useState, useEffect } from "react";
-import { Send, Facebook, Instagram, Linkedin, MapPin, ArrowUp, Mail, Phone, Globe, Clock, Award, Users, Star } from "lucide-react";
-import { useToast } from "@/hooks/use-toast";
-import { apiRequest } from "@/lib/queryClient";
+import { Facebook, Instagram, Linkedin, MapPin, ArrowUp, Mail, Phone, Globe, Clock, Award, Users, Star } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
@@ -45,43 +43,7 @@ function ScrollToTop() {
 }
 
 export default function Footer() {
-  const [newsletterEmail, setNewsletterEmail] = useState("");
-  const [isSubmitting, setIsSubmitting] = useState(false);
-  const { toast } = useToast();
   const { ref, isVisible } = useScrollAnimation(0.1);
-
-  const handleNewsletterSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    
-    // Validate email
-    if (!newsletterEmail || !newsletterEmail.includes('@')) {
-      toast({
-        title: "Invalid email",
-        description: "Please enter a valid email address.",
-        variant: "destructive",
-      });
-      return;
-    }
-
-    setIsSubmitting(true);
-    
-    try {
-      await apiRequest("/api/newsletter", "POST", { email: newsletterEmail });
-      toast({
-        title: "Successfully subscribed!",
-        description: "Welcome to our newsletter! You'll receive the latest updates.",
-      });
-      setNewsletterEmail("");
-    } catch (error) {
-      toast({
-        title: "Successfully subscribed!",
-        description: "Welcome to our newsletter! You'll receive the latest updates.",
-      });
-      setNewsletterEmail("");
-    } finally {
-      setIsSubmitting(false);
-    }
-  };
 
   const scrollToSection = (href: string) => {
     const element = document.querySelector(href);
@@ -110,64 +72,7 @@ export default function Footer() {
     <>
       <ScrollToTop />
       
-      {/* Newsletter Section */}
-      <section className="py-20 bg-gradient-to-br from-niakazi-primary to-niakazi-secondary relative overflow-hidden">
-        <div className="aurora-bg"></div>
-        <div className="aurora-bg"></div>
-        
-        <div className="container mx-auto px-6 relative z-10">
-          <motion.div
-            className="max-w-4xl mx-auto text-center"
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-          >
-            <motion.div
-              className="inline-flex items-center px-6 py-3 rounded-full glass-card text-white font-semibold mb-8"
-              whileHover={{ scale: 1.05 }}
-            >
-              <Send className="w-5 h-5 mr-2" />
-              Stay Updated
-            </motion.div>
-            
-            <h3 className="text-3xl md:text-4xl font-space-grotesk font-bold text-white mb-6">
-              Get the Latest ICT Insights
-            </h3>
-            <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-              Subscribe to our newsletter for technology trends, industry updates, and exclusive insights from Zimbabwe's leading ICT experts.
-            </p>
-            
-            <motion.form
-              onSubmit={handleNewsletterSubmit}
-              className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto"
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.6, delay: 0.2 }}
-              viewport={{ once: true }}
-            >
-              <input
-                type="email"
-                value={newsletterEmail}
-                onChange={(e) => setNewsletterEmail(e.target.value)}
-                placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 bg-white/10 border border-white/20 rounded-xl text-white placeholder-white/60 focus:ring-2 focus:ring-white/50 focus:border-white/50 transition-all backdrop-blur-sm"
-                required
-              />
-              <motion.button
-                type="submit"
-                disabled={isSubmitting}
-                className="px-8 py-4 bg-white text-niakazi-primary font-semibold rounded-xl hover:bg-white/90 transition-all inline-flex items-center justify-center space-x-2 btn-glow"
-                whileHover={{ scale: 1.05 }}
-                whileTap={{ scale: 0.95 }}
-              >
-                <Send className="w-5 h-5" />
-                <span>{isSubmitting ? "Subscribing..." : "Subscribe"}</span>
-              </motion.button>
-            </motion.form>
-          </motion.div>
-        </div>
-      </section>
+
 
       {/* Main Footer */}
       <footer className="bg-gradient-to-br from-slate-900 via-niakazi-dark to-slate-800 text-white py-20 relative overflow-hidden">
