@@ -65,7 +65,7 @@ export default function Stats() {
   
   const stats = [
     {
-      end: 26,
+      end: 4,
       suffix: "+",
       label: "Years of Experience",
       icon: Clock,
@@ -73,15 +73,15 @@ export default function Stats() {
       delay: 0
     },
     {
-      end: 200,
+      end: 50,
       suffix: "+", 
       label: "Happy Clients",
       icon: Users,
       color: "bg-gradient-to-r from-green-500 to-green-600",
-      delay: 200
+      delay: 50
     },
     {
-      end: 500,
+      end: 50,
       suffix: "+",
       label: "Projects Completed", 
       icon: Award,

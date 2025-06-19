@@ -6,9 +6,9 @@ export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
   const achievements = [
-    { number: "26+", label: "Years Experience", icon: Clock },
-    { number: "500+", label: "Projects Completed", icon: Award },
-    { number: "200+", label: "Happy Clients", icon: Users },
+    { number: "4+", label: "Years Experience", icon: Clock },
+    { number: "50+", label: "Projects Completed", icon: Award },
+    { number: "50+", label: "Happy Clients", icon: Users },
     { number: "99.9%", label: "Uptime Guarantee", icon: Star }
   ];
 
@@ -58,7 +58,7 @@ export default function About() {
             </h1>
             
             <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              For over 26 years, NIAKAZI has been at the forefront of Zimbabwe's digital transformation, 
+              For over 3 years, NIAKAZI has been at the forefront of Zimbabwe's digital transformation, 
               delivering innovative ICT solutions that drive business growth and operational excellence.
             </p>
 
@@ -94,7 +94,7 @@ export default function About() {
           >
             <div className="relative rounded-2xl overflow-hidden shadow-2xl">
               <img
-                src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop&crop=faces"
+                src="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/1272/cached.offlinehbpl.hbpl.co.uk/news/OMP/GettyImages-1010594174.jpg"
                 alt="NIAKAZI Team - ICT Professionals"
                 className="w-full h-[500px] object-cover"
               />
