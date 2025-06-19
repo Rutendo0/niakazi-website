@@ -104,7 +104,7 @@ export default function Stats() {
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-30"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-50 rounded-full blur-lg opacity-20"></div>
       
-      <div className="container mx-auto px-4 relative z-10 overflow-visible">
+      <div className="container mx-auto px-6 relative z-10 overflow-visible">
         <motion.div
           ref={ref}
           className="text-center mb-16"
@@ -131,10 +131,10 @@ export default function Stats() {
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-niakazi-primary">
+                <div className="bg-white border border-gray-200 rounded-2xl p-6 sm:p-7 md:p-8 shadow-lg hover:shadow-2xl transition-all duration-300 group-hover:border-niakazi-primary group-hover:shadow-niakazi-primary/20">
                   {/* Icon */}
-                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:bg-niakazi-primary transition-all duration-300">
-                    <IconComponent className="text-gray-600 group-hover:text-white text-lg sm:text-xl md:text-2xl transition-colors duration-300" />
+                  <div className="w-16 h-16 sm:w-18 sm:h-18 md:w-20 md:h-20 bg-gradient-to-br from-niakazi-primary/10 to-niakazi-secondary/10 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-5 md:mb-6 group-hover:bg-gradient-to-br group-hover:from-niakazi-primary group-hover:to-niakazi-secondary transition-all duration-300 shadow-lg">
+                    <IconComponent className="text-niakazi-primary group-hover:text-white text-xl sm:text-2xl md:text-3xl transition-colors duration-300" />
                   </div>
                   
                   {/* Animated Counter */}
@@ -151,8 +151,8 @@ export default function Stats() {
                   </div>
                   
                   {/* Additional Information - Always Visible */}
-                  <div className="mt-3 pt-3 border-t border-gray-200">
-                    <div className="text-xs sm:text-sm text-gray-500 font-medium leading-relaxed">
+                  <div className="mt-4 pt-4 border-t border-gray-100">
+                    <div className="text-sm sm:text-base text-gray-600 font-medium leading-relaxed">
                       {index === 0 && "Established expertise serving clients since 2018"}
                       {index === 1 && "Trusted by businesses across Zimbabwe"}
                       {index === 2 && "Successful implementations and deployments"}
@@ -172,10 +172,10 @@ export default function Stats() {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 1 }}
         >
-          <blockquote className="text-xl md:text-2xl italic text-gray-400 max-w-4xl mx-auto mb-6">
+          <blockquote className="text-xl md:text-2xl italic text-gray-600 max-w-4xl mx-auto mb-6 leading-relaxed">
             "NIAKAZI has been instrumental in our digital transformation journey. Their expertise and dedication to excellence is unmatched."
           </blockquote>
-          <div className="text-dande-primary font-semibold">
+          <div className="text-niakazi-primary font-semibold text-lg">
             — Leading Enterprise Client, Zimbabwe
           </div>
         </motion.div>
