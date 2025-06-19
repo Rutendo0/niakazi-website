@@ -99,6 +99,7 @@ NIAKAZI ICT Solutions is a comprehensive full-stack web application showcasing I
 ```
 Changelog:
 - December 19, 2024. Project migration to Replit completed
+- December 19, 2024. About and Solutions pages combined - Solutions content shows first when navigating to About
 - December 19, 2024. Combined About page with Solutions page - navigation maintained to #about section
 - December 19, 2024. Card sizes reduced for better UX
 - December 19, 2024. Page order reorganized: Services → Products → Solutions

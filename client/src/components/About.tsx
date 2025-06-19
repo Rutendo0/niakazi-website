@@ -42,8 +42,8 @@ export default function AboutSolutionsPage() {
 
   return (
     <div className="bg-gray-50">
-      {/* Solutions Section */}
-      <section id="solutions" className="py-20" ref={solutionsRef}>
+      {/* About Section - Starting with Solutions */}
+      <section id="about" className="py-20" ref={solutionsRef}>
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           {/* Information Section Before Solutions */}
           <motion.div 
@@ -145,8 +145,8 @@ export default function AboutSolutionsPage() {
           </motion.div>
         </div>
       </section>
-      {/* About Section */}
-<section id="about" className="py-16 relative overflow-hidden border-t-0" ref={aboutRef}>
+      {/* Mission & Vision Section */}
+<section className="py-16 relative overflow-hidden border-t-0" ref={aboutRef}>
   <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <motion.div
       className="bg-white rounded-2xl p-8 shadow-lg mb-16"
