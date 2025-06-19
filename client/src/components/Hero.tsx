@@ -231,7 +231,7 @@ export default function Hero() {
         </motion.div>
 
         <motion.p 
-          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed opacity-20"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed opacity-90"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
@@ -248,7 +248,7 @@ export default function Hero() {
           
           <motion.button
             onClick={() => scrollToSection('#services')}
-            className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-xl hover:bg-white/10 transition-all"
+            className="w-full sm:w-auto bg-white/20 backdrop-blur-sm border-2 border-white/60 text-white px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-xl hover:bg-white/30 hover:border-white shadow-lg transition-all duration-300"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
