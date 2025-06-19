@@ -229,55 +229,7 @@ export default function About() {
           </div>
         </div>
 
-        {/* Why Choose Niakazi Section */}
-        <div className="max-w-6xl mx-auto">
-          <div className="text-center mb-16">
-            <h3 className="text-3xl md:text-4xl font-poppins font-bold text-dande-dark mb-4">
-              Why Choose NIAKAZI
-            </h3>
-            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
-              We combine technical expertise with business acumen to deliver solutions that matter
-            </p>
-          </div>
-          
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Users className="text-white text-2xl" />
-              </div>
-              <h4 className="text-2xl font-poppins font-bold text-dande-dark mb-4">
-                Expert Team
-              </h4>
-              <p className="text-gray-700 leading-relaxed">
-                Certified professionals with deep expertise in the latest technologies and industry best practices.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Award className="text-white text-2xl" />
-              </div>
-              <h4 className="text-2xl font-poppins font-bold text-dande-dark mb-4">
-                Proven Track Record
-              </h4>
-              <p className="text-gray-700 leading-relaxed">
-                Successfully delivered 500+ projects across various industries with exceptional results.
-              </p>
-            </div>
-            
-            <div className="bg-white rounded-2xl p-8 text-center shadow-lg">
-              <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Clock className="text-white text-2xl" />
-              </div>
-              <h4 className="text-2xl font-poppins font-bold text-dande-dark mb-4">
-                24/7 Support
-              </h4>
-              <p className="text-gray-700 leading-relaxed">
-                Round-the-clock support and maintenance to ensure your systems run smoothly at all times.
-              </p>
-            </div>
-          </div>
-        </div>
+
       </div>
     </section>
   );
