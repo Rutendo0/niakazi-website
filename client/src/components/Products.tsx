@@ -266,16 +266,16 @@ export default function Products() {
             animate={isVisible ? { opacity: 1, scale: 1 } : { opacity: 0, scale: 0.8 }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            Premium ICT{" "}
+            ICT{" "}
             <span className="text-gradient-niakazi">Products & Solutions</span>
           </motion.h2>
           <motion.p 
-            className="text-xl text-gray-700 max-w-3xl mx-auto mb-8"
+            className="text-xl text-gray-400 max-w-3xl mx-auto mb-8"
             initial={{ opacity: 0, y: 20 }}
             animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 20 }}
             transition={{ duration: 0.8, delay: 0.4 }}
           >
-            Discover our comprehensive range of technology products designed to enhance your business operations and drive digital transformation.
+            Discover our comprehensive range of technology products designed just for you.
           </motion.p>
 
         </motion.div>

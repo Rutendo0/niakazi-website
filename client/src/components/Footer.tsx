@@ -56,7 +56,6 @@ export default function Footer() {
     { href: "#home", label: "Home" },
     { href: "#services", label: "Solutions" },
     { href: "#products", label: "Products" },
-    { href: "#stats", label: "Statistics" },
     { href: "#about", label: "About" },
     { href: "#contact", label: "Contact" }
   ];
@@ -99,10 +98,7 @@ export default function Footer() {
                   NIAKAZI
                 </div>
               </motion.div>
-              
-              <p className="text-blue-100 text-sm leading-relaxed mb-4">
-                Empowering Zimbabwe's digital transformation with innovative ICT solutions since 1998.
-              </p>
+            
               
               {/* Social Links */}
               <div className="flex space-x-3">

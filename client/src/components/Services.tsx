@@ -7,34 +7,34 @@ export default function Services() {
 
   const services = [
     {
-      title: "Connectivity Solutions",
+      title: "  Software Development Solutions",
       icon: Network,
       color: "from-niakazi-primary to-niakazi-secondary",
-      description: "Robust and reliable connectivity solutions to keep your business connected and productive.",
+      description: "Custom software solutions to streamline your business processes and enhance productivity.",
       items: [
         {
-          name: "Dedicated Internet Access",
+          name: "Web Development",
           icon: Globe,
-          desc: "High-speed, reliable internet connectivity with guaranteed bandwidth and uptime SLAs.",
-          features: ["Scalable bandwidth", "99.9% uptime guarantee", "24/7 technical support", "Symmetric speeds"]
+          desc: "Full-stack web development services to create responsive, high-performance websites and applications.",
+          features: ["Responsive design", "E-commerce solutions", "Content management systems", "API integration"]
         },
         {
-          name: "Fiber Connectivity", 
+          name: "Mobile App Development", 
           icon: Wifi,
-          desc: "Ultra-fast fiber optic connections for businesses requiring high-performance networking.",
-          features: ["Low latency", "High bandwidth capacity", "Redundant connections", "Future-proof technology"]
+          desc: "Mobile application development for iOS and Android platforms with a focus on user experience.",
+          features: ["Native & hybrid apps", "UI/UX design", "App store deploymentt", "Maintenance & support"]
         },
         {
-          name: "SD-WAN Solutions",
+          name: "Artificial Intelligence ",
           icon: Zap,
-          desc: "Software-defined wide area network solutions for optimized network performance.",
-          features: ["Centralized management", "Cost optimization", "Enhanced security", "Application prioritization"]
+          desc: "AI-driven solutions to automate processes, enhance decision-making, and improve customer experiences.",
+          features: ["Machine learning", "Natural language processing", "Predictive analytics", "Chatbot development"]
         },
         {
-          name: "VSAT Services",
+          name: "Custom Software Development",
           icon: Database,
-          desc: "Satellite communication solutions for remote locations and backup connectivity.",
-          features: ["Global coverage", "Reliable backup", "Remote site connectivity", "Disaster recovery"]
+          desc: "Tailored software solutions to meet specific business needs and integrate with existing systems.",
+          features: ["Business process automation", "Legacy system integration", "Custom application development", "Scalable architecture"]
         }
       ]
     },
@@ -45,16 +45,16 @@ export default function Services() {
       description: "Comprehensive cloud solutions to modernize your infrastructure and enhance business agility.",
       items: [
         {
-          name: "Co-Location Services",
+          name: "System Integration",
           icon: Server,
-          desc: "Secure data center facilities with enterprise-grade infrastructure and 24/7 monitoring.",
-          features: ["Tier 3 data centers", "Physical security", "Power redundancy", "Climate control"]
+          desc: "Seamless integration of disparate systems to ensure smooth data flow and operational efficiency.",
+          features: ["API integration", "Data synchronization", "Legacy system integration", "Real-time data processing"]
         },
         {
           name: "Microsoft Azure",
           icon: Cloud,
-          desc: "Complete Azure cloud solutions including migration, deployment, and ongoing management.",
-          features: ["Cloud migration", "Virtual machines", "Storage solutions", "Backup & recovery"]
+          desc: "Enterprise-grade cloud services on Microsoft Azure for scalable and secure applications including administration and deployment.",
+          features: ["Virtual machines", "App services", "Database solutions", "Scalable storage"]
         },
         {
           name: "Microsoft 365",
@@ -63,23 +63,13 @@ export default function Services() {
           features: ["Email & calendar", "Office applications", "Teams collaboration", "SharePoint & OneDrive"]
         },
         {
-          name: "Oracle Cloud Infrastructure",
+          name: "Licensing Support",
           icon: Database,
-          desc: "Enterprise-grade Oracle cloud services for mission-critical applications and databases.",
-          features: ["Database services", "Compute instances", "Enterprise applications", "High availability"]
+          desc: "Comprehensive licensing support for Microsoft products and services to ensure compliance and optimization.",
+          features: ["License management", "Compliance audits", "Cost optimization", "Support & training"]
         },
-        {
-          name: "Virtual Private Server",
-          icon: Server,
-          desc: "Scalable VPS solutions with dedicated resources and full administrative control.",
-          features: ["Dedicated resources", "Root access", "Custom configurations", "Scalable performance"]
-        },
-        {
-          name: "Storage Area Network",
-          icon: Database,
-          desc: "High-performance SAN solutions for centralized storage and data management.",
-          features: ["Centralized storage", "High IOPS", "Data redundancy", "Backup integration"]
-        }
+        
+       
       ]
     },
     {
@@ -88,17 +78,12 @@ export default function Services() {
       color: "bg-gradient-to-r from-niakazi-accent to-niakazi-primary",
       description: "Comprehensive cybersecurity solutions to protect your business from evolving threats.",
       items: [
-        {
-          name: "Vulnerability Assessment & Penetration Testing",
-          icon: Shield,
-          desc: "Comprehensive security assessments to identify and address potential vulnerabilities in your systems.",
-          features: ["Network security testing", "Application security", "Infrastructure assessment", "Compliance reporting"]
-        },
+        
         {
           name: "Cyber Security Awareness Training",
           icon: Users,
-          desc: "Employee training programs to build a strong security culture within your organization.",
-          features: ["Phishing simulation", "Security best practices", "Incident response training", "Regular updates"]
+          desc: "Empower your team with essential cybersecurity knowledge to prevent threats and enhance security posture.Being in partnership with Asian distributors for postquantum (PQTunnel) .",
+          features: ["Phishing simulations", "Security best practices", "Incident response training", "Ongoing education"]
         },
         {
           name: "Endpoint Security",
@@ -115,35 +100,24 @@ export default function Services() {
       ]
     },
     {
-      title: "Hardware & Software",
+      title: "Hardware Solutions",
       icon: Server,
       color: "bg-gradient-to-r from-niakazi-primary to-niakazi-light",
       description: "Enterprise-grade hardware and software solutions to power your business operations.",
       items: [
         {
+          name: "High Quality Hikvision Systems",
+          icon: Server,
+          desc: "Advanced surveillance systems for enhanced security and monitoring of your premises.",
+          features: ["CCTV cameras", "Access control systems", "Video management software", "Remote monitoring"]
+        },
+        {
           name: "ICT Hardware",
-          icon: Server,
-          desc: "Complete range of enterprise-grade hardware solutions including servers, workstations, and networking equipment.",
-          features: ["Servers & workstations", "Networking equipment", "Storage systems", "Enterprise laptops"]
-        },
-        {
-          name: "Software Solutions",
           icon: Database,
-          desc: "Licensed software packages and custom application development for business optimization.",
-          features: ["Enterprise software licensing", "Custom application development", "System integration", "Software maintenance"]
+          desc: "Comprehensive ICT hardware solutions.",
+          features: ["professional systems", "Reliable"]
         },
-        {
-          name: "Data Center Equipment",
-          icon: Server,
-          desc: "Professional data center hardware including racks, UPS systems, and cooling solutions.",
-          features: ["Server racks & cabinets", "UPS & power systems", "Cooling solutions", "Cable management"]
-        },
-        {
-          name: "Mobile Device Management",
-          icon: Phone,
-          desc: "Complete mobile device lifecycle management including procurement, deployment, and support.",
-          features: ["Device procurement", "Mobile security", "App management", "Device lifecycle"]
-        }
+        
       ]
     },
    
@@ -197,7 +171,7 @@ export default function Services() {
             <span className="text-blue-600">Premium ICT Solutions</span>
           </h2>
           <p className="text-xl text-gray-700 max-w-4xl mx-auto mb-8">
-            Discover comprehensive technology services designed to optimize operations, enhance security, and drive sustainable growth for your organization across Zimbabwe and beyond.
+            Discover our comprehensive range of solutions designed to enhance your business operations, boost productivity, and ensure security in the digital age.
           </p>
         </motion.div>
 
@@ -241,26 +215,20 @@ export default function Services() {
                       const ItemIcon = item.icon;
                       // Professional service images using high-quality stock photos
                       const serviceImages = {
-                        "Dedicated Internet Access": "https://virtualcommissioning.com/wp-content/uploads/2020/01/hybrid-digital-twin-virtual-commissioning-1536x864.jpg",
-                        "Fiber Connectivity": "https://images.unsplash.com/photo-1607723619497-98a79f01ba90?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8ZmliZXIlMjBvcHRpY3xlbnwwfHwwfHw%3D&w=1000&q=80",
-                        "SD-WAN Solutions": "https://www.eletimes.com/wp-content/uploads/2018/08/Gartner-main.jpg",
-                        "VSAT Services": "https://vsatplus.net/wp-content/uploads/2022/08/blue-yellow-minimalist-school-admission-facebook-cover-1-1024x577.png",
-                        "Co-Location Services": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&q=80",
+                        "Web Development": "https://cms.jibecdn.com/prod/sabresystems-tech/assets/LP-SKU-11-5-IMG-en-us-1628107354234.jpg",
+                        "Mobile App development": "https://img.freepik.com/premium-photo/futuristic-isometric-mobile-phone-dark-background_935589-13877.jpg",
+                        "Artificial Intelligence": "https://wallpapercave.com/wp/wp6397784.jpg",
+                        "Custom Software Development": "https://www.creativephilosopher.com/wp-content/uploads/2022/12/Software-Product-Development.jpg",
+                        "System Intergration": "https://swi-solutions.com/wp-content/uploads/2022/01/AdobeStock_335667473-1536x874.jpg",
                         "Microsoft Azure": "https://wallpaperbat.com/img/1871965-empowering-msps-transforming-business-with-azure-cognitive-services.png",
                         "Microsoft 365": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop&q=80",
-                        "Oracle Cloud Infrastructure": "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=400&h=250&fit=crop&q=80",
-                        "Virtual Private Server": "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=250&fit=crop&q=80",
-                        "Storage Area Network": "https://images.unsplash.com/photo-1573164713714-d95e436ab8d6?w=400&h=250&fit=crop&q=80",
-                        "Vulnerability Assessment & Penetration Testing": "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=400&h=250&fit=crop&q=80",
-                        "Cyber Security Awareness Training": "https://img.freepik.com/premium-photo/protecting-business-personal-data-with-cybersecurity_1111209-10964.jpg",
+                        " Licensing Support": "https://miro.medium.com/v2/resize:fit:393/1*OVlShbnD9hBq6jFsbRE2bw.png",
+                        "Cloud aSecurity": "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=250&fit=crop&q=80",
+                         "Cyber Security Awareness Training": "https://img.freepik.com/premium-photo/protecting-business-personal-data-with-cybersecurity_1111209-10964.jpg",
                         "Endpoint Security": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&q=80",
                         "Security Operations Center": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop&q=80",
-                        "ICT Hardware": "https://img.freepik.com/premium-vector/cpu-motherboard-technology-background-high-resolution-3d-render_1250153-8089.jpg?w=740",
-                        "Software Solutions": "https://opensrs.com/wp-content/uploads/customer-easily-integrating-with-OpenSRS.png",
-                        "Data Center Equipment": "https://www.jll.com.mx/images/global/jll-data-centre-social-1200x628.jpg",
-                        "Mobile Device Management": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop&q=80",
-                        "Managed Services": "https://images.unsplash.com/photo-1553877522-43269d4ea984?w=400&h=250&fit=crop&q=80",
-                        "Technical Support": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=400&h=250&fit=crop&q=80"
+                        "High Quality Hikvision Systems": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a3bbd475511465.5c4f1de04d86f.jpg",
+                        "ICT Hardware": "https://appath.com/wp-content/uploads/2015/02/Ecommerce-blog-18.jpg", 
                       };
                       
                       return (
@@ -302,13 +270,7 @@ export default function Services() {
                               ))}
                             </div>
                             
-                            <motion.button 
-                              className="mt-4 text-niakazi-primary font-medium flex items-center hover:text-niakazi-secondary transition-colors"
-                              whileHover={{ x: 4 }}
-                            >
-                              Learn More <ArrowRight className="w-4 h-4 ml-1" />
-                            </motion.button>
-                          </div>
+                             </div>
                         </motion.div>
                       );
                     })}

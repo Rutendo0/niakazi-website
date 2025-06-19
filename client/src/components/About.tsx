@@ -3,27 +3,12 @@ import { Target, Lightbulb, Heart, Users, Award, Clock, CheckCircle, ArrowRight,
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
 import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
 
+// Define the features array locally
+
+
+
 export default function About() {
   const { ref, isVisible } = useScrollAnimation();
-
-  
-  const features = [
-    {
-      icon: Target,
-      title: "Professional Excellence",
-      description: "Certified ICT professionals delivering world-class solutions with proven methodologies and industry best practices."
-    },
-    {
-      icon: Lightbulb,
-      title: "Innovation Driven",
-      description: "Cutting-edge technology solutions that transform businesses and drive digital transformation across Zimbabwe."
-    },
-    {
-      icon: Heart,
-      title: "Client-Focused",
-      description: "Dedicated support and personalized service ensuring your success is our priority, 24/7 technical assistance."
-    }
-  ];
 
   return (
     <section id="about" className="py-20 bg-gray-50 relative overflow-hidden" ref={ref}>
@@ -121,25 +106,7 @@ export default function About() {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          {features.map((feature, index) => {
-            const Icon = feature.icon;
-            return (
-              <motion.div
-                key={index}
-                className="bg-white rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 text-center"
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg">
-                  <Icon className="w-8 h-8 text-white" />
-                </div>
-                <h3 className="text-xl font-bold text-gray-900 mb-4">{feature.title}</h3>
-                <p className="text-gray-600 leading-relaxed">{feature.description}</p>
-              </motion.div>
-            );
-          })}
+          {/* Features section removed as requested */}
         </motion.div>
 
         {/* Mission & Vision */}

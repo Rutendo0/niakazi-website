@@ -8,30 +8,26 @@ export default function Solutions() {
   const solutions = [
     {
       icon: Network,
-      title: "Enterprise Connectivity",
-      description: "High-performance network solutions with redundancy and 99.9% uptime guarantee",
-      stats: "500+ Mbps",
+      title: "Sofware Development",
+      description: "Custom software solutions tailored to your business needs, enhancing efficiency and innovation",
       color: "from-blue-500 to-blue-600"
     },
     {
       icon: Database,
-      title: "Cloud Infrastructure",
-      description: "Scalable cloud platforms with enterprise-grade security and compliance",
-      stats: "99.99% Uptime",
+      title: "Cloud Solutions",
+      description: "Cloud solutions which provide administrative support and deployment for your applications",
       color: "from-green-500 to-green-600"
     },
     {
       icon: Lock,
       title: "Cybersecurity Suite",
-      description: "Advanced threat protection with 24/7 monitoring and incident response",
-      stats: "24/7 Protection",
+      description: "Comprehensive cybersecurity services to protect your data and systems from threats",
       color: "from-orange-500 to-orange-600"
     },
     {
       icon: Smartphone,
-      title: "Managed IT Services",
-      description: "Complete IT management with proactive monitoring and expert support",
-      stats: "Expert Support",
+      title: "ICT Hardware",
+      description: "High-quality ICT hardware solutions.",
       color: "from-indigo-500 to-indigo-600"
     }
   ];
@@ -54,9 +50,7 @@ export default function Solutions() {
             Powering Your Digital Future
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
-            From enterprise connectivity to advanced cybersecurity, we provide comprehensive ICT solutions 
-            that enable businesses to thrive in the digital age. Our expertise spans across multiple domains, 
-            ensuring your technology infrastructure is robust, secure, and scalable.
+            Our ICT solutions are designed to transform your business operations, enhance productivity, and drive innovation.
           </p>
           
           {/* Key Benefits */}
@@ -70,8 +64,8 @@ export default function Solutions() {
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Network className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Enterprise Grade</h3>
-              <p className="text-gray-600">Built for large-scale operations with enterprise-level reliability and performance</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Licensing Support</h3>
+              <p className="text-gray-600">We offer you the support you need</p>
             </motion.div>
             <motion.div 
               className="text-center"
@@ -83,7 +77,7 @@ export default function Solutions() {
                 <Lock className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Security First</h3>
-              <p className="text-gray-600">Advanced security measures protecting your data and infrastructure 24/7</p>
+              <p className="text-gray-600">Advanced security measures protecting your data 24/7</p>
             </motion.div>
             <motion.div 
               className="text-center"
@@ -94,8 +88,8 @@ export default function Solutions() {
               <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
                 <Database className="w-8 h-8 text-white" />
               </div>
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Scalable Solutions</h3>
-              <p className="text-gray-600">Flexible infrastructure that grows with your business needs</p>
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Software Solutions</h3>
+              <p className="text-gray-600">Flexible solutions that grows with your business needs</p>
             </motion.div>
           </div>
         </motion.div>
@@ -109,7 +103,7 @@ export default function Solutions() {
         >
           <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Core Solutions</h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-            Discover our comprehensive range of connectivity and IT solutions designed to transform your business operations.
+            Explore our comprehensive suite of ICT solutions designed to empower your business with the latest technology and expertise.
           </p>
         </motion.div>
         
