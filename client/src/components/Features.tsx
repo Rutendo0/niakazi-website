@@ -171,7 +171,7 @@ export default function Features() {
               </motion.button>
               <motion.button
                 onClick={() => {
-                  window.open('https://wa.me/263785176021', '_blank');
+                  window.open('https://wa.me/263778224653', '_blank');
                 }}
                 className="px-8 py-3 border-2 border-green-500 text-green-600 font-semibold rounded-xl hover:bg-green-500 hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.05 }}

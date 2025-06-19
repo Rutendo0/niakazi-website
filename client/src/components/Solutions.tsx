@@ -109,7 +109,7 @@ export default function Solutions() {
           </p>
           <div className="flex justify-center">
             <button 
-              onClick={() => window.open('https://wa.me/263785176021', '_blank')}
+              onClick={() => window.open('https://wa.me/263778224653', '_blank')}
               className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors"
             >
               Get Free Consultation
