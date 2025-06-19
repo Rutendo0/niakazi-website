@@ -81,17 +81,10 @@ export default function Features() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-niakazi-dark via-gray-400 to-niakazi-secondary relative overflow-hidden" ref={ref}>
-      {/* Enhanced background effects */}
-      <div className="absolute inset-0">
-        <div className="aurora-bg"></div>
-        <div className="aurora-bg"></div>
-      </div>
-
-      {/* Floating background elements */}
-      <div className="absolute top-20 left-10 w-20 h-20 bg-niakazi-accent/20 rounded-full blur-xl float-slow"></div>
-      <div className="absolute bottom-20 right-10 w-32 h-32 bg-niakazi-primary/20 rounded-full blur-xl float-medium"></div>
-      <div className="absolute top-1/2 left-1/4 w-16 h-16 bg-niakazi-light/30 rounded-full blur-lg float-fast"></div>
+    <section className="py-16 sm:py-24 md:py-32 bg-white relative overflow-hidden" ref={ref}>
+      {/* Subtle background elements */}
+      <div className="absolute top-20 right-10 w-32 h-32 bg-blue-100 rounded-full blur-xl opacity-30"></div>
+      <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-100 rounded-full blur-lg opacity-20"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
@@ -107,18 +100,18 @@ export default function Features() {
           >
             <Zap className="w-6 h-6 text-niakazi-accent" />
           </motion.div>
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6 font-space-grotesk">
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-6 font-space-grotesk">
             Why Choose
-            <span className="block text-gradient-niakazi text-shimmer">NIAKAZI</span>
+            <span className="block text-niakazi-primary">NIAKAZI</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
             We deliver enterprise-grade ICT solutions with unmatched reliability, security, and support
           </p>
         </motion.div>
 
         {/* Features Grid */}
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8"
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-6 md:gap-8"
           variants={containerVariants}
           
         >
@@ -128,17 +121,17 @@ export default function Features() {
               variants={cardVariants}
               className="group relative"
             >
-              <div className="glass-card bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-6 h-full card-hover-lift group-hover:bg-white/15 transition-all duration-300">
+              <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 h-full shadow-sm hover:shadow-md transition-all duration-300">
                 {/* Icon with gradient background */}
-                <div className={`inline-flex items-center justify-center w-14 h-14 bg-gradient-to-br ${feature.gradient} rounded-xl mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className="w-7 h-7 text-white" />
+                <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${feature.gradient} rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
+                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-xl font-bold text-white mb-3 group-hover:text-niakazi-accent transition-colors duration-300">
+                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-niakazi-primary transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-gray-300 leading-relaxed group-hover:text-gray-200 transition-colors duration-300">
+                <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   {feature.description}
                 </p>
 

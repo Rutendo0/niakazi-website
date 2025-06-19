@@ -124,137 +124,88 @@ export default function Hero() {
         transition={{ duration: 12, repeat: Infinity, ease: "linear" }}
       />
       
-      {/* Enhanced Floating tech icons */}
+      {/* Simplified floating tech icons - minimal animations */}
       <motion.div
-        className="absolute top-20 left-10 text-white particle-animation"
-        animate={{ 
-          y: [0, -20, 0],
-          rotate: [0, 10, 0]
-        }}
-        transition={{ 
-          duration: 6, 
-          repeat: Infinity, 
-          ease: "easeInOut" 
-        }}
+        className="absolute top-20 left-4 md:left-10 text-white hidden sm:block"
+        animate={{ y: [0, -8, 0] }}
+        transition={{ duration: 8, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Monitor size={40} className="neon-glow" />
+        <Monitor size={32} className="opacity-60" />
       </motion.div>
       
       <motion.div
-        className="absolute top-40 right-20 text-white blob-animation"
-        animate={{ 
-          y: [0, -10, 0],
-          rotate: [0, -10, 0]
-        }}
-        transition={{ 
-          duration: 4, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 1
-        }}
+        className="absolute top-40 right-4 md:right-20 text-white hidden md:block"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
       >
-        <Server size={35} className="breathe" />
+        <Shield size={28} className="opacity-50" />
       </motion.div>
       
       <motion.div
-        className="absolute bottom-40 left-20 text-white float-slow"
-        animate={{ 
-          y: [0, -25, 0],
-          rotate: [0, 15, 0]
-        }}
-        transition={{ 
-          duration: 5, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 2
-        }}
+        className="absolute bottom-40 left-8 md:left-16 text-white hidden lg:block"
+        animate={{ y: [0, -6, 0] }}
+        transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 2 }}
       >
-        <Shield size={45} className="pulse-glow" />
+        <Zap size={24} className="opacity-40" />
       </motion.div>
 
       <motion.div
-        className="absolute bottom-60 right-40 text-white float-medium"
-        animate={{ 
-          y: [0, -18, 0],
-          rotate: [0, -8, 0]
-        }}
-        transition={{ 
-          duration: 7, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 0.5
-        }}
+        className="absolute bottom-32 right-8 md:right-32 text-white hidden lg:block"
+        animate={{ rotate: [0, 180, 360] }}
+        transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
       >
-        <Database size={30} className="rotate-hover" />
+        <Network size={30} className="opacity-30" />
       </motion.div>
       
       <motion.div
-        className="absolute top-1/3 left-1/4 text-white float-fast"
-        animate={{ 
-          y: [0, -12, 0],
-          rotate: [0, 20, 0]
-        }}
-        transition={{ 
-          duration: 3, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 3
-        }}
+        className="absolute top-60 left-1/3 text-white hidden md:block"
+        animate={{ y: [0, -5, 0], opacity: [0.3, 0.6, 0.3] }}
+        transition={{ duration: 9, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Network size={28} />
+        <Globe size={22} className="opacity-40" />
       </motion.div>
       
       <motion.div
-        className="absolute top-2/3 right-1/3 text-white particle-animation"
-        animate={{ 
-          y: [0, -22, 0],
-          rotate: [0, -12, 0]
-        }}
-        transition={{ 
-          duration: 4.5, 
-          repeat: Infinity, 
-          ease: "easeInOut",
-          delay: 1.5
-        }}
+        className="absolute bottom-20 left-1/2 text-white hidden lg:block"
+        animate={{ scale: [1, 1.1, 1] }}
+        transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
       >
-        <Cpu size={32} />
+        <Server size={26} className="opacity-35" />
       </motion.div>
       
-      <motion.div 
-        className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto py-20"
-        style={{ transform: `translateY(${offsetY * 0.1}px)` }}
-      >
+      {/* Main Content */}
+      <div className="relative z-10 text-center text-white px-4 sm:px-6 max-w-6xl mx-auto" style={{ transform: `translateY(${offsetY}px)` }}>
         <motion.div
           className="mb-6"
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-flex items-center px-6 py-3 rounded-full animated-gradient-border glass-card text-sm font-medium font-space-grotesk">
-            <Zap className="w-4 h-4 mr-2 text-shimmer" />
+          <span className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-card text-xs sm:text-sm font-medium font-space-grotesk">
+            <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
             Leading ICT Solutions in Zimbabwe
           </span>
         </motion.div>
 
         <motion.h1 
-          className="text-4xl md:text-6xl lg:text-5xl font-space-grotesk font-bold mb-8 leading-tight"
+          className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-space-grotesk font-bold mb-8 leading-tight"
           initial={{ opacity: 0, y: 50 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, delay: 0.2 }}
         >
-          <span className="typewriter inline-block">
+          <span className="block">
             Unlock reliable and secure 
           </span>
-          <span className="block text-gradient-niakazi text-shimmer mt-2">
+          <span className="block text-gradient-niakazi mt-2">
             connectivity
           </span> 
-          <span className="block text-3xl md:text-3xl lg:text-6xl mt-2 neon-glow">
+          <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2">
             for your business
           </span>
         </motion.h1>
         
         <motion.div 
-          className="grid grid-cols-2 md:grid-cols-4 gap-6 mb-12 max-w-4xl mx-auto"
+          className="grid grid-cols-2 md:grid-cols-4 gap-3 sm:gap-4 md:gap-6 mb-12 max-w-4xl mx-auto"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
@@ -267,70 +218,60 @@ export default function Hero() {
           ].map((feature, index) => (
             <motion.div 
               key={feature.text}
-              className={`text-center glass-card rounded-xl p-6 tilt-card magnetic-area stagger-${index + 1}`}
+              className="text-center glass-card rounded-lg sm:rounded-xl p-3 sm:p-4 md:p-6"
               initial={{ opacity: 0, scale: 0.8 }}
               animate={{ opacity: 1, scale: 1 }}
               transition={{ delay: 0.8 + index * 0.1, duration: 0.4 }}
-              whileHover={{ scale: 1.05, y: -8 }}
+              whileHover={{ scale: 1.02 }}
             >
-              <motion.div 
-                className="flex justify-center mb-3"
-                animate={{ y: [0, -8, 0] }}
-                transition={{ duration: 3, repeat: Infinity, delay: index * 0.5 }}
-              >
-                <feature.icon className="w-8 h-8 text-white neon-glow" />
-              </motion.div>
-              <span className="text-sm md:text-base font-space-grotesk font-medium">{feature.text}</span>
+              <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 md:w-8 md:h-8 mx-auto mb-2 sm:mb-3" />
+              <p className="text-xs sm:text-sm font-semibold">{feature.text}</p>
             </motion.div>
           ))}
         </motion.div>
 
-        <motion.div 
-          className="text-center mb-12 flex flex-col sm:flex-row gap-4 justify-center items-center"
+        <motion.p 
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed opacity-90"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
         >
-          <motion.button
-            onClick={() => scrollToSection('#services')}
-            className="btn-glow bg-white text-niakazi-dark px-12 py-4 rounded-full font-space-grotesk font-semibold text-lg hover:shadow-2xl transition-all inline-block ripple-btn"
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 20px 40px rgba(0,0,0,0.3)"
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Discover Our Solutions
-          </motion.button>
-          
-          <motion.button
-            onClick={() => window.location.href = '/quote'}
-            className="bg-transparent border-2 border-white text-white px-12 py-4 rounded-full font-space-grotesk font-semibold text-lg hover:bg-white hover:text-niakazi-dark transition-all inline-block"
-            whileHover={{ 
-              scale: 1.05,
-              backgroundColor: "rgba(255,255,255,0.1)"
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            Get Free Quote
-          </motion.button>
-        </motion.div>
-
-        <motion.p 
-          className="text-lg md:text-xl max-w-1xl mx-auto leading-relaxed font-poppins opacity-90"
+          Experience enterprise-grade connectivity solutions with 26+ years of proven expertise. 
+          From high-speed internet to comprehensive managed services, we deliver the infrastructure your business needs to thrive.
+        </motion.p>
+        
+        <motion.div 
+          className="flex flex-col sm:flex-row gap-4 sm:gap-6 justify-center items-center"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          Count on us for agile and responsive 24/7 customer support. Powerful and affordable ICT products and services.
-        </motion.p>
-      </motion.div>
+          <motion.button
+            onClick={() => scrollToSection('#contact')}
+            className="w-full sm:w-auto btn-glow px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-niakazi-dark rounded-xl"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            Get Started Today
+          </motion.button>
+          
+          <motion.button
+            onClick={() => scrollToSection('#services')}
+            className="w-full sm:w-auto glass-card px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white rounded-xl border-2 border-white/30 hover:bg-white/10 transition-all duration-300"
+            whileHover={{ scale: 1.02 }}
+            whileTap={{ scale: 0.98 }}
+          >
+            View Our Services
+          </motion.button>
+        </motion.div>
+      </div>
 
-      {/* Scroll indicator */}
+      {/* Scroll Indicator */}
       <motion.div 
-        className="absolute bottom-8 left-1/2 transform -translate-x-1/2"
-        animate={{ y: [0, 10, 0] }}
-        transition={{ duration: 2, repeat: Infinity }}
+        className="absolute bottom-8 left-1/2 transform -translate-x-1/2 text-white"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 2 }}
       >
         <div className="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center">
           <motion.div 

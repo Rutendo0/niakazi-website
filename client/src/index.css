@@ -429,25 +429,25 @@
   animation: typewriter 3s steps(40, end), blink-caret 0.75s step-end infinite;
 }
 
-/* Aurora Background */
+/* Aurora Background - Reduced intensity */
 .aurora-bg {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 400px;
-  height: 400px;
-  background: radial-gradient(circle, hsl(var(--niakazi-primary) / 0.4), hsl(var(--niakazi-secondary) / 0.3), transparent);
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, hsl(var(--niakazi-primary) / 0.2), hsl(var(--niakazi-secondary) / 0.15), transparent);
   border-radius: 50%;
-  filter: blur(60px);
-  animation: aurora-1 15s ease-in-out infinite;
+  filter: blur(80px);
+  animation: aurora-1 20s ease-in-out infinite;
 }
 
 .aurora-bg:nth-child(2) {
-  width: 300px;
-  height: 300px;
-  background: radial-gradient(circle, hsl(var(--niakazi-secondary) / 0.5), hsl(var(--niakazi-accent) / 0.4), transparent);
-  animation: aurora-2 12s ease-in-out infinite;
-  animation-delay: -5s;
+  width: 200px;
+  height: 200px;
+  background: radial-gradient(circle, hsl(var(--niakazi-secondary) / 0.25), hsl(var(--niakazi-accent) / 0.2), transparent);
+  animation: aurora-2 18s ease-in-out infinite;
+  animation-delay: -8s;
 }
 
 /* Animation Classes */
@@ -670,12 +670,29 @@ button, a, .card, .hover-element {
 /* Mobile Responsive Adjustments */
 @media (max-width: 768px) {
   .aurora-bg {
-    width: 250px;
-    height: 250px;
+    width: 200px;
+    height: 200px;
+    opacity: 0.6;
   }
   
   .aurora-bg:nth-child(2) {
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
+    opacity: 0.4;
+  }
+  
+  /* Reduce animation intensity on mobile */
+  .particle-animation,
+  .blob-animation {
+    animation-duration: 12s;
+    opacity: 0.5;
+  }
+  
+  /* Better mobile text sizing */
+  .text-gradient-niakazi {
+    background: linear-gradient(135deg, #e2e8f0, #cbd5e1, #94a3b8);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 }

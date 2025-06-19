@@ -83,15 +83,10 @@ export default function About() {
   );
 
   return (
-    <section id="about" className="py-20 bg-gradient-to-br from-white to-gray-50 relative overflow-hidden">
-      {/* Aurora Background Effects */}
-      <div className="aurora-bg"></div>
-      <div className="aurora-bg"></div>
-      
-      {/* Background decorative elements */}
-      <div className="absolute top-20 right-0 w-80 h-80 bg-gradient-to-br from-niakazi-primary/10 to-transparent rounded-full blur-3xl particle-animation"></div>
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-gradient-to-tr from-niakazi-dark/5 to-transparent rounded-full blur-3xl blob-animation"></div>
-      <div className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[600px] h-[300px] bg-niakazi-accent/5 rounded-full blur-3xl"></div>
+    <section id="about" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute top-20 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
+      <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-50 rounded-full blur-3xl opacity-30"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         {/* Our Story Section */}

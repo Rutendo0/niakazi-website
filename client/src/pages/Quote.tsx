@@ -96,11 +96,11 @@ export default function Quote() {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-white">
+    <div className="min-h-screen bg-white">
       <Header />
       
       {/* Back to Home Button */}
-      <div className="fixed top-24 left-6 z-40">
+      <div className="fixed top-24 left-4 sm:left-6 z-40">
         <Link to="/">
           <motion.button
             className="bg-white/90 backdrop-blur-sm hover:bg-white text-gray-800 p-3 rounded-full shadow-lg hover:shadow-xl transition-all duration-300 flex items-center space-x-2"
@@ -114,17 +114,17 @@ export default function Quote() {
       </div>
       
       {/* Hero Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-20 pt-32">
+      <section className="bg-gradient-to-r from-blue-600 to-indigo-700 text-white py-16 sm:py-20 pt-28 sm:pt-32">
         <div className="container mx-auto px-4 text-center">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
           >
-            <h1 className="text-4xl md:text-6xl font-poppins font-bold mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-poppins font-bold mb-6">
               Get Your Quote
             </h1>
-            <p className="text-xl md:text-2xl max-w-4xl mx-auto opacity-90">
+            <p className="text-lg sm:text-xl md:text-2xl max-w-4xl mx-auto opacity-90">
               Tell us about your project and receive a detailed proposal with transparent pricing within 24 hours
             </p>
           </motion.div>
@@ -143,7 +143,7 @@ export default function Quote() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8">
             {[
               {
                 step: "1",
@@ -177,7 +177,7 @@ export default function Quote() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-16 h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-6`}>
+                  <div className={`w-14 h-14 sm:w-16 sm:h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
                     <Icon className="text-white text-2xl" />
                   </div>
                   <h3 className="text-xl font-poppins font-semibold text-dande-dark mb-3">
