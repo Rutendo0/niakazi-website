@@ -80,7 +80,7 @@ export default function Services() {
       items: [
         
         {
-          name: "Cyber Security Awareness Training",
+          name: "Cyber Security Solutions",
           icon: Users,
           desc: "Empower your team with essential cybersecurity knowledge to prevent threats and enhance security posture.Being in partnership with Asian distributors for postquantum (PQTunnel) .",
           features: ["Phishing simulations", "Security best practices", "Incident response training", "Ongoing education"]
@@ -91,12 +91,7 @@ export default function Services() {
           desc: "Advanced endpoint protection to secure all devices connected to your network.",
           features: ["Antivirus & anti-malware", "Device encryption", "Access control", "Real-time monitoring"]
         },
-        {
-          name: "Security Operations Center",
-          icon: Database,
-          desc: "24/7 security monitoring and incident response services to protect your business.",
-          features: ["Threat detection", "Incident response", "Security analytics", "Compliance monitoring"]
-        }
+       
       ]
     },
     {
@@ -215,19 +210,18 @@ export default function Services() {
                       const ItemIcon = item.icon;
                       // Professional service images using high-quality stock photos
                       const serviceImages = {
-                        "Web Development": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=250&fit=crop&q=80",
-                        "Mobile App Development": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop&q=80",
-                        "Artificial Intelligence ": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=250&fit=crop&q=80",
+                        "Web Development": "https://wallpaperaccess.com/full/2109962.jpg",
+                        "Mobile App Development": "https://canadian.agency/wp-content/uploads/2023/11/Image.jpg",
+                        "Artificial Intelligence ": "https://wallpapercave.com/wp/wp4532952.jpg",
                         "Custom Software Development": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&q=80",
-                        "System Integration": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&q=80",
-                        "Microsoft Azure": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&q=80",
+                        "System Integration": "https://swi-solutions.com/wp-content/uploads/2022/01/AdobeStock_335667473-1536x874.jpg",
+                        "Microsoft Azure": "https://wallpapercave.com/wp/wp3734338.jpg",
                         "Microsoft 365": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop&q=80",
                         "Licensing Support": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&q=80",
-                        "Cyber Security Awareness Training": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&q=80",
-                        "Endpoint Security": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop&q=80",
-                        "Security Operations Center": "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop&q=80",
-                        "High Quality Hikvision Systems": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop&q=80",
-                        "ICT Hardware": "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop&q=80"
+                        "Cyber Security Solutions": "https://www.electric.coop/wp-content/uploads/2020/09/getty-doe-cyber-1024x683.jpg",
+                        "Endpoint Security": "https://phoenixnap.com/blog/wp-content/uploads/2023/01/endpoint-security-fb.jpg",
+                        "High Quality Hikvision Systems": "https://media.takealot.com/covers_tsins/57522682/57522682-1-zoom.jpeg",
+                        "ICT Hardware": "https://appath.com/wp-content/uploads/2015/02/Ecommerce-blog-18.jpg"
                       };
                       
                       return (

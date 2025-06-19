@@ -1,158 +1,206 @@
 import { motion } from "framer-motion";
-import { Target, Lightbulb, Heart, Users, Award, Clock, CheckCircle, ArrowRight, Star } from "lucide-react";
+import { 
+  Target, 
+  Lightbulb, 
+  Network, 
+  Database, 
+  Lock, 
+  Smartphone 
+} from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
-import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
 
-// Define the features array locally
+export default function AboutSolutionsPage() {
+  const { ref: aboutRef, isVisible: aboutVisible } = useScrollAnimation();
+  const { ref: solutionsRef, isVisible: solutionsVisible } = useScrollAnimation();
 
-
-
-export default function About() {
-  const { ref, isVisible } = useScrollAnimation();
+  const solutions = [
+    {
+      icon: Network,
+      title: "Software Development",
+      description: "Custom software solutions tailored to your business needs, enhancing efficiency and innovation",
+      color: "from-blue-500 to-blue-600"
+    },
+    {
+      icon: Database,
+      title: "Cloud Solutions",
+      description: "Cloud solutions which provide administrative support and deployment for your applications",
+      color: "from-green-500 to-green-600"
+    },
+    {
+      icon: Lock,
+      title: "Cybersecurity Suite",
+      description: "Comprehensive cybersecurity services to protect your data and systems from threats",
+      color: "from-orange-500 to-orange-600"
+    },
+    {
+      icon: Smartphone,
+      title: "ICT Hardware",
+      description: "High-quality ICT hardware solutions.",
+      color: "from-indigo-500 to-indigo-600"
+    }
+  ];
 
   return (
-    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden border-t-0" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Hero Section */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-20">
-          {/* Left Content */}
-          <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
+    <div className="bg-gray-50">
+      {/* Solutions Section */}
+      <section id="solutions" className="py-20" ref={solutionsRef}>
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          {/* Information Section Before Solutions */}
+          <motion.div 
+            className="text-center mb-20"
+            initial={{ opacity: 0, y: 30 }}
+            animate={solutionsVisible ? { opacity: 1, y: 0 } : {}}
             transition={{ duration: 0.8 }}
           >
-            <motion.div
-              className="inline-flex items-center px-6 py-3 rounded-full bg-blue-100 text-blue-800 font-semibold mb-6"
-              initial={{ opacity: 0, scale: 0.8 }}
-              animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-              transition={{ duration: 0.6 }}
-            >
-              <CheckCircle className="w-5 h-5 mr-2" />
-              About NIAKAZI
-            </motion.div>
-
-            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6 leading-tight">
-              Empowering Zimbabwe's{" "}
-              <span className="text-blue-600">Digital Future</span>
-            </h1>
-            
-            <p className="text-xl text-gray-600 mb-8 leading-relaxed">
-              For over 3 years, NIAKAZI has been at the forefront of Zimbabwe's digital transformation, 
-              delivering innovative ICT solutions that drive business growth and operational excellence.
-            </p>
-
-            <div className="space-y-4 mb-8">
-              {[
-                "Enterprise-grade ICT infrastructure and solutions",
-                "24/7 technical support and monitoring services", 
-                "Custom software development and integration",
-                "Comprehensive training and consultation programs"
-              ].map((item, index) => (
-                <motion.div
-                  key={index}
-                  className="flex items-center"
-                  initial={{ opacity: 0, x: -20 }}
-                  animate={isVisible ? { opacity: 1, x: 0 } : {}}
-                  transition={{ duration: 0.6, delay: 0.2 + index * 0.1 }}
-                >
-                  <CheckCircle className="w-5 h-5 text-green-500 mr-3 flex-shrink-0" />
-                  <span className="text-gray-700">{item}</span>
-                </motion.div>
-              ))}
+            <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full font-semibold mb-6">
+              <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
+              Comprehensive ICT Solutions
             </div>
-
-
-          </motion.div>
-
-          {/* Right Image */}
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, x: 50 }}
-            animate={isVisible ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-          >
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl">
-              <img
-                src="https://cached.imagescaler.hbpl.co.uk/resize/scaleWidth/1272/cached.offlinehbpl.hbpl.co.uk/news/OMP/GettyImages-1010594174.jpg"
-                alt="NIAKAZI Team - ICT Professionals"
-                className="w-full h-[500px] object-cover"
-              />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
-              
-              {/* Floating Stats Card */}
-              <motion.div
-                className="absolute bottom-6 left-6 right-6 bg-white/95 backdrop-blur-sm rounded-xl p-6 shadow-lg"
-                initial={{ opacity: 0, y: 20 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 1 }}
+            <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Powering Your Digital Future
+            </h2>
+            <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
+              Our ICT solutions are designed to transform your business operations, enhance productivity, and drive innovation.
+            </p>
+            
+            {/* Key Benefits */}
+            <div className="grid md:grid-cols-3 gap-8 mt-16 mb-20">
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={solutionsVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.2 }}
               >
-              
+                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Network className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Licensing Support</h3>
+                <p className="text-gray-600">We offer you the support you need</p>
+              </motion.div>
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={solutionsVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.3 }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Lock className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Security First</h3>
+                <p className="text-gray-600">Advanced security measures protecting your data 24/7</p>
+              </motion.div>
+              <motion.div 
+                className="text-center"
+                initial={{ opacity: 0, y: 30 }}
+                animate={solutionsVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.4 }}
+              >
+                <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                  <Database className="w-8 h-8 text-white" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Software Solutions</h3>
+                <p className="text-gray-600">Flexible solutions that grows with your business needs</p>
               </motion.div>
             </div>
-
-            {/* Decorative Elements */}
-            <div className="absolute -top-4 -right-4 w-24 h-24 bg-blue-200 rounded-full opacity-20"></div>
-            <div className="absolute -bottom-4 -left-4 w-32 h-32 bg-blue-300 rounded-full opacity-15"></div>
           </motion.div>
-        </div>
-
-        
-
-        {/* Mission & Vision - Moved up for prominence */}
-        <motion.div
-          className="bg-white rounded-3xl p-12 shadow-xl mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.6 }}
-        >
+          
+          {/* Solutions Title */}
           <motion.div 
-            className="text-center mb-12"
-            initial={{ opacity: 0, y: 20 }}
-            animate={isVisible ? { opacity: 1, y: 0 } : {}}
-            transition={{ duration: 0.6, delay: 0.8 }}
+            className="text-center mb-16"
+            initial={{ opacity: 0, y: 30 }}
+            animate={solutionsVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.4 }}
           >
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Our <span className="text-blue-600">Purpose</span> & <span className="text-green-600">Vision</span>
-            </h2>
-            <p className="text-gray-600 max-w-2xl mx-auto">
-              Driven by purpose, guided by vision - discover what motivates us to deliver excellence
+            <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Core Solutions</h3>
+            <p className="text-lg text-gray-600 max-w-2xl mx-auto">
+              Explore our comprehensive suite of ICT solutions designed to empower your business with the latest technology and expertise.
             </p>
           </motion.div>
-          <div className="grid md:grid-cols-2 gap-12">
-            <motion.div
-              initial={{ opacity: 0, x: -30 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                <Target className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Mission</h3>
-              <p className="text-gray-600 leading-relaxed">
-                To empower businesses across Zimbabwe with innovative ICT solutions that drive growth, 
-                efficiency, and competitive advantage in the digital economy.
-              </p>
-            </motion.div>
-            
-            <motion.div
-              initial={{ opacity: 0, x: 30 }}
-              animate={isVisible ? { opacity: 1, x: 0 } : {}}
-              transition={{ duration: 0.8, delay: 1.2 }}
-            >
-              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
-                <Lightbulb className="w-8 h-8 text-white" />
-              </div>
-              <h3 className="text-2xl font-bold text-gray-900 mb-4">Our Vision</h3>
-              <p className="text-gray-600 leading-relaxed">
-                To be Zimbabwe's leading technology partner, transforming how businesses operate, 
-                connect, and succeed in an increasingly digital world.
-              </p>
-            </motion.div>
+          
+          <motion.div 
+            className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={solutionsVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.6 }}
+          >
+            {solutions.map((solution, index) => {
+              const IconComponent = solution.icon;
+              return (
+                <motion.div 
+                  key={index} 
+                  className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group h-full"
+                  initial={{ opacity: 0, y: 30 }}
+                  animate={solutionsVisible ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                  whileHover={{ y: -5 }}
+                >
+                  <div className={`w-16 h-16 bg-gradient-to-r ${solution.color} rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
+                    <IconComponent className="text-white w-8 h-8" />
+                  </div>
+                  <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">{solution.title}</h3>
+                  <p className="text-gray-600 mb-4 leading-relaxed text-center">{solution.description}</p>
+                </motion.div>
+              );
+            })}
+          </motion.div>
+        </div>
+      </section>
+      {/* About Section */}
+<section id="about" className="py-16 relative overflow-hidden border-t-0" ref={aboutRef}>
+  <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+    <motion.div
+      className="bg-white rounded-2xl p-8 shadow-lg mb-16"
+      initial={{ opacity: 0, y: 30 }}
+      animate={aboutVisible ? { opacity: 1, y: 0 } : {}}
+      transition={{ duration: 0.8, delay: 0.6 }}
+    >
+      <motion.div 
+        className="text-center mb-8"
+        initial={{ opacity: 0, y: 20 }}
+        animate={aboutVisible ? { opacity: 1, y: 0 } : {}}
+        transition={{ duration: 0.6, delay: 0.8 }}
+      >
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900 mb-3">
+          Our <span className="text-blue-600">Purpose</span> & <span className="text-green-600">Vision</span>
+        </h2>
+        <p className="text-gray-600 max-w-xl mx-auto text-sm">
+          Driven by purpose, guided by vision - discover what motivates us to deliver excellence
+        </p>
+      </motion.div>
+      <div className="grid md:grid-cols-2 gap-8">
+        <motion.div
+          initial={{ opacity: 0, x: -30 }}
+          animate={aboutVisible ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1 }}
+        >
+          <div className="w-12 h-12 bg-gradient-to-r from-blue-500 to-blue-600 rounded-lg flex items-center justify-center mb-4 shadow-md">
+            <Target className="w-6 h-6 text-white" />
           </div>
+          <h3 className="text-xl font-bold text-gray-900 mb-3">Our Mission</h3>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            To empower businesses across Zimbabwe with innovative ICT solutions that drive growth, 
+            efficiency, and competitive advantage in the digital economy.
+          </p>
         </motion.div>
-
+        
+        <motion.div
+          initial={{ opacity: 0, x: 30 }}
+          animate={aboutVisible ? { opacity: 1, x: 0 } : {}}
+          transition={{ duration: 0.8, delay: 1.2 }}
+        >
+          <div className="w-12 h-12 bg-gradient-to-r from-green-500 to-green-600 rounded-lg flex items-center justify-center mb-4 shadow-md">
+            <Lightbulb className="w-6 h-6 text-white" />
+          </div>
+          <h3 className="text-xl font-bold text-gray-900 mb-3">Our Vision</h3>
+          <p className="text-gray-600 text-sm leading-relaxed">
+            To be Zimbabwe's leading technology partner, transforming how businesses operate, 
+            connect, and succeed in an increasingly digital world.
+          </p>
+        </motion.div>
       </div>
-    </section>
+    </motion.div>
+  </div>
+</section>
+    </div>
   );
 }
