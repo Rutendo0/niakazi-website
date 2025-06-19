@@ -140,7 +140,7 @@ export default function Header() {
           </motion.div>
           
           <motion.button
-            className="lg:hidden p-2 rounded-xl bg-blue-100 text-blue-600 hover:bg-blue-600 hover:text-white transition-all duration-300"
+            className="lg:hidden p-2 rounded-xl bg-white/20 text-white hover:bg-white/30 hover:text-white transition-all duration-300"
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
@@ -162,7 +162,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <div className="flex flex-col space-y-2 bg-white/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
+            <div className="flex flex-col space-y-2 bg-blue-800/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.href}
@@ -185,7 +185,7 @@ export default function Header() {
               ))}
               <Link to="/quote">
                 <motion.button
-                  className="w-full px-4 py-3 bg-blue-600 text-white rounded-xl font-medium font-space-grotesk hover:bg-blue-700 transition-all duration-300 mt-4"
+                  className="w-full px-4 py-3 bg-white/20 text-white rounded-xl font-medium font-space-grotesk hover:bg-white/30 transition-all duration-300 mt-4"
                   initial={{ opacity: 0, x: -20 }}
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: navItems.length * 0.1, duration: 0.3 }}
