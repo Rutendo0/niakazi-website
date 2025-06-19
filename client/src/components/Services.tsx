@@ -242,7 +242,7 @@ export default function Services() {
                           whileHover={{ y: -8 }}
                         >
                           {/* Service Image */}
-                          <div className="h-48 relative overflow-hidden">
+                          <div className="h-32 relative overflow-hidden">
                             <img 
                               src={serviceImages[item.name as keyof typeof serviceImages] || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&q=80"}
                               alt={item.name}
@@ -257,9 +257,9 @@ export default function Services() {
                             </div>
                           </div>
                           
-                          <div className="p-6">
-                            <h4 className="text-xl font-space-grotesk font-semibold text-niakazi-dark mb-3">{item.name}</h4>
-                            <p className="text-gray-600 mb-4 leading-relaxed">{item.desc}</p>
+                          <div className="p-4">
+                            <h4 className="text-lg font-space-grotesk font-semibold text-niakazi-dark mb-2">{item.name}</h4>
+                            <p className="text-gray-600 mb-3 leading-relaxed text-sm">{item.desc}</p>
                             
                             <div className="space-y-2">
                               {item.features.map((feature, featureIndex) => (

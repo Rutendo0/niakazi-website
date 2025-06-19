@@ -322,7 +322,7 @@ export default function Products() {
               className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 h-full"
               whileHover={{ y: -10, rotateY: 5 }}
             >
-              <div className="relative overflow-hidden h-48">
+              <div className="relative overflow-hidden h-32">
                 <img
                   src={product.image}
                   alt={product.title}
@@ -339,15 +339,15 @@ export default function Products() {
                 </motion.div>
               </div>
               
-              <div className="p-6">
-                <h3 className="text-lg font-semibold text-dande-dark mb-2 font-poppins group-hover:text-dande-primary transition-colors">
+              <div className="p-4">
+                <h3 className="text-base font-semibold text-dande-dark mb-2 font-poppins group-hover:text-dande-primary transition-colors">
                   {product.title}
                 </h3>
-                <p className="text-gray-600 text-sm mb-4 font-poppins">
+                <p className="text-gray-600 text-xs mb-3 font-poppins">
                   {product.description}
                 </p>
                 <div className="flex items-center justify-between">
-                  <span className="text-2xl font-bold text-dande-primary font-poppins">
+                  <span className="text-lg font-bold text-dande-primary font-poppins">
                     {product.price}
                   </span>
                   <motion.button
