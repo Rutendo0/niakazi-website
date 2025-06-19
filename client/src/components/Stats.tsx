@@ -54,14 +54,9 @@ function AnimatedCounter({ end, suffix, isVisible, delay = 0 }: {
   }, [isVisible, delay]);
   
   return (
-    <motion.div
-      className="text-4xl md:text-6xl font-space-grotesk font-bold text-gradient-niakazi mb-2 neon-glow"
-      initial={{ scale: 0 }}
-      animate={isVisible ? { scale: 1 } : {}}
-      transition={{ duration: 0.6, delay: delay / 1000, type: "spring", stiffness: 200 }}
-    >
+    <div className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-primary mb-2">
       {count}{suffix}
-    </motion.div>
+    </div>
   );
 }
 
@@ -104,10 +99,10 @@ export default function Stats() {
   ];
 
   return (
-    <section id="stats" className="py-20 bg-gradient-to-br from-gray-50 to-white relative overflow-hidden">
-      {/* Background decorative elements */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-dande-primary/5 rounded-full blur-3xl"></div>
-      <div className="absolute bottom-0 left-0 w-80 h-80 bg-dande-dark/5 rounded-full blur-3xl"></div>
+    <section id="stats" className="py-16 sm:py-20 md:py-24 bg-white relative">
+      {/* Subtle background elements */}
+      <div className="absolute top-20 right-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-30"></div>
+      <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-50 rounded-full blur-lg opacity-20"></div>
       
       <div className="container mx-auto px-4 relative z-10">
         <motion.div
@@ -117,22 +112,11 @@ export default function Stats() {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="inline-flex items-center px-4 py-2 rounded-full bg-dande-primary/10 text-dande-primary font-semibold mb-6"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6 }}
-          >
-            <TrendingUp className="w-5 h-5 mr-2" />
-            Our Achievements
-          </motion.div>
-          
-          <h2 className="text-4xl md:text-5xl font-poppins font-bold text-dande-dark mb-6">
-            Proven Track Record of{" "}
-            <span className="gradient-text">Excellence</span>
+          <h2 className="text-3xl sm:text-4xl md:text-5xl font-space-grotesk font-bold text-gray-900 mb-6">
+            Our Track Record of <span className="text-niakazi-primary">Excellence</span>
           </h2>
-          <p className="text-xl text-gray-400 max-w-3xl mx-auto">
-            Over two decades of delivering exceptional ICT solutions across Zimbabwe and beyond.
+          <p className="text-lg sm:text-xl text-gray-600 max-w-3xl mx-auto">
+            Years of delivering exceptional ICT solutions across Zimbabwe and beyond.
           </p>
         </motion.div>
 
@@ -142,25 +126,16 @@ export default function Stats() {
             return (
               <motion.div 
                 key={index} 
-                className="text-center group"
-                initial={{ opacity: 0, y: 50 }}
+                className="text-center group relative"
+                initial={{ opacity: 0, y: 30 }}
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
-                whileHover={{ y: -10 }}
               >
-                <motion.div 
-                  className="relative bg-white/80 backdrop-blur-sm rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300 border border-white/20"
-                  whileHover={{ scale: 1.05 }}
-                >
+                <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-niakazi-primary">
                   {/* Icon */}
-                  <motion.div 
-                    className={`w-16 h-16 bg-gradient-to-r ${stat.color} rounded-2xl flex items-center justify-center mx-auto mb-6 shadow-lg`}
-                    initial={{ rotate: 0 }}
-                    whileHover={{ rotate: 10 }}
-                    transition={{ type: "spring", stiffness: 300 }}
-                  >
-                    <IconComponent className="text-white text-2xl" />
-                  </motion.div>
+                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-200 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-niakazi-primary transition-all duration-300">
+                    <IconComponent className="text-gray-600 group-hover:text-white text-xl sm:text-2xl transition-colors duration-300" />
+                  </div>
                   
                   {/* Animated Counter */}
                   <AnimatedCounter 
@@ -171,18 +146,20 @@ export default function Stats() {
                   />
                   
                   {/* Label */}
-                  <motion.div 
-                    className="text-gray-600 font-poppins text-sm md:text-base font-medium"
-                    initial={{ opacity: 0 }}
-                    animate={isVisible ? { opacity: 1 } : {}}
-                    transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
-                  >
+                  <div className="text-gray-600 font-space-grotesk text-sm sm:text-base font-medium group-hover:text-gray-900 transition-colors duration-300">
                     {stat.label}
-                  </motion.div>
+                  </div>
                   
-                  {/* Hover effect overlay */}
-                  <div className="absolute inset-0 bg-gradient-to-r from-dande-primary/5 to-dande-dark/5 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-                </motion.div>
+                  {/* Hover Information */}
+                  <div className="absolute inset-x-0 bottom-0 bg-niakazi-primary text-white p-4 rounded-b-xl opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
+                    <div className="text-sm font-medium">
+                      {index === 0 && "Established expertise serving clients since 2018"}
+                      {index === 1 && "Trusted by businesses across Zimbabwe"}
+                      {index === 2 && "Successful implementations and deployments"}
+                      {index === 3 && "Customer satisfaction and retention rate"}
+                    </div>
+                  </div>
+                </div>
               </motion.div>
             );
           })}
