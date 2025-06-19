@@ -99,25 +99,32 @@ export default function About() {
 
         
 
-        {/* Features Section */}
+        {/* Mission & Vision - Moved up for prominence */}
         <motion.div
-          className="grid md:grid-cols-3 gap-8 mb-20"
+          className="bg-white rounded-3xl p-12 shadow-xl mb-20"
           initial={{ opacity: 0, y: 30 }}
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.6 }}
         >
-          {/* Features section removed as requested */}
-        </motion.div>
-
-        {/* Mission & Vision */}
-        <motion.div
-          className="bg-white rounded-3xl p-12 shadow-xl"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.8 }}
-        >
+          <motion.div 
+            className="text-center mb-12"
+            initial={{ opacity: 0, y: 20 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.6, delay: 0.8 }}
+          >
+            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+              Our <span className="text-blue-600">Purpose</span> & <span className="text-green-600">Vision</span>
+            </h2>
+            <p className="text-gray-600 max-w-2xl mx-auto">
+              Driven by purpose, guided by vision - discover what motivates us to deliver excellence
+            </p>
+          </motion.div>
           <div className="grid md:grid-cols-2 gap-12">
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1 }}
+            >
               <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
                 <Target className="w-8 h-8 text-white" />
               </div>
@@ -126,9 +133,13 @@ export default function About() {
                 To empower businesses across Zimbabwe with innovative ICT solutions that drive growth, 
                 efficiency, and competitive advantage in the digital economy.
               </p>
-            </div>
+            </motion.div>
             
-            <div>
+            <motion.div
+              initial={{ opacity: 0, x: 30 }}
+              animate={isVisible ? { opacity: 1, x: 0 } : {}}
+              transition={{ duration: 0.8, delay: 1.2 }}
+            >
               <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mb-6 shadow-lg">
                 <Lightbulb className="w-8 h-8 text-white" />
               </div>
@@ -137,7 +148,7 @@ export default function About() {
                 To be Zimbabwe's leading technology partner, transforming how businesses operate, 
                 connect, and succeed in an increasingly digital world.
               </p>
-            </div>
+            </motion.div>
           </div>
         </motion.div>
 

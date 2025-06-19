@@ -102,6 +102,7 @@ Changelog:
 - December 19, 2024. Card sizes reduced for better UX
 - December 19, 2024. Page order reorganized: Services → Products → Solutions
 - December 19, 2024. Call-to-action moved from Services to Products page
+- December 19, 2024. Mission & Vision sections moved up in About page for better prominence
 - June 19, 2025. Initial setup
 ```
 
