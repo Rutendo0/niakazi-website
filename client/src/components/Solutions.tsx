@@ -1,47 +1,56 @@
+import { motion } from "framer-motion";
 import { Network, Database, Lock, Smartphone } from "lucide-react";
+import { useScrollAnimation } from "../hooks/useScrollAnimation";
 
 export default function Solutions() {
+  const { ref, isVisible } = useScrollAnimation();
+
   const solutions = [
     {
       icon: Network,
       title: "Enterprise Connectivity",
       description: "High-performance network solutions with redundancy and 99.9% uptime guarantee",
       stats: "500+ Mbps",
-      color: "bg-blue-600"
+      color: "from-blue-500 to-blue-600"
     },
     {
       icon: Database,
       title: "Cloud Infrastructure",
       description: "Scalable cloud platforms with enterprise-grade security and compliance",
       stats: "99.99% Uptime",
-      color: "bg-green-600"
+      color: "from-green-500 to-green-600"
     },
     {
       icon: Lock,
       title: "Cybersecurity Suite",
       description: "Advanced threat protection with 24/7 monitoring and incident response",
       stats: "24/7 Protection",
-      color: "bg-orange-600"
+      color: "from-orange-500 to-orange-600"
     },
     {
       icon: Smartphone,
       title: "Managed IT Services",
       description: "Complete IT management with proactive monitoring and expert support",
       stats: "Expert Support",
-      color: "bg-indigo-600"
+      color: "from-indigo-500 to-indigo-600"
     }
   ];
 
   return (
-    <section id="solutions" className="py-20 bg-gray-50">
-      <div className="container mx-auto px-4">
+    <section id="solutions" className="py-20 bg-gray-50" ref={ref}>
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Information Section Before Solutions */}
-        <div className="text-center mb-20">
-          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-semibold mb-6">
+        <motion.div 
+          className="text-center mb-20"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8 }}
+        >
+          <div className="inline-flex items-center bg-blue-100 text-blue-800 px-6 py-3 rounded-full font-semibold mb-6">
             <span className="w-2 h-2 bg-blue-600 rounded-full mr-2"></span>
             Comprehensive ICT Solutions
           </div>
-          <h2 className="text-5xl font-bold text-gray-900 mb-6">
+          <h2 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
             Powering Your Digital Future
           </h2>
           <p className="text-xl text-gray-600 max-w-4xl mx-auto leading-relaxed">
@@ -52,70 +61,85 @@ export default function Solutions() {
           
           {/* Key Benefits */}
           <div className="grid md:grid-cols-3 gap-8 mt-16 mb-20">
-            <div className="text-center">
-              <div className="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Network className="w-8 h-8 text-blue-600" />
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Network className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Enterprise Grade</h3>
               <p className="text-gray-600">Built for large-scale operations with enterprise-level reliability and performance</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Lock className="w-8 h-8 text-green-600" />
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Lock className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Security First</h3>
               <p className="text-gray-600">Advanced security measures protecting your data and infrastructure 24/7</p>
-            </div>
-            <div className="text-center">
-              <div className="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
-                <Database className="w-8 h-8 text-orange-600" />
+            </motion.div>
+            <motion.div 
+              className="text-center"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.4 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-orange-500 to-orange-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
+                <Database className="w-8 h-8 text-white" />
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-2">Scalable Solutions</h3>
               <p className="text-gray-600">Flexible infrastructure that grows with your business needs</p>
-            </div>
+            </motion.div>
           </div>
-        </div>
+        </motion.div>
         
         {/* Solutions Title */}
-        <div className="text-center mb-16">
-          <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Connectivity Solutions</h3>
+        <motion.div 
+          className="text-center mb-16"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.4 }}
+        >
+          <h3 className="text-3xl font-bold text-gray-900 mb-4">Our Core Solutions</h3>
           <p className="text-lg text-gray-600 max-w-2xl mx-auto">
             Discover our comprehensive range of connectivity and IT solutions designed to transform your business operations.
           </p>
-        </div>
+        </motion.div>
         
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <motion.div 
+          className="grid md:grid-cols-2 lg:grid-cols-4 gap-8"
+          initial={{ opacity: 0, y: 30 }}
+          animate={isVisible ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+        >
           {solutions.map((solution, index) => {
             const IconComponent = solution.icon;
             return (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:scale-105 h-full">
-                <div className={`w-16 h-16 ${solution.color} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg transition-shadow`}>
+              <motion.div 
+                key={index} 
+                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group h-full"
+                initial={{ opacity: 0, y: 30 }}
+                animate={isVisible ? { opacity: 1, y: 0 } : {}}
+                transition={{ duration: 0.6, delay: 0.8 + index * 0.1 }}
+                whileHover={{ y: -5 }}
+              >
+                <div className={`w-16 h-16 bg-gradient-to-r ${solution.color} rounded-xl flex items-center justify-center mx-auto mb-6 shadow-lg`}>
                   <IconComponent className="text-white w-8 h-8" />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 mb-4 text-center">{solution.title}</h3>
                 <p className="text-gray-600 mb-4 leading-relaxed text-center">{solution.description}</p>
                 <div className="text-blue-600 font-bold text-lg text-center">{solution.stats}</div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
-        
-        <div className="mt-20 bg-gradient-to-r from-blue-600 to-indigo-700 rounded-3xl p-12 text-center text-white">
-          <h3 className="text-3xl font-bold mb-6">
-            Ready to Transform Your Business?
-          </h3>
-          <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-            Join hundreds of businesses that trust NIAKAZI for their ICT infrastructure needs.
-          </p>
-          <div className="flex justify-center">
-            <button 
-              onClick={() => window.open('https://wa.me/263778224653', '_blank')}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
-            >
-              Get Free Consultation
-            </button>
-          </div>
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -54,7 +54,7 @@ function AnimatedCounter({ end, suffix, isVisible, delay = 0 }: {
   }, [isVisible, delay]);
   
   return (
-    <div className="text-3xl sm:text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-primary mb-2">
+    <div className="text-3xl sm:text-4xl md:text-5xl font-bold text-blue-600 mb-2">
       {count}{suffix}
     </div>
   );
@@ -65,35 +65,35 @@ export default function Stats() {
   
   const stats = [
     {
-      end: 6,
+      end: 26,
       suffix: "+",
       label: "Years of Experience",
       icon: Clock,
-      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-secondary",
+      color: "bg-gradient-to-r from-blue-500 to-blue-600",
       delay: 0
     },
     {
-      end: 50,
+      end: 200,
       suffix: "+", 
       label: "Happy Clients",
       icon: Users,
-      color: "bg-gradient-to-r from-niakazi-secondary to-niakazi-accent",
+      color: "bg-gradient-to-r from-green-500 to-green-600",
       delay: 200
     },
     {
-      end: 100,
+      end: 500,
       suffix: "+",
       label: "Projects Completed", 
       icon: Award,
-      color: "bg-gradient-to-r from-niakazi-accent to-niakazi-primary",
+      color: "bg-gradient-to-r from-orange-500 to-orange-600",
       delay: 400
     },
     {
-      end: 90,
+      end: 99,
       suffix: "%",
       label: "Client Satisfaction",
       icon: TrendingUp,
-      color: "bg-gradient-to-r from-niakazi-primary to-niakazi-light",
+      color: "bg-gradient-to-r from-purple-500 to-purple-600",
       delay: 600
     }
   ];
