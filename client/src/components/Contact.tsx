@@ -102,102 +102,95 @@ export default function Contact() {
           animate={isVisible ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
         >
-          <motion.div
-            className="inline-flex items-center px-8 py-4 rounded-full animated-gradient-border glass-card text-white font-semibold mb-8 text-lg"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={isVisible ? { opacity: 1, scale: 1 } : {}}
-            transition={{ duration: 0.6, delay: 0.2 }}
-            whileHover={{ scale: 1.05 }}
+          <motion.h2 
+            className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-space-grotesk font-bold text-gray-900 mb-6 leading-tight"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8 }}
           >
-            <MessageCircle className="w-5 h-5 mr-2 text-shimmer" />
-            Let's Connect
-          </motion.div>
+            Get in <span className="text-niakazi-primary">Touch</span>
+          </motion.h2>
           
-          <h2 className="text-4xl md:text-6xl font-space-grotesk font-bold text-white mb-8 leading-tight">
-            Ready to Transform Your{" "}
-            <span className="text-gradient-niakazi text-shimmer">Business?</span>
-          </h2>
-          <p className="text-xl text-white max-w-4xl mx-auto leading-relaxed">
-            Connect with our ICT experts today and discover how we can help optimize your technology infrastructure and drive sustainable growth for your organization across Zimbabwe.
-          </p>
+          <motion.p 
+            className="text-lg sm:text-xl text-gray-600 mb-12 max-w-2xl mx-auto"
+            initial={{ opacity: 0, y: 30 }}
+            animate={isVisible ? { opacity: 1, y: 0 } : {}}
+            transition={{ duration: 0.8, delay: 0.2 }}
+          >
+            Ready to transform your business with cutting-edge ICT solutions? Let's discuss your project and bring your vision to life.
+          </motion.p>
         </motion.div>
 
         <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
           {/* Contact Form */}
           <motion.div
-            className="luxury-card rounded-3xl p-8 md:p-12"
+            className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg"
             initial={{ opacity: 0, x: -50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
-            whileHover={{ y: -5, scale: 1.02 }}
           >
-            <div className="mb-10">
-              <h3 className="text-3xl font-space-grotesk font-bold text-white mb-4 neon-glow">Send us a Message</h3>
-              <p className="text-white text-lg">Fill out the form below and we'll get back to you within 24 hours with a customized solution.</p>
-            </div>
+            <h3 className="text-2xl font-space-grotesk font-bold text-gray-900 mb-8">Contact Form</h3>
 
             <form onSubmit={handleSubmit} className="space-y-6">
               <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <label className="block text-sm font-medium text-white mb-3">Name *</label>
-                  <input
-                    type="text"
-                    name="name"
-                    value={formData.name}
-                    onChange={handleInputChange}
-                    className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm"
-                    placeholder="Your full name"
-                    required
-                  />
-                </div>
-                <div>
-                  <label className="block text-sm font-medium text-white mb-3">Email *</label>
-                  <input
-                    type="email"
-                    name="email"
-                    value={formData.email}
-                    onChange={handleInputChange}
-                    className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm"
-                    placeholder="your.email@example.com"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-white mb-3">Subject</label>
                 <input
                   type="text"
-                  name="subject"
-                  value={formData.subject}
+                  name="name"
+                  placeholder="Full Name *"
+                  value={formData.name}
                   onChange={handleInputChange}
-                  className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm"
-                  placeholder="How can we help you?"
+                  className="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-niakazi-primary focus:bg-white transition-all"
+                  required
                 />
-              </div>
-
-              <div>
-                <label className="block text-sm font-medium text-white mb-3">Message *</label>
-                <textarea
-                  name="message"
-                  value={formData.message}
+                
+                <input
+                  type="email"
+                  name="email"
+                  placeholder="Email Address *"
+                  value={formData.email}
                   onChange={handleInputChange}
-                  rows={6}
-                  className="w-full px-5 py-4 bg-white/10 border border-white/20 rounded-xl focus:ring-2 focus:ring-niakazi-accent focus:border-niakazi-accent transition-all text-white placeholder-white/50 backdrop-blur-sm resize-none"
-                  placeholder="Tell us about your project requirements..."
+                  className="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-niakazi-primary focus:bg-white transition-all"
                   required
                 />
               </div>
+              
+              <input
+                type="text"
+                name="subject"
+                placeholder="Subject"
+                value={formData.subject}
+                onChange={handleInputChange}
+                className="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-niakazi-primary focus:bg-white transition-all"
+              />
+              
+              <textarea
+                name="message"
+                placeholder="Your Message *"
+                value={formData.message}
+                onChange={handleInputChange}
+                rows={5}
+                className="w-full bg-gray-50 border border-gray-200 text-gray-900 placeholder-gray-500 rounded-xl px-4 py-3 focus:outline-none focus:border-niakazi-primary focus:bg-white transition-all resize-none"
+                required
+              />
 
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-xl font-semibold text-lg transition-all inline-flex items-center justify-center space-x-2 shadow-lg hover:shadow-xl"
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
+                className="w-full bg-niakazi-primary text-white px-8 py-3 rounded-xl font-space-grotesk font-semibold text-lg hover:bg-niakazi-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
+                whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
-                <Send className="w-5 h-5" />
-                <span>{isSubmitting ? "Sending..." : "Send Message"}</span>
+                {isSubmitting ? (
+                  <div className="flex items-center justify-center space-x-2">
+                    <div className="w-5 h-5 border-2 border-white/30 border-t-white rounded-full animate-spin"></div>
+                    <span>Sending...</span>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center space-x-2">
+                    <Send className="w-5 h-5" />
+                    <span>Send Message</span>
+                  </div>
+                )}
               </motion.button>
             </form>
 
@@ -243,8 +236,8 @@ export default function Contact() {
                       transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                       whileHover={{ scale: 1.02, x: 5 }}
                     >
-                      <div className={`w-12 h-12 bg-gradient-to-r ${info.color} rounded-xl flex items-center justify-center`}>
-                        <IconComponent className="w-6 h-6 text-white" />
+                      <div className="w-12 h-12 bg-gray-200 rounded-xl flex items-center justify-center">
+                        <IconComponent className="w-6 h-6 text-gray-600" />
                       </div>
                       <div>
                         <h4 className="text-gray-900 font-semibold mb-1">{info.title}</h4>

@@ -177,8 +177,8 @@ export default function Quote() {
                   transition={{ duration: 0.6, delay: index * 0.2 }}
                   viewport={{ once: true }}
                 >
-                  <div className={`w-14 h-14 sm:w-16 sm:h-16 ${item.color} rounded-2xl flex items-center justify-center mx-auto mb-4 sm:mb-6`}>
-                    <Icon className="text-white text-2xl" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6">
+                    <Icon className="w-6 h-6 sm:w-8 sm:h-8 text-gray-600" />
                   </div>
                   <h3 className="text-xl font-poppins font-semibold text-dande-dark mb-3">
                     {item.step}. {item.title}

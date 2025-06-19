@@ -121,10 +121,10 @@ export default function Features() {
               variants={cardVariants}
               className="group relative"
             >
-              <div className="bg-white border border-gray-200 rounded-2xl p-4 sm:p-6 h-full shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 h-full shadow-sm hover:shadow-md transition-all duration-300">
                 {/* Icon with gradient background */}
-                <div className={`inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gradient-to-br ${feature.gradient} rounded-xl mb-4 sm:mb-6 group-hover:scale-110 transition-transform duration-300`}>
-                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-white" />
+                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 rounded-xl mb-4 sm:mb-6 transition-transform duration-300">
+                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-gray-600" />
                 </div>
 
                 {/* Content */}
@@ -139,8 +139,7 @@ export default function Features() {
                 <div className="absolute inset-0 bg-gradient-to-br from-niakazi-primary/10 to-niakazi-secondary/10 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
               </div>
 
-              {/* Glowing border effect */}
-              <div className="absolute inset-0 bg-gradient-to-br from-niakazi-primary via-niakazi-secondary to-niakazi-accent rounded-2xl opacity-0 group-hover:opacity-20 transition-opacity duration-300 -z-10 blur-xl"></div>
+
             </motion.div>
           ))}
         </motion.div>
@@ -152,11 +151,11 @@ export default function Features() {
           animate={{ opacity: 1, y: 0 } }
           transition={{ duration: 1}}
         >
-          <div className="glass-card bg-white/10 backdrop-blur-sm border border-white/20 rounded-2xl p-8 max-w-2xl mx-auto">
-            <h3 className="text-2xl font-bold text-white mb-4">
+          <div className="bg-white border border-gray-200 rounded-xl p-8 max-w-2xl mx-auto shadow-lg">
+            <h3 className="text-2xl font-bold text-gray-900 mb-4">
               Ready to Transform Your Business?
             </h3>
-            <p className="text-gray-300 mb-6">
+            <p className="text-gray-600 mb-6">
               Join hundreds of satisfied clients who trust NIAKAZI for their ICT solutions
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -167,7 +166,7 @@ export default function Features() {
                     element.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
-                className="px-8 py-3 bg-gradient-to-r from-niakazi-primary to-niakazi-secondary text-white font-semibold rounded-xl hover:from-niakazi-secondary hover:to-niakazi-accent transition-all duration-300 glow-on-hover"
+                className="px-8 py-3 bg-niakazi-primary hover:bg-niakazi-secondary text-white font-semibold rounded-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

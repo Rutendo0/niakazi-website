@@ -248,7 +248,7 @@ export default function Hero() {
         >
           <motion.button
             onClick={() => scrollToSection('#contact')}
-            className="w-full sm:w-auto btn-glow px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-niakazi-dark rounded-xl"
+            className="w-full sm:w-auto bg-white text-niakazi-primary px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-xl hover:bg-gray-100 transition-all"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
@@ -257,7 +257,7 @@ export default function Hero() {
           
           <motion.button
             onClick={() => scrollToSection('#services')}
-            className="w-full sm:w-auto glass-card px-6 sm:px-8 py-3 sm:py-4 text-base sm:text-lg font-semibold text-white rounded-xl border-2 border-white/30 hover:bg-white/10 transition-all duration-300"
+            className="w-full sm:w-auto border-2 border-white text-white px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-xl hover:bg-white/10 transition-all"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
