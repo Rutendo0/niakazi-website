@@ -195,18 +195,18 @@ export default function Contact() {
             </form>
 
             {/* Why Choose Us */}
-            <div className="mt-10 pt-8 border-t border-white/20">
-              <h4 className="text-lg font-semibold text-white mb-4">Why Choose NIAKAZI?</h4>
+            <div className="mt-10 pt-8 border-t border-gray-200">
+              <h4 className="text-lg font-semibold text-gray-900 mb-4">Why Choose NIAKAZI?</h4>
               <div className="grid grid-cols-2 gap-3">
                 {whyChooseUs.map((item, index) => (
                   <motion.div
                     key={index}
-                    className="flex items-center space-x-2 text-white/80"
+                    className="flex items-center space-x-2 text-gray-700"
                     initial={{ opacity: 0, x: -20 }}
                     animate={isVisible ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
                   >
-                    <item.icon className="w-4 h-4 text-niakazi-accent" />
+                    <item.icon className="w-4 h-4 text-green-600" />
                     <span className="text-sm">{item.text}</span>
                   </motion.div>
                 ))}
@@ -249,14 +249,14 @@ export default function Contact() {
               </div>
 
               {/* Social Links */}
-              <div className="mt-8 pt-6 border-t border-white/20">
-                <h4 className="text-white font-semibold mb-4">Follow Us</h4>
+              <div className="mt-8 pt-6 border-t border-gray-200">
+                <h4 className="text-gray-900 font-semibold mb-4">Follow Us</h4>
                 <div className="flex space-x-4">
                   <motion.a
                     href="https://www.facebook.com/niakazi"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gradient-to-r from-niakazi-primary to-niakazi-secondary rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all"
+                    className="w-12 h-12 bg-blue-600 rounded-xl flex items-center justify-center text-white hover:bg-blue-700 shadow-lg transition-all"
                     whileHover={{ scale: 1.1, rotate: 5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -266,7 +266,7 @@ export default function Contact() {
                     href="https://www.instagram.com/niakazi"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 bg-gradient-to-r from-niakazi-secondary to-niakazi-accent rounded-xl flex items-center justify-center text-white hover:scale-110 transition-all"
+                    className="w-12 h-12 bg-gradient-to-r from-purple-500 to-pink-500 rounded-xl flex items-center justify-center text-white hover:from-purple-600 hover:to-pink-600 shadow-lg transition-all"
                     whileHover={{ scale: 1.1, rotate: -5 }}
                     whileTap={{ scale: 0.9 }}
                   >
@@ -276,25 +276,25 @@ export default function Contact() {
               </div>
             </div>
 
-            {/* Emergency Contact */}
+            {/* Emergency Contact - Compact Version */}
             <motion.div
-              className="bg-red-50 border border-red-200 rounded-3xl p-8"
+              className="bg-gradient-to-r from-red-500 to-red-600 rounded-2xl p-6 shadow-lg"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.0 }}
-              whileHover={{ scale: 1.02 }}
+              whileHover={{ scale: 1.02, y: -2 }}
             >
-              <div className="flex items-center space-x-3 mb-4">
-                <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center">
-                  <Zap className="w-5 h-5 text-white" />
+              <div className="flex items-center space-x-3 mb-3">
+                <div className="w-8 h-8 bg-white/20 rounded-lg flex items-center justify-center">
+                  <Zap className="w-4 h-4 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-gray-900">Emergency Support</h4>
+                <h4 className="text-lg font-semibold text-white">Emergency Support</h4>
               </div>
-              <p className="text-gray-700 mb-4">
-                Need immediate technical assistance? Our emergency support team is available 24/7 for critical issues.
+              <p className="text-white/90 text-sm mb-4">
+                24/7 technical assistance for critical issues
               </p>
               <motion.button
-                className="w-full bg-red-500 hover:bg-red-600 text-white px-6 py-3 rounded-xl font-semibold transition-all"
+                className="w-full bg-white text-red-600 px-4 py-2 rounded-lg font-semibold text-sm hover:bg-red-50 transition-all shadow-sm"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => window.open('tel:+263778224653', '_self')}
