@@ -99,8 +99,8 @@ export default function Header() {
                 className={`
                   px-4 py-2 rounded-full font-medium font-space-grotesk relative group transition-all duration-300
                   ${activeSection === item.href 
-                    ? 'text-white bg-blue-600' 
-                    : 'text-white hover:text-blue-200 hover:bg-white/10'
+                    ? 'text-white bg-white/20 shadow-lg' 
+                    : 'text-white/90 hover:text-white hover:bg-white/10'
                   }
                 `}
                 initial={{ opacity: 0, y: -20 }}
@@ -158,7 +158,7 @@ export default function Header() {
             exit={{ opacity: 0, height: 0, y: -20 }}
             transition={{ duration: 0.4, ease: "easeOut" }}
           >
-            <div className="flex flex-col space-y-2 bg-blue-800/90 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
+            <div className="flex flex-col space-y-2 bg-gradient-to-br from-blue-900/95 via-indigo-900/95 to-purple-900/95 backdrop-blur-xl rounded-2xl p-6 shadow-xl border border-white/20">
               {navItems.map((item, index) => (
                 <motion.button
                   key={item.href}
@@ -166,8 +166,8 @@ export default function Header() {
                   className={`
                     px-4 py-3 rounded-xl font-medium font-space-grotesk text-left transition-all duration-300
                     ${activeSection === item.href 
-                      ? 'text-white bg-blue-600' 
-                      : 'text-white hover:text-blue-200 hover:bg-white/10'
+                      ? 'text-white bg-white/20 shadow-lg' 
+                      : 'text-white/90 hover:text-white hover:bg-white/15'
                     }
                   `}
                   initial={{ opacity: 0, x: -20 }}

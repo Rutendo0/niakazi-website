@@ -248,7 +248,7 @@ export default function Hero() {
           
           <motion.button
             onClick={() => scrollToSection('#services')}
-            className="w-full sm:w-auto bg-white/20 backdrop-blur-sm border-2 border-white/60 text-white px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-xl hover:bg-white/30 hover:border-white shadow-lg transition-all duration-300"
+            className="w-full sm:w-auto bg-white/90 text-blue-900 px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-xl hover:bg-white hover:shadow-xl shadow-lg transition-all duration-300 border border-white/20"
             whileHover={{ scale: 1.02 }}
             whileTap={{ scale: 0.98 }}
           >
