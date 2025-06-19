@@ -1,4 +1,14 @@
+import { drizzle } from "drizzle-orm/neon-http";
+import { neon } from "@neondatabase/serverless";
+import { eq } from "drizzle-orm";
 import { contacts, newsletters, quotes, type Contact, type Newsletter, type Quote, type InsertContact, type InsertNewsletter, type InsertQuote } from "@shared/schema";
+
+if (!process.env.DATABASE_URL) {
+  throw new Error("DATABASE_URL environment variable is required");
+}
+
+const sql = neon(process.env.DATABASE_URL);
+const db = drizzle(sql);
 
 export interface IStorage {
   createContact(contact: InsertContact): Promise<Contact>;
@@ -6,64 +16,32 @@ export interface IStorage {
   createQuote(quote: InsertQuote): Promise<Quote>;
 }
 
-export class MemStorage implements IStorage {
-  private contacts: Map<number, Contact>;
-  private newsletters: Map<number, Newsletter>;
-  private quotes: Map<number, Quote>;
-  private contactId: number;
-  private newsletterId: number;
-  private quoteId: number;
-
-  constructor() {
-    this.contacts = new Map();
-    this.newsletters = new Map();
-    this.quotes = new Map();
-    this.contactId = 1;
-    this.newsletterId = 1;
-    this.quoteId = 1;
-  }
-
+export class DatabaseStorage implements IStorage {
   async createContact(insertContact: InsertContact): Promise<Contact> {
-    const id = this.contactId++;
-    const contact: Contact = {
-      ...insertContact,
-      id,
-      createdAt: new Date(),
-    };
-    this.contacts.set(id, contact);
+    const [contact] = await db.insert(contacts).values(insertContact).returning();
     return contact;
   }
 
   async createNewsletterSubscription(insertNewsletter: InsertNewsletter): Promise<Newsletter> {
     // Check if email already exists
-    const existingSubscription = Array.from(this.newsletters.values()).find(
-      (sub) => sub.email === insertNewsletter.email
-    );
+    const existingSubscription = await db
+      .select()
+      .from(newsletters)
+      .where(eq(newsletters.email, insertNewsletter.email))
+      .limit(1);
     
-    if (existingSubscription) {
+    if (existingSubscription.length > 0) {
       throw new Error("Email already subscribed");
     }
 
-    const id = this.newsletterId++;
-    const newsletter: Newsletter = {
-      ...insertNewsletter,
-      id,
-      createdAt: new Date(),
-    };
-    this.newsletters.set(id, newsletter);
+    const [newsletter] = await db.insert(newsletters).values(insertNewsletter).returning();
     return newsletter;
   }
 
   async createQuote(insertQuote: InsertQuote): Promise<Quote> {
-    const id = this.quoteId++;
-    const quote: Quote = {
-      ...insertQuote,
-      id,
-      createdAt: new Date(),
-    };
-    this.quotes.set(id, quote);
+    const [quote] = await db.insert(quotes).values(insertQuote).returning();
     return quote;
   }
 }
 
-export const storage = new MemStorage();
+export const storage = new DatabaseStorage();
