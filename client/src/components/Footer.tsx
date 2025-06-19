@@ -146,25 +146,22 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.2 }}
             >
               <h4 className="text-lg font-semibold text-white mb-4">Quick Links</h4>
-              <ul className="space-y-2">
+              <div className="flex flex-wrap gap-4">
                 {quickLinks.map((link, index) => (
-                  <motion.li 
+                  <motion.button
                     key={index}
+                    onClick={() => scrollToSection(link.href)}
+                    className="text-blue-200 hover:text-white transition-colors text-sm"
+                    whileHover={{ scale: 1.05 }}
+                    transition={{ type: "spring", stiffness: 300 }}
                     initial={{ opacity: 0, x: -20 }}
                     animate={isVisible ? { opacity: 1, x: 0 } : {}}
                     transition={{ duration: 0.4, delay: 0.3 + index * 0.05 }}
                   >
-                    <motion.button
-                      onClick={() => scrollToSection(link.href)}
-                      className="text-blue-200 hover:text-white transition-colors text-sm"
-                      whileHover={{ x: 5 }}
-                      transition={{ type: "spring", stiffness: 300 }}
-                    >
-                      {link.label}
-                    </motion.button>
-                  </motion.li>
+                    {link.label}
+                  </motion.button>
                 ))}
-              </ul>
+              </div>
             </motion.div>
  
             {/* Contact Info */}
@@ -174,10 +171,10 @@ export default function Footer() {
               transition={{ duration: 0.6, delay: 0.3 }}
             >
               <h4 className="text-lg font-semibold text-white mb-4">Get In Touch</h4>
-              <div className="space-y-3">
+              <div className="flex flex-wrap gap-6">
                 <motion.div 
-                  className="flex items-center space-x-3"
-                  whileHover={{ x: 5 }}
+                  className="flex items-center space-x-2"
+                  whileHover={{ scale: 1.05 }}
                 >
                   <Phone className="h-4 w-4 text-blue-300 flex-shrink-0" />
                   <a 
@@ -189,8 +186,8 @@ export default function Footer() {
                 </motion.div>
                 
                 <motion.div 
-                  className="flex items-center space-x-3"
-                  whileHover={{ x: 5 }}
+                  className="flex items-center space-x-2"
+                  whileHover={{ scale: 1.05 }}
                 >
                   <Mail className="h-4 w-4 text-blue-300 flex-shrink-0" />
                   <a 
@@ -202,8 +199,8 @@ export default function Footer() {
                 </motion.div>
 
                 <motion.div 
-                  className="flex items-center space-x-3"
-                  whileHover={{ x: 5 }}
+                  className="flex items-center space-x-2"
+                  whileHover={{ scale: 1.05 }}
                 >
                   <Globe className="h-4 w-4 text-blue-300 flex-shrink-0" />
                   <span className="text-blue-100 text-sm">
