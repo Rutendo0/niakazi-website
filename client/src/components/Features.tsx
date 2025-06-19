@@ -161,10 +161,7 @@ export default function Features() {
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <motion.button
                 onClick={() => {
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
+                  window.location.href = '/quote';
                 }}
                 className="px-8 py-3 bg-niakazi-primary hover:bg-niakazi-secondary text-white font-semibold rounded-xl transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
@@ -174,16 +171,13 @@ export default function Features() {
               </motion.button>
               <motion.button
                 onClick={() => {
-                  const element = document.querySelector('#products');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
+                  window.open('https://wa.me/263785176021', '_blank');
                 }}
-                className="px-8 py-3 border-2 border-niakazi-accent text-niakazi-accent font-semibold rounded-xl hover:bg-niakazi-accent hover:text-white transition-all duration-300"
+                className="px-8 py-3 border-2 border-green-500 text-green-600 font-semibold rounded-xl hover:bg-green-500 hover:text-white transition-all duration-300"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                View Solutions
+                Get Free Consultation
               </motion.button>
             </div>
           </div>

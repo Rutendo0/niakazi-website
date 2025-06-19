@@ -107,12 +107,12 @@ export default function Solutions() {
           <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
             Join hundreds of businesses that trust NIAKAZI for their ICT infrastructure needs.
           </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <button className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors">
+          <div className="flex justify-center">
+            <button 
+              onClick={() => window.open('https://wa.me/263785176021', '_blank')}
+              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors"
+            >
               Get Free Consultation
-            </button>
-            <button className="border-2 border-white text-white hover:bg-white hover:text-blue-600 font-semibold py-3 px-8 rounded-lg transition-colors">
-              View Case Studies
             </button>
           </div>
         </div>

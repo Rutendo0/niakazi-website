@@ -188,23 +188,7 @@ export default function Pricing() {
                 ))}
               </ul>
 
-              <motion.button
-                onClick={() => {
-                  const element = document.querySelector('#contact');
-                  if (element) {
-                    element.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className={`w-full py-3 rounded-xl font-semibold transition-all duration-300 ${
-                  plan.popular
-                    ? 'bg-gradient-to-r from-niakazi-primary to-niakazi-secondary text-white hover:shadow-lg'
-                    : 'border-2 border-niakazi-primary text-niakazi-primary hover:bg-niakazi-primary hover:text-white'
-                }`}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-              >
-                Get Started
-              </motion.button>
+
             </motion.div>
           ))}
         </motion.div>
@@ -250,17 +234,7 @@ export default function Pricing() {
                   ))}
                 </ul>
 
-                <button
-                  onClick={() => {
-                    const element = document.querySelector('#contact');
-                    if (element) {
-                      element.scrollIntoView({ behavior: 'smooth' });
-                    }
-                  }}
-                  className="w-full py-2 border-2 border-niakazi-primary text-niakazi-primary rounded-xl font-semibold hover:bg-niakazi-primary hover:text-white transition-all duration-300"
-                >
-                  Subscribe
-                </button>
+
               </motion.div>
             ))}
           </div>
