@@ -363,24 +363,35 @@ export default function Products() {
           ))}
         </motion.div>
 
-        {/* Call to Action */}
-        <motion.div 
-          className="text-center mt-16"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : { opacity: 0, y: 30 }}
-          transition={{ duration: 0.8, delay: 1.5 }}
+        {/* Ready to Transform Business Call to Action */}
+        <motion.div
+          className="mt-20 bg-gradient-to-r from-niakazi-primary to-niakazi-secondary rounded-3xl p-12 text-center text-white relative overflow-hidden"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8 }}
+          viewport={{ once: true }}
         >
-          <motion.button
-            className="bg-gradient-to-r from-dande-primary to-dande-dark text-white px-8 py-4 rounded-full font-poppins font-semibold text-lg hover:shadow-lg transition-all duration-300 inline-flex items-center gap-2"
-            whileHover={{ 
-              scale: 1.05,
-              boxShadow: "0 10px 25px rgba(0,0,0,0.2)"
-            }}
-            whileTap={{ scale: 0.95 }}
-          >
-            View All Products
-            <ChevronRight className="w-5 h-5" />
-          </motion.button>
+          <div className="absolute inset-0 bg-gradient-to-r from-niakazi-dark/20 to-transparent"></div>
+          <div className="relative z-10">
+            <ShoppingCart className="w-16 h-16 mx-auto mb-6 text-white neon-glow" />
+            <h3 className="text-3xl font-space-grotesk font-bold mb-4">Ready to transform your business?</h3>
+            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
+              Let's discuss your technology needs today
+            </p>
+            <motion.button
+              className="bg-white text-niakazi-primary px-8 py-4 rounded-full font-space-grotesk font-semibold text-lg hover:shadow-xl transition-all duration-300 btn-glow"
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => {
+                const contactSection = document.querySelector('#contact');
+                if (contactSection) {
+                  contactSection.scrollIntoView({ behavior: 'smooth' });
+                }
+              }}
+            >
+              Get Started
+            </motion.button>
+          </div>
         </motion.div>
       </div>
     </section>

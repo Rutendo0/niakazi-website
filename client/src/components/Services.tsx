@@ -281,36 +281,7 @@ export default function Services() {
           })}
         </div>
 
-        {/* Call to Action */}
-        <motion.div
-          className="mt-20 bg-gradient-to-r from-niakazi-primary to-niakazi-secondary rounded-3xl p-12 text-center text-white relative overflow-hidden"
-          initial={{ opacity: 0, scale: 0.9 }}
-          whileInView={{ opacity: 1, scale: 1 }}
-          transition={{ duration: 0.8 }}
-          viewport={{ once: true }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-r from-niakazi-dark/20 to-transparent"></div>
-          <div className="relative z-10">
-            <Zap className="w-16 h-16 mx-auto mb-6 text-white neon-glow" />
-            <h3 className="text-3xl font-space-grotesk font-bold mb-4">Ready to transform your business?</h3>
-            <p className="text-xl mb-8 max-w-2xl mx-auto opacity-90">
-              Let's discuss your technology needs today
-            </p>
-            <motion.button
-              className="bg-white text-niakazi-primary px-8 py-4 rounded-full font-space-grotesk font-semibold text-lg hover:shadow-xl transition-all duration-300 btn-glow"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-              onClick={() => {
-                const contactSection = document.querySelector('#contact');
-                if (contactSection) {
-                  contactSection.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-            >
-              Get Started
-            </motion.button>
-          </div>
-        </motion.div>
+
       </div>
     </section>
   );
