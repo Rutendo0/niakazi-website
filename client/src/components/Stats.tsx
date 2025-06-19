@@ -150,9 +150,9 @@ export default function Stats() {
                     {stat.label}
                   </div>
                   
-                  {/* Hover Information */}
-                  <div className="absolute inset-x-0 bottom-0 bg-niakazi-primary text-white p-4 rounded-b-xl opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-y-2 group-hover:translate-y-0">
-                    <div className="text-sm font-medium">
+                  {/* Additional Information - Always Visible */}
+                  <div className="mt-4 pt-4 border-t border-gray-200">
+                    <div className="text-xs sm:text-sm text-gray-500 font-medium">
                       {index === 0 && "Established expertise serving clients since 2018"}
                       {index === 1 && "Trusted by businesses across Zimbabwe"}
                       {index === 2 && "Successful implementations and deployments"}
