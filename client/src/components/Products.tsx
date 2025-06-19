@@ -220,7 +220,7 @@ export default function Products() {
   };
 
   return (
-    <section id="products" className="py-32 bg-gradient-to-br from-gray-50 via-white to-niakazi-light/20 relative overflow-hidden" ref={ref}>
+    <section id="products" className="py-20 bg-white relative overflow-hidden" ref={ref}>
       {/* Enhanced background effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>
@@ -291,7 +291,7 @@ export default function Products() {
             <motion.button
               key={category}
               onClick={() => setActiveCategory(category)}
-              className={`px-6 py-3 rounded-full font-space-grotesk font-medium transition-all duration-300 ${
+              className={`px-8 py-4 rounded-xl font-space-grotesk font-medium transition-all duration-300 shadow-lg hover:shadow-xl ${
                 activeCategory === category
                   ? 'bg-niakazi-primary text-white'
                   : 'bg-white text-niakazi-dark hover:bg-niakazi-primary hover:text-white'
@@ -319,7 +319,7 @@ export default function Products() {
             <motion.div
               key={`${activeCategory}-${index}`}
               variants={cardVariants}
-              className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-2xl transition-all duration-500"
+              className="bg-white rounded-2xl shadow-lg overflow-hidden group hover:shadow-xl transition-all duration-300 h-full"
               whileHover={{ y: -10, rotateY: 5 }}
             >
               <div className="relative overflow-hidden h-48">

@@ -83,7 +83,7 @@ export default function About() {
   );
 
   return (
-    <section id="about" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden">
       {/* Subtle background elements */}
       <div className="absolute top-20 right-0 w-64 h-64 bg-blue-50 rounded-full blur-3xl opacity-50"></div>
       <div className="absolute bottom-0 left-0 w-72 h-72 bg-indigo-50 rounded-full blur-3xl opacity-30"></div>
@@ -191,41 +191,59 @@ export default function About() {
           </div>
           
           <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-blue-50 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-blue-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Target className="text-white text-2xl" />
+            <motion.div 
+              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.1 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Target className="text-white w-8 h-8" />
               </div>
-              <h4 className="text-2xl font-poppins font-bold text-dande-dark mb-4">
+              <h4 className="text-xl font-poppins font-bold text-gray-900 mb-4">
                 Our Mission
               </h4>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 To empower businesses with innovative technology solutions that drive growth, efficiency, and competitive advantage in the digital age.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-green-50 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-green-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Lightbulb className="text-white text-2xl" />
+            <motion.div 
+              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.2 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-green-500 to-green-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Lightbulb className="text-white w-8 h-8" />
               </div>
-              <h4 className="text-2xl font-poppins font-bold text-dande-dark mb-4">
+              <h4 className="text-xl font-poppins font-bold text-gray-900 mb-4">
                 Our Vision
               </h4>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 To be the leading technology partner that transforms how businesses operate, connect, and succeed in an interconnected world.
               </p>
-            </div>
+            </motion.div>
             
-            <div className="bg-purple-50 rounded-2xl p-8 text-center">
-              <div className="w-16 h-16 bg-purple-500 rounded-full flex items-center justify-center mx-auto mb-6">
-                <Heart className="text-white text-2xl" />
+            <motion.div 
+              className="bg-white rounded-2xl p-8 text-center shadow-lg hover:shadow-xl transition-all duration-300 border border-gray-100"
+              initial={{ opacity: 0, y: 30 }}
+              animate={isVisible ? { opacity: 1, y: 0 } : {}}
+              transition={{ duration: 0.6, delay: 0.3 }}
+              whileHover={{ y: -5 }}
+            >
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-500 to-purple-600 rounded-full flex items-center justify-center mx-auto mb-6 shadow-lg">
+                <Heart className="text-white w-8 h-8" />
               </div>
-              <h4 className="text-2xl font-poppins font-bold text-dande-dark mb-4">
+              <h4 className="text-xl font-poppins font-bold text-gray-900 mb-4">
                 Our Values
               </h4>
-              <p className="text-gray-700 leading-relaxed">
+              <p className="text-gray-600 leading-relaxed">
                 Innovation, integrity, excellence, and client success drive every decision we make and every solution we deliver.
               </p>
-            </div>
+            </motion.div>
           </div>
         </div>
 

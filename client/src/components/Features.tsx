@@ -81,7 +81,7 @@ export default function Features() {
   };
 
   return (
-    <section className="py-16 sm:py-24 md:py-32 bg-white relative overflow-hidden" ref={ref}>
+    <section className="py-20 bg-white relative overflow-hidden" ref={ref}>
       {/* Subtle background elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-100 rounded-full blur-xl opacity-30"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-100 rounded-full blur-lg opacity-20"></div>
@@ -121,17 +121,17 @@ export default function Features() {
               variants={cardVariants}
               className="group relative"
             >
-              <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 h-full shadow-sm hover:shadow-md transition-all duration-300">
+              <div className="bg-white border border-gray-200 rounded-2xl p-8 h-full shadow-lg hover:shadow-xl transition-all duration-300">
                 {/* Icon with gradient background */}
-                <div className="inline-flex items-center justify-center w-12 h-12 sm:w-14 sm:h-14 bg-gray-200 rounded-xl mb-4 sm:mb-6 transition-transform duration-300">
-                  <feature.icon className="w-6 h-6 sm:w-7 sm:h-7 text-gray-600" />
+                <div className="inline-flex items-center justify-center w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl mb-6 transition-transform duration-300 shadow-lg">
+                  <feature.icon className="w-8 h-8 text-white" />
                 </div>
 
                 {/* Content */}
-                <h3 className="text-lg sm:text-xl font-bold text-gray-900 mb-2 sm:mb-3 group-hover:text-niakazi-primary transition-colors duration-300">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 group-hover:text-niakazi-primary transition-colors duration-300">
                   {feature.title}
                 </h3>
-                <p className="text-sm sm:text-base text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
+                <p className="text-gray-600 leading-relaxed group-hover:text-gray-700 transition-colors duration-300">
                   {feature.description}
                 </p>
 
@@ -163,7 +163,7 @@ export default function Features() {
                 onClick={() => {
                   window.location.href = '/quote';
                 }}
-                className="px-8 py-3 bg-niakazi-primary hover:bg-niakazi-secondary text-white font-semibold rounded-xl transition-all duration-300"
+                className="px-8 py-4 bg-niakazi-primary hover:bg-niakazi-secondary text-white font-semibold rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -173,7 +173,7 @@ export default function Features() {
                 onClick={() => {
                   window.open('https://wa.me/263778224653', '_blank');
                 }}
-                className="px-8 py-3 border-2 border-green-500 text-green-600 font-semibold rounded-xl hover:bg-green-500 hover:text-white transition-all duration-300"
+                className="px-8 py-4 border-2 border-green-500 text-green-600 font-semibold rounded-xl hover:bg-green-500 hover:text-white transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >

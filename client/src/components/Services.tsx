@@ -177,7 +177,7 @@ export default function Services() {
   ];
 
   return (
-    <section id="services" className="py-24 bg-white relative overflow-hidden">
+    <section id="services" className="py-20 bg-white relative overflow-hidden">
       {/* Enhanced background effects */}
       <div className="aurora-bg"></div>
       <div className="aurora-bg"></div>

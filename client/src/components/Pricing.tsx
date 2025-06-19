@@ -114,7 +114,7 @@ export default function Pricing() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-white via-gray-50 to-niakazi-light/20 relative overflow-hidden" ref={ref}>
+    <section className="py-20 bg-white relative overflow-hidden" ref={ref}>
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="aurora-bg"></div>

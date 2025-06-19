@@ -99,7 +99,7 @@ export default function Stats() {
   ];
 
   return (
-    <section id="stats" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-visible">
+    <section id="stats" className="py-20 bg-gray-50 relative overflow-visible">
       {/* Subtle background elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-30"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-50 rounded-full blur-lg opacity-20"></div>

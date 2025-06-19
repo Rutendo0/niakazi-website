@@ -33,7 +33,7 @@ export default function Solutions() {
   ];
 
   return (
-    <section id="solutions" className="py-24 bg-gray-50">
+    <section id="solutions" className="py-20 bg-gray-50">
       <div className="container mx-auto px-4">
         {/* Information Section Before Solutions */}
         <div className="text-center mb-20">
@@ -88,7 +88,7 @@ export default function Solutions() {
           {solutions.map((solution, index) => {
             const IconComponent = solution.icon;
             return (
-              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:scale-105">
+              <div key={index} className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group hover:transform hover:scale-105 h-full">
                 <div className={`w-16 h-16 ${solution.color} rounded-xl flex items-center justify-center mx-auto mb-6 group-hover:shadow-lg transition-shadow`}>
                   <IconComponent className="text-white w-8 h-8" />
                 </div>
@@ -110,7 +110,7 @@ export default function Solutions() {
           <div className="flex justify-center">
             <button 
               onClick={() => window.open('https://wa.me/263778224653', '_blank')}
-              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-3 px-8 rounded-lg transition-colors"
+              className="bg-white text-blue-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-xl transition-all duration-300 shadow-lg hover:shadow-xl"
             >
               Get Free Consultation
             </button>

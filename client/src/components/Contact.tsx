@@ -89,7 +89,7 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+    <section id="contact" className="py-20 bg-white relative overflow-hidden">
       {/* Subtle background elements */}
       <div className="absolute top-20 right-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-30"></div>
       <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-50 rounded-full blur-lg opacity-20"></div>
@@ -124,7 +124,7 @@ export default function Contact() {
         <div className="grid lg:grid-cols-2 gap-16 items-start max-w-7xl mx-auto">
           {/* Contact Form */}
           <motion.div
-            className="bg-white border border-gray-200 rounded-xl p-8 shadow-lg"
+            className="bg-white border border-gray-200 rounded-2xl p-8 shadow-lg hover:shadow-xl transition-all duration-300"
             initial={{ opacity: 0, x: -50 }}
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.4 }}
@@ -176,7 +176,7 @@ export default function Contact() {
               <motion.button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full bg-niakazi-primary text-white px-8 py-3 rounded-xl font-space-grotesk font-semibold text-lg hover:bg-niakazi-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-all"
+                className="w-full bg-niakazi-primary text-white px-8 py-4 rounded-xl font-space-grotesk font-semibold text-lg hover:bg-niakazi-secondary disabled:opacity-50 disabled:cursor-not-allowed transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: isSubmitting ? 1 : 1.02 }}
                 whileTap={{ scale: isSubmitting ? 1 : 0.98 }}
               >
@@ -294,7 +294,7 @@ export default function Contact() {
                 24/7 technical assistance for critical issues
               </p>
               <motion.button
-                className="w-full bg-white text-red-600 px-4 py-2 rounded-lg font-semibold text-sm hover:bg-red-50 transition-all shadow-sm"
+                className="w-full bg-white text-red-600 px-4 py-3 rounded-xl font-semibold text-sm hover:bg-red-50 transition-all duration-300 shadow-lg hover:shadow-xl"
                 whileHover={{ scale: 1.02 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => window.open('tel:+263778224653', '_self')}

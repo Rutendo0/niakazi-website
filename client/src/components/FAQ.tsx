@@ -114,7 +114,7 @@ export default function FAQ() {
   };
 
   return (
-    <section className="py-32 bg-gradient-to-br from-gray-50 via-white to-niakazi-light/10 relative overflow-hidden" ref={ref}>
+    <section className="py-20 bg-gray-50 relative overflow-hidden" ref={ref}>
       {/* Background Effects */}
       <div className="absolute inset-0">
         <div className="aurora-bg"></div>
