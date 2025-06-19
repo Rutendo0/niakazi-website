@@ -1,17 +1,12 @@
 import { motion } from "framer-motion";
 import { Target, Lightbulb, Heart, Users, Award, Clock, CheckCircle, ArrowRight, Star } from "lucide-react";
 import { useScrollAnimation } from "../hooks/useScrollAnimation";
+import { ReactElement, JSXElementConstructor, ReactNode, ReactPortal, Key } from "react";
 
 export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
-  const achievements = [
-    { number: "4+", label: "Years Experience", icon: Clock },
-    { number: "50+", label: "Projects Completed", icon: Award },
-    { number: "50+", label: "Happy Clients", icon: Users },
-    { number: "99.9%", label: "Uptime Guarantee", icon: Star }
-  ];
-
+  
   const features = [
     {
       icon: Target,
@@ -107,20 +102,7 @@ export default function About() {
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: 1 }}
               >
-                <div className="grid grid-cols-2 gap-4">
-                  {achievements.slice(0, 2).map((achievement, index) => {
-                    const Icon = achievement.icon;
-                    return (
-                      <div key={index} className="text-center">
-                        <div className="flex items-center justify-center w-10 h-10 bg-blue-100 rounded-lg mx-auto mb-2">
-                          <Icon className="w-5 h-5 text-blue-600" />
-                        </div>
-                        <div className="text-2xl font-bold text-gray-900">{achievement.number}</div>
-                        <div className="text-sm text-gray-600">{achievement.label}</div>
-                      </div>
-                    );
-                  })}
-                </div>
+              
               </motion.div>
             </div>
 
@@ -130,33 +112,7 @@ export default function About() {
           </motion.div>
         </div>
 
-        {/* Stats Section */}
-        <motion.div
-          className="grid grid-cols-2 md:grid-cols-4 gap-8 mb-20"
-          initial={{ opacity: 0, y: 30 }}
-          animate={isVisible ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.4 }}
-        >
-          {achievements.map((achievement, index) => {
-            const Icon = achievement.icon;
-            return (
-              <motion.div
-                key={index}
-                className="text-center bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all duration-300"
-                whileHover={{ y: -5 }}
-                initial={{ opacity: 0, y: 30 }}
-                animate={isVisible ? { opacity: 1, y: 0 } : {}}
-                transition={{ duration: 0.6, delay: 0.6 + index * 0.1 }}
-              >
-                <div className="w-16 h-16 bg-gradient-to-r from-blue-500 to-blue-600 rounded-xl flex items-center justify-center mx-auto mb-4 shadow-lg">
-                  <Icon className="w-8 h-8 text-white" />
-                </div>
-                <div className="text-3xl md:text-4xl font-bold text-gray-900 mb-2">{achievement.number}</div>
-                <div className="text-gray-600 font-medium">{achievement.label}</div>
-              </motion.div>
-            );
-          })}
-        </motion.div>
+        
 
         {/* Features Section */}
         <motion.div

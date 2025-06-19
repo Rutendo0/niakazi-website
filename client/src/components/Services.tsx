@@ -146,34 +146,7 @@ export default function Services() {
         }
       ]
     },
-    {
-      title: "Training & Managed Services",
-      icon: Wrench,
-      color: "from-niakazi-secondary to-niakazi-primary",
-      description: "Professional IT training, certification programs, and comprehensive managed service solutions.",
-      items: [
-        {
-          name: "Managed Services",
-          icon: Wrench,
-          desc: "Complete IT infrastructure management allowing you to focus on core business activities.",
-          features: ["24/7 monitoring & support", "Proactive maintenance", "Performance optimization", "Service level agreements"]
-        }
-      ]
-    },
-    {
-      title: "Value Added Services",
-      icon: Star,
-      color: "from-niakazi-accent to-niakazi-secondary",
-      description: "Additional services that enhance your IT capabilities and maximize your technology investments.",
-      items: [
-        {
-          name: "Technical Support",
-          icon: Phone,
-          desc: "Expert technical assistance and troubleshooting services for all your IT systems.",
-          features: ["Remote diagnostics", "On-site support", "Emergency response", "Knowledge base access"]
-        }
-      ]
-    }
+   
   ];
 
   return (

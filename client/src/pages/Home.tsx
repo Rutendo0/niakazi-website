@@ -3,10 +3,7 @@ import Hero from "@/components/Hero";
 import Services from "@/components/Services";
 import Solutions from "@/components/Solutions";
 import Products from "@/components/Products";
-import Stats from "@/components/Stats";
-import Features from "@/components/Features";
 import About from "@/components/About";
-import Pricing from "@/components/Pricing";
 import FAQ from "@/components/FAQ";
 import Contact from "@/components/Contact";
 import Footer from "@/components/Footer";
@@ -21,10 +18,7 @@ export default function Home() {
       <Services />
       <Solutions />
       <Products />
-      <Stats />
-      <Features />
       <About />
-      <Pricing />
       <FAQ />
       <Contact />
       <Footer />

@@ -181,10 +181,7 @@ export default function Hero() {
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-flex items-center px-4 sm:px-6 py-2 sm:py-3 rounded-full glass-card text-xs sm:text-sm font-medium font-space-grotesk">
-            <Zap className="w-3 h-3 sm:w-4 sm:h-4 mr-2" />
-            Leading ICT Solutions in Zimbabwe
-          </span>
+          
         </motion.div>
 
         <motion.h1 
@@ -194,13 +191,11 @@ export default function Hero() {
           transition={{ duration: 1, delay: 0.2 }}
         >
           <span className="block">
-            Unlock reliable and secure 
+            Unlock the power of modern software solutions
           </span>
-          <span className="block text-gradient-niakazi mt-2">
-            connectivity
-          </span> 
+          
           <span className="block text-2xl sm:text-3xl md:text-4xl lg:text-5xl mt-2">
-            for your business
+            for your business with us
           </span>
         </motion.h1>
         
@@ -211,10 +206,10 @@ export default function Hero() {
           transition={{ duration: 0.8, delay: 0.6 }}
         >
           {[
-            { text: "Route Diversity", icon: Globe },
+            { text: "Data Protection ", icon: Globe },
             { text: "Quick Turnaround", icon: Clock }, 
-            { text: "24hr Monitoring", icon: Monitor },
-            { text: "26+ Years Experience", icon: Shield }
+            { text: "24hr Maintance free", icon: Monitor },
+            { text: "Microsoft Cloud Partner", icon: Shield }
           ].map((feature, index) => (
             <motion.div 
               key={feature.text}
@@ -236,7 +231,7 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
         >
-          At Niakazi, we provide cutting-edge ICT solutions tailored to your business needs.
+          
         </motion.p>
         
         <motion.div 
