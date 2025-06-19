@@ -215,20 +215,19 @@ export default function Services() {
                       const ItemIcon = item.icon;
                       // Professional service images using high-quality stock photos
                       const serviceImages = {
-                        "Web Development": "https://cms.jibecdn.com/prod/sabresystems-tech/assets/LP-SKU-11-5-IMG-en-us-1628107354234.jpg",
-                        "Mobile App development": "https://img.freepik.com/premium-photo/futuristic-isometric-mobile-phone-dark-background_935589-13877.jpg",
-                        "Artificial Intelligence": "https://wallpapercave.com/wp/wp6397784.jpg",
-                        "Custom Software Development": "https://www.creativephilosopher.com/wp-content/uploads/2022/12/Software-Product-Development.jpg",
-                        "System Intergration": "https://swi-solutions.com/wp-content/uploads/2022/01/AdobeStock_335667473-1536x874.jpg",
-                        "Microsoft Azure": "https://wallpaperbat.com/img/1871965-empowering-msps-transforming-business-with-azure-cognitive-services.png",
+                        "Web Development": "https://images.unsplash.com/photo-1547658719-da2b51169166?w=400&h=250&fit=crop&q=80",
+                        "Mobile App Development": "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=400&h=250&fit=crop&q=80",
+                        "Artificial Intelligence ": "https://images.unsplash.com/photo-1555255707-c07966088b7b?w=400&h=250&fit=crop&q=80",
+                        "Custom Software Development": "https://images.unsplash.com/photo-1551650975-87deedd944c3?w=400&h=250&fit=crop&q=80",
+                        "System Integration": "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=400&h=250&fit=crop&q=80",
+                        "Microsoft Azure": "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&q=80",
                         "Microsoft 365": "https://images.unsplash.com/photo-1633356122544-f134324a6cee?w=400&h=250&fit=crop&q=80",
-                        " Licensing Support": "https://miro.medium.com/v2/resize:fit:393/1*OVlShbnD9hBq6jFsbRE2bw.png",
-                        "Cloud aSecurity": "https://images.unsplash.com/photo-1597733336794-12d05021d510?w=400&h=250&fit=crop&q=80",
-                         "Cyber Security Awareness Training": "https://img.freepik.com/premium-photo/protecting-business-personal-data-with-cybersecurity_1111209-10964.jpg",
-                        "Endpoint Security": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&q=80",
-                        "Security Operations Center": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop&q=80",
-                        "High Quality Hikvision Systems": "https://mir-s3-cdn-cf.behance.net/project_modules/max_1200/a3bbd475511465.5c4f1de04d86f.jpg",
-                        "ICT Hardware": "https://appath.com/wp-content/uploads/2015/02/Ecommerce-blog-18.jpg", 
+                        "Licensing Support": "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=250&fit=crop&q=80",
+                        "Cyber Security Awareness Training": "https://images.unsplash.com/photo-1563013544-824ae1b704d3?w=400&h=250&fit=crop&q=80",
+                        "Endpoint Security": "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=400&h=250&fit=crop&q=80",
+                        "Security Operations Center": "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop&q=80",
+                        "High Quality Hikvision Systems": "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=400&h=250&fit=crop&q=80",
+                        "ICT Hardware": "https://images.unsplash.com/photo-1518432031352-d6fc5c10da5a?w=400&h=250&fit=crop&q=80"
                       };
                       
                       return (
