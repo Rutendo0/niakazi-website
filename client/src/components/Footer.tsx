@@ -202,19 +202,18 @@ export default function Footer() {
               </motion.div>
               
               {/* Quick Stats */}
-              <div className="grid grid-cols-3 gap-4 mb-6">
+              <div className="grid grid-cols-3 gap-3 mb-4">
                 {achievements.map((achievement, index) => (
                   <motion.div
                     key={index}
-                    className="text-center p-3 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                    className="text-center p-2 rounded-lg bg-white border border-gray-200 hover:border-niakazi-primary transition-all"
                     initial={{ opacity: 0, scale: 0.8 }}
                     animate={isVisible ? { opacity: 1, scale: 1 } : {}}
                     transition={{ duration: 0.5, delay: 0.3 + index * 0.1 }}
-                    whileHover={{ scale: 1.05 }}
                   >
-                    <achievement.icon className="w-6 h-6 text-niakazi-accent mx-auto mb-2" />
-                    <div className="text-lg font-bold text-white">{achievement.number}</div>
-                    <div className="text-xs text-gray-400">{achievement.text}</div>
+                    <achievement.icon className="w-4 h-4 text-niakazi-primary mx-auto mb-1" />
+                    <div className="text-sm font-bold text-gray-900">{achievement.number}</div>
+                    <div className="text-xs text-gray-500">{achievement.text}</div>
                   </motion.div>
                 ))}
               </div>
