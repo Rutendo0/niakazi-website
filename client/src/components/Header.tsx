@@ -56,8 +56,8 @@ export default function Header() {
     <motion.header 
       className={`sticky top-0 z-50 transition-all duration-500 ${
         scrolled 
-          ? 'bg-white/95 backdrop-blur-xl border-b border-gray-200 shadow-sm' 
-          : 'bg-white/10 backdrop-blur-md'
+          ? 'bg-transparent backdrop-blur-md' 
+          : 'bg-transparent backdrop-blur-md'
       }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
@@ -85,9 +85,7 @@ export default function Header() {
             >
               <span className="text-white font-bold text-lg">N</span>
             </motion.div>
-            <div className={`text-2xl font-bold font-space-grotesk transition-colors duration-300 ${
-              scrolled ? 'text-blue-600' : 'text-white'
-            }`}>
+            <div className="text-2xl font-bold font-space-grotesk transition-colors duration-300 text-white">
               NIAKAZI
             </div>
           </motion.div>
@@ -106,9 +104,7 @@ export default function Header() {
                   px-4 py-2 rounded-full font-medium font-space-grotesk relative group transition-all duration-300
                   ${activeSection === item.href 
                     ? 'text-white bg-blue-600' 
-                    : scrolled 
-                      ? 'text-gray-800 hover:text-blue-600 hover:bg-blue-50'
-                      : 'text-white hover:text-blue-200 hover:bg-white/10'
+                    : 'text-white hover:text-blue-200 hover:bg-white/10'
                   }
                 `}
                 initial={{ opacity: 0, y: -20 }}
@@ -175,7 +171,7 @@ export default function Header() {
                     px-4 py-3 rounded-xl font-medium font-space-grotesk text-left transition-all duration-300
                     ${activeSection === item.href 
                       ? 'text-white bg-blue-600' 
-                      : 'text-gray-800 hover:text-blue-600 hover:bg-blue-50'
+                      : 'text-white hover:text-blue-200 hover:bg-white/10'
                     }
                   `}
                   initial={{ opacity: 0, x: -20 }}
