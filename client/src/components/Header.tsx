@@ -54,7 +54,11 @@ export default function Header() {
 
   return (
     <motion.header 
-      className="sticky top-0 z-50"
+      className={`sticky top-0 z-50 transition-all duration-300 ${
+        scrolled 
+          ? 'bg-white/95 backdrop-blur-xl shadow-lg border-b border-white/20' 
+          : 'bg-gradient-to-r from-black/30 via-black/20 to-black/30 backdrop-blur-sm'
+      }`}
       initial={{ y: -100 }}
       animate={{ y: 0 }}
       transition={{ duration: 0.6 }}
@@ -81,7 +85,9 @@ export default function Header() {
             >
               <span className="text-white font-bold text-lg">N</span>
             </motion.div>
-            <div className="text-2xl font-bold font-space-grotesk transition-colors duration-300 text-white">
+            <div className={`text-2xl font-bold font-space-grotesk transition-colors duration-300 ${
+              scrolled ? 'text-blue-900' : 'text-white'
+            }`}>
               NIAKAZI
             </div>
           </motion.div>
@@ -98,9 +104,13 @@ export default function Header() {
                 onClick={() => scrollToSection(item.href)}
                 className={`
                   px-4 py-2 rounded-full font-medium font-space-grotesk relative group transition-all duration-300
-                  ${activeSection === item.href 
-                    ? 'text-white bg-white/20 shadow-lg' 
-                    : 'text-white/90 hover:text-white hover:bg-white/10'
+                  ${scrolled 
+                    ? (activeSection === item.href 
+                        ? 'text-white bg-blue-600 shadow-lg' 
+                        : 'text-blue-900 hover:text-blue-700 hover:bg-blue-50')
+                    : (activeSection === item.href 
+                        ? 'text-white bg-white/20 shadow-lg' 
+                        : 'text-white/90 hover:text-white hover:bg-white/10')
                   }
                 `}
                 initial={{ opacity: 0, y: -20 }}
@@ -126,7 +136,11 @@ export default function Header() {
           >
             <Link to="/quote">
               <motion.button
-                className="px-6 py-3 bg-blue-600 text-white rounded-full font-medium font-space-grotesk hover:bg-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                className={`px-6 py-3 rounded-full font-medium font-space-grotesk transition-all duration-300 shadow-lg hover:shadow-xl ${
+                  scrolled 
+                    ? 'bg-blue-600 text-white hover:bg-blue-700' 
+                    : 'bg-white/20 text-white hover:bg-white/30 border border-white/40'
+                }`}
                 whileHover={{ scale: 1.05, y: -2 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -136,7 +150,11 @@ export default function Header() {
           </motion.div>
           
           <motion.button
-            className="lg:hidden p-2 rounded-xl bg-white/20 text-white hover:bg-white/30 hover:text-white transition-all duration-300"
+            className={`lg:hidden p-2 rounded-xl transition-all duration-300 ${
+              scrolled 
+                ? 'bg-blue-100 text-blue-900 hover:bg-blue-200' 
+                : 'bg-white/20 text-white hover:bg-white/30'
+            }`}
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
             whileHover={{ scale: 1.1 }}
             whileTap={{ scale: 0.9 }}
