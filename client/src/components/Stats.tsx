@@ -54,7 +54,7 @@ function AnimatedCounter({ end, suffix, isVisible, delay = 0 }: {
   }, [isVisible, delay]);
   
   return (
-    <div className="text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-primary mb-2">
+    <div className="text-3xl sm:text-4xl md:text-5xl font-space-grotesk font-bold text-niakazi-primary mb-2">
       {count}{suffix}
     </div>
   );
@@ -120,7 +120,7 @@ export default function Stats() {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           {stats.map((stat, index) => {
             const IconComponent = stat.icon;
             return (
@@ -131,10 +131,10 @@ export default function Stats() {
                 animate={isVisible ? { opacity: 1, y: 0 } : {}}
                 transition={{ duration: 0.6, delay: index * 0.1 }}
               >
-                <div className="bg-white border border-gray-200 rounded-xl p-6 sm:p-8 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-niakazi-primary">
+                <div className="bg-white border border-gray-200 rounded-xl p-4 sm:p-6 md:p-8 shadow-lg hover:shadow-xl transition-all duration-300 group-hover:border-niakazi-primary">
                   {/* Icon */}
-                  <div className="w-12 h-12 sm:w-16 sm:h-16 bg-gray-200 rounded-xl flex items-center justify-center mx-auto mb-4 sm:mb-6 group-hover:bg-niakazi-primary transition-all duration-300">
-                    <IconComponent className="text-gray-600 group-hover:text-white text-xl sm:text-2xl transition-colors duration-300" />
+                  <div className="w-14 h-14 sm:w-16 sm:h-16 bg-gray-200 rounded-xl flex items-center justify-center mx-auto mb-3 sm:mb-4 md:mb-6 group-hover:bg-niakazi-primary transition-all duration-300">
+                    <IconComponent className="text-gray-600 group-hover:text-white text-lg sm:text-xl md:text-2xl transition-colors duration-300" />
                   </div>
                   
                   {/* Animated Counter */}
@@ -146,7 +146,7 @@ export default function Stats() {
                   />
                   
                   {/* Label */}
-                  <div className="text-gray-600 font-space-grotesk text-sm sm:text-base font-medium group-hover:text-gray-900 transition-colors duration-300">
+                  <div className="text-gray-600 font-space-grotesk text-sm sm:text-base md:text-lg font-medium group-hover:text-gray-900 transition-colors duration-300">
                     {stat.label}
                   </div>
                   
