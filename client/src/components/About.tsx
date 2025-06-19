@@ -11,7 +11,7 @@ export default function About() {
   const { ref, isVisible } = useScrollAnimation();
 
   return (
-    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden" ref={ref}>
+    <section id="about" className="py-20 bg-gray-50 relative overflow-hidden border-t-0" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Hero Section */}
