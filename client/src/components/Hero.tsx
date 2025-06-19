@@ -231,13 +231,12 @@ export default function Hero() {
         </motion.div>
 
         <motion.p 
-          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-12 max-w-3xl mx-auto leading-relaxed opacity-90"
+          className="text-base sm:text-lg md:text-xl lg:text-2xl mb-8 sm:mb-10 max-w-2xl mx-auto leading-relaxed opacity-20"
           initial={{ opacity: 0, y: 30 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.0 }}
         >
-          Experience enterprise-grade connectivity solutions with 26+ years of proven expertise. 
-          From high-speed internet to comprehensive managed services, we deliver the infrastructure your business needs to thrive.
+          At Niakazi, we provide cutting-edge ICT solutions tailored to your business needs.
         </motion.p>
         
         <motion.div 
@@ -246,14 +245,6 @@ export default function Hero() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 1.2 }}
         >
-          <motion.button
-            onClick={() => scrollToSection('#contact')}
-            className="w-full sm:w-auto bg-white text-niakazi-primary px-6 sm:px-8 py-3 text-base sm:text-lg font-semibold rounded-xl hover:bg-gray-100 transition-all"
-            whileHover={{ scale: 1.02 }}
-            whileTap={{ scale: 0.98 }}
-          >
-            Get Started Today
-          </motion.button>
           
           <motion.button
             onClick={() => scrollToSection('#services')}
