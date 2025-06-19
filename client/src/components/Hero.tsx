@@ -1,6 +1,6 @@
 import { motion } from "framer-motion";
 import { useParallax } from "../hooks/useScrollAnimation";
-import { Monitor, Wifi, Shield, Clock, Globe, Zap, Server, Database, Cpu, Network } from "lucide-react";
+import { Monitor, Shield, Clock, Globe, Zap, Server, Network } from "lucide-react";
 
 export default function Hero() {
   const offsetY = useParallax(0.3);
