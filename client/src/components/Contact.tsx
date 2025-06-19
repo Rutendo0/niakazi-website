@@ -89,44 +89,10 @@ export default function Contact() {
   ];
 
   return (
-    <section id="contact" className="py-24 bg-gradient-to-br from-gray-900 via-blue-900 to-indigo-900 relative overflow-hidden">
-      {/* Enhanced Aurora Background Effects */}
-      <div className="aurora-bg"></div>
-      <div className="aurora-bg"></div>
-      
-      {/* Floating geometric shapes */}
-      <motion.div 
-        className="absolute top-20 left-10 w-24 h-24 bg-niakazi-primary/20 rounded-3xl rotate-12"
-        animate={{ 
-          y: [0, -30, 0],
-          rotate: [12, 32, 12]
-        }}
-        transition={{ duration: 8, repeat: Infinity }}
-      />
-      <motion.div 
-        className="absolute bottom-32 right-20 w-20 h-20 bg-niakazi-secondary/20 rounded-full"
-        animate={{ 
-          y: [0, -25, 0],
-          scale: [1, 1.2, 1]
-        }}
-        transition={{ duration: 6, repeat: Infinity }}
-      />
-      
-      {/* Tech Icons */}
-      <motion.div 
-        className="absolute top-1/4 right-10 text-white/10"
-        animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-        transition={{ duration: 6, repeat: Infinity }}
-      >
-        <Globe size={50} />
-      </motion.div>
-      <motion.div 
-        className="absolute bottom-1/4 left-10 text-white/10"
-        animate={{ y: [0, -15, 0], rotate: [0, -8, 0] }}
-        transition={{ duration: 4, repeat: Infinity }}
-      >
-        <Shield size={45} />
-      </motion.div>
+    <section id="contact" className="py-16 sm:py-20 md:py-24 bg-white relative overflow-hidden">
+      {/* Subtle background elements */}
+      <div className="absolute top-20 right-10 w-32 h-32 bg-blue-50 rounded-full blur-xl opacity-30"></div>
+      <div className="absolute bottom-20 left-10 w-24 h-24 bg-indigo-50 rounded-full blur-lg opacity-20"></div>
       
       <div className="container mx-auto px-6 relative z-10" ref={ref}>
         {/* Header Section */}
@@ -262,8 +228,8 @@ export default function Contact() {
             animate={isVisible ? { opacity: 1, x: 0 } : {}}
             transition={{ duration: 0.8, delay: 0.6 }}
           >
-            <div className="luxury-card rounded-3xl p-8">
-              <h3 className="text-2xl font-space-grotesk font-bold text-white mb-8 neon-glow">Get in Touch</h3>
+            <div className="bg-white border border-gray-200 rounded-3xl p-8 shadow-lg">
+              <h3 className="text-2xl font-space-grotesk font-bold text-gray-900 mb-8">Get in Touch</h3>
               
               <div className="space-y-6">
                 {contactInfo.map((info, index) => {
@@ -271,7 +237,7 @@ export default function Contact() {
                   return (
                     <motion.div
                       key={index}
-                      className="flex items-start space-x-4 p-4 rounded-xl bg-white/5 hover:bg-white/10 transition-all"
+                      className="flex items-start space-x-4 p-4 rounded-xl bg-gray-50 hover:bg-gray-100 transition-all"
                       initial={{ opacity: 0, y: 20 }}
                       animate={isVisible ? { opacity: 1, y: 0 } : {}}
                       transition={{ duration: 0.5, delay: 0.8 + index * 0.1 }}
@@ -281,8 +247,8 @@ export default function Contact() {
                         <IconComponent className="w-6 h-6 text-white" />
                       </div>
                       <div>
-                        <h4 className="text-white font-semibold mb-1">{info.title}</h4>
-                        <p className="text-white/80 text-sm whitespace-pre-line">{info.text}</p>
+                        <h4 className="text-gray-900 font-semibold mb-1">{info.title}</h4>
+                        <p className="text-gray-600 text-sm whitespace-pre-line">{info.text}</p>
                       </div>
                     </motion.div>
                   );
@@ -319,7 +285,7 @@ export default function Contact() {
 
             {/* Emergency Contact */}
             <motion.div
-              className="luxury-card rounded-3xl p-8 bg-gradient-to-br from-niakazi-primary/20 to-niakazi-secondary/20"
+              className="bg-red-50 border border-red-200 rounded-3xl p-8"
               initial={{ opacity: 0, y: 30 }}
               animate={isVisible ? { opacity: 1, y: 0 } : {}}
               transition={{ duration: 0.8, delay: 1.0 }}
@@ -329,9 +295,9 @@ export default function Contact() {
                 <div className="w-10 h-10 bg-red-500 rounded-xl flex items-center justify-center">
                   <Zap className="w-5 h-5 text-white" />
                 </div>
-                <h4 className="text-xl font-semibold text-white">Emergency Support</h4>
+                <h4 className="text-xl font-semibold text-gray-900">Emergency Support</h4>
               </div>
-              <p className="text-white mb-4">
+              <p className="text-gray-700 mb-4">
                 Need immediate technical assistance? Our emergency support team is available 24/7 for critical issues.
               </p>
               <motion.button
