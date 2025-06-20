@@ -227,7 +227,7 @@ export default function Services() {
                       return (
                         <motion.div
                           key={itemIndex}
-                          className="bg-white rounded-2xl overflow-hidden hover:shadow-xl transition-all tilt-card modern-card"
+                          className="bg-white rounded-2xl shadow-lg overflow-hidden hover:shadow-xl transition-all tilt-card modern-card border border-gray-100"
                           initial={{ opacity: 0, scale: 0.9 }}
                           whileInView={{ opacity: 1, scale: 1 }}
                           transition={{ duration: 0.6, delay: itemIndex * 0.1 }}
@@ -235,11 +235,11 @@ export default function Services() {
                           whileHover={{ y: -8 }}
                         >
                           {/* Service Image */}
-                          <div className="h-32 relative overflow-hidden">
+                          <div className="h-48 relative overflow-hidden">
                             <img 
                               src={serviceImages[item.name as keyof typeof serviceImages] || "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=400&h=250&fit=crop&q=80"}
                               alt={item.name}
-                              className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
+                              className="w-full h-full object-contain bg-gray-50 transition-transform duration-300 hover:scale-105"
                               loading="lazy"
                             />
                             <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -250,9 +250,9 @@ export default function Services() {
                             </div>
                           </div>
                           
-                          <div className="p-4">
-                            <h4 className="text-lg font-space-grotesk font-semibold text-niakazi-dark mb-2">{item.name}</h4>
-                            <p className="text-gray-600 mb-3 leading-relaxed text-sm">{item.desc}</p>
+                          <div className="p-6">
+                            <h4 className="text-xl font-space-grotesk font-semibold text-niakazi-dark mb-3">{item.name}</h4>
+                            <p className="text-gray-600 mb-4 leading-relaxed">{item.desc}</p>
                             
                             <div className="space-y-2">
                               {item.features.map((feature, featureIndex) => (
